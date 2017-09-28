@@ -1,22 +1,10 @@
 <!DOCTYPE html>
-<html lang=zh>
+<html>
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-  <meta name="renderer" content="webkit">
-  <meta http-equiv="Cache-Control" content="no-transform" />
-  <meta http-equiv="Cache-Control" content="no-siteapp" />
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="format-detection" content="telephone=no,email=no,adress=no">
-  <!-- Color theme for statusbar -->
-  <meta name="theme-color" content="#000000" />
-  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
-  <meta http-equiv="window-target" content="_top" />
   
-  
-  <title>my-first-blog | Hexo</title>
+  <title>my-first-blog | Tig9r&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="description:">
 <meta property="og:type" content="article">
 <meta property="og:title" content="my-first-blog">
@@ -28,273 +16,237 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="my-first-blog">
 <meta name="twitter:description" content="description:">
-  <!-- Canonical links -->
-  <link rel="canonical" href="http://yoursite.com/2017/09/27/my-first-blog/index.html">
   
-    <link rel="alternate" href="/atom.xml" title="Tig9r&#39;s blog" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Tig9r&#39;s blog" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png" type="image/x-icon">
+    <link rel="icon" href="/img/favicon.png">
   
-  <!-- font-awesome CSS -->
-  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   
-    
-    
-
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
 </head>
-
-
-<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
-  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-  <div class="slimContent">
-    <div class="navbar-header">
-      
-      
-      <div class="profile-block text-center">
-        <a id="avatar" href="https://github.com/cofess" target="_blank">
-          <img class="thumb-xl img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/head.jpg" class="js-avatar">
+            
         </a>
-        <h2 id="name" class="hidden-xs hidden-sm">昵称</h2>
-        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Web Developer &amp; Designer</h3>
-        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="fa fa-map-marker"></i> Shenzhen, China</small>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">0xMJ</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">Love my love~</p>
+        
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/Home">博客首页</a></li>
+                        
+                            <li><a href="/works">作品展示</a></li>
+                        
+                            <li><a href="/about">留言打卡</a></li>
+                        
+                            <li><a href="/FrontEndGuide">前端导航</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/luuman" title="github">github</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo" target="_blank" href="#" title="weibo">weibo</a>
+                            
+                                <a class="fl google" target="_blank" href="#" title="google">google</a>
+                            
+                                <a class="fl twitter" target="_blank" href="#" title="twitter">twitter</a>
+                            
+                                <a class="fl linkedin" target="_blank" href="#" title="linkedin">linkedin</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://luuman.github.io/">name</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">纯海迷、爱运动、爱交友、爱旅行、喜欢接触新鲜事物、迎接新的挑战，更爱游离于错综复杂的编码与逻辑中</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">0xMJ</a></h1>
       </div>
-      
-      <div class="search" id="search-form-wrap">
-
-    <form class="search-form sidebar-form">
-        <div class="input-group">
-            <input type="text" class="search-form-input form-control" placeholder="Search" />
-            <span class="input-group-btn">
-                <button type="submit" class="search-form-submit btn btn-flat"><i class="fa fa-search"></i></button>
-            </span>
-        </div>
-    </form>
-    <div class="ins-search">
-    <div class="ins-search-mask"></div>
-    <div class="ins-search-container">
-        <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
-            <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-            <!-- <span class="ins-close ins-selectable"><i class="fa fa-times"></i></span> -->
-        </div>
-        <div class="ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
-    </div>
-</div>
-
-</div>
-      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-    </div>
-    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
-      <ul class="nav navbar-nav main-nav">
-        
-        
-        
-        <li class="menu-item menu-item-home">
-          <a href="/.">
-            
-            <i class="fa fa-fw fa-dashboard"></i>
-            
-            <span class="menu-title">Home</span>
-          </a>
-        </li>
-        
-        
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives">
-            
-            <i class="fa fa-fw fa-delicious"></i>
-            
-            <span class="menu-title">Archives</span>
-          </a>
-        </li>
-        
-        
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories">
-            
-            <i class="fa fa-fw fa-folder"></i>
-            
-            <span class="menu-title">Categories</span>
-          </a>
-        </li>
-        
-        
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags">
-            
-            <i class="fa fa-fw fa-tags"></i>
-            
-            <span class="menu-title">Tags</span>
-          </a>
-        </li>
-        
-        
-        
-        <li class="menu-item menu-item-repository">
-          <a href="/repository">
-            
-            <i class="fa fa-fw fa-code"></i>
-            
-            <span class="menu-title">Repository</span>
-          </a>
-        </li>
-        
-        
-        
-        <li class="menu-item menu-item-books">
-          <a href="/books">
-            
-            <i class="fa fa-fw fa-leanpub"></i>
-            
-            <span class="menu-title">Books</span>
-          </a>
-        </li>
-        
-        
-        
-        <li class="menu-item menu-item-links">
-          <a href="/links">
-            
-            <i class="fa fa-fw fa-gg"></i>
-            
-            <span class="menu-title">Links</span>
-          </a>
-        </li>
-        
-        
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about">
-            
-            <i class="fa fa-fw fa-coffee"></i>
-            
-            <span class="menu-title">About</span>
-          </a>
-        </li>
-        
-      </ul>
-      
-	
-    <ul class="social-links">
-    	
-        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="fa fa-github"></i></a></li>
-        
-        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="fa fa-weibo"></i></a></li>
-        
-        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="fa fa-twitter"></i></a></li>
-        
-        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="fa fa-behance"></i></a></li>
-        
-        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="fa fa-rss"></i></a></li>
-        
-    </ul>
-
-    </nav>
-  </div>
-</header>
-
-  
-    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
-  <div class="slimContent">
-    
-      <div class="widget">
-    <h3 class="widget-title">Board</h3>
-    <div class="widget-body">
-        <div id="board">
-            
-            <p>您好，您是第<span id="busuanzi_value_site_uv">0</span>位访客</p>
-            
-            <div class="content">
-                <p>欢迎交流与分享经验!</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-    
-      
-
-    
-      
-
-    
-      
-    
-      
-  <div class="widget">
-    <h3 class="widget-title">Archive</h3>
-    <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">2</span></li></ul>
-    </div>
-  </div>
-
-
-    
-      
-  <div class="widget">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget-body">
-      <ul class="recent-post-list list-unstyled no-thumbnail">
-        
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
                 
-              </p>
-              <p class="item-title">
-                <a href="/2017/09/27/my-first-blog/" class="title">my-first-blog</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2017-09-27T08:56:58.000Z" itemprop="datePublished">2017-09-27</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
                 
-              </p>
-              <p class="item-title">
-                <a href="/2017/09/25/hello-world/" class="title">Hello World</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2017-09-25T03:30:25.298Z" itemprop="datePublished">2017-09-25</time>
-              </p>
-            </div>
-          </li>
-          
-      </ul>
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">0xMJ</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">Love my love~</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/Home">博客首页</a></li>
+                
+                    <li><a href="/works">作品展示</a></li>
+                
+                    <li><a href="/about">留言打卡</a></li>
+                
+                    <li><a href="/FrontEndGuide">前端导航</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/luuman" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+                    
+                        <a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+                    
+                        <a class="google" target="_blank" href="#" title="google">google</a>
+                    
+                        <a class="twitter" target="_blank" href="#" title="twitter">twitter</a>
+                    
+                        <a class="linkedin" target="_blank" href="#" title="linkedin">linkedin</a>
+                    
+                </div>
+            </nav>
+        </header>                
     </div>
-  </div>
+</nav>
+      <div class="body-wrap"><article id="post-my-first-blog" class="article article-type-post" itemscope itemprop="blogPost">
   
-
+    <div class="article-meta">
+      <a href="/2017/09/27/my-first-blog/" class="article-date">
+      <time datetime="2017-09-27T08:56:58.000Z" itemprop="datePublished">2017-09-27</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
     
-  </div>
-</aside>
-
-  
-  
-<main class="main" role="main">
-  <div class="content">
-  <article id="post-my-first-blog" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+      <input type="hidden" class="isFancy" />
     
-    <div class="article-header">
-      
+    
+      <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
@@ -302,219 +254,301 @@
     </h1>
   
 
+      </header>
       
-      <div class="article-meta">
-        <span class="article-date">
-    <i class="fa fa-calendar-check-o"></i>
-	<a href="/2017/09/27/my-first-blog/" class="article-date">
-	  <time datetime="2017-09-27T08:56:58.000Z" itemprop="datePublished">2017-09-27</time>
-	</a>
-</span>
-        
+      <div class="article-info article-info-post">
         
 
         
-	<span class="article-read hidden-xs">
-	    <i class="fa fa-eye" aria-hidden="true"></i>
-	    <span id="busuanzi_container_page_pv">
-			阅读<span id="busuanzi_value_page_pv">0</span>次
-		</span>
-	</span>
-
-
-        <span class="post-comment"><i class="fa fa-commenting-o"></i> <a href="/2017/09/27/my-first-blog/#comments" class="article-comment-link">Comments</a></span>
-        
+        <div class="clearfix"></div>
       </div>
       
-    </div>
-    <div class="article-entry markdown-body" itemprop="articleBody">
+    
+    <div class="article-entry" itemprop="articleBody">
       
+          
         <h2 id="description"><a href="#description" class="headerlink" title="description: "></a>description: </h2>
       
-    </div>
-    <div class="article-footer">
-      <blockquote class="mt-2x">
-  <ul class="post-copyright list-unstyled">
-    
-    <li class="post-copyright-link hidden-xs">
-      <strong>本文链接：</strong>
-      <a href="http://yoursite.com/2017/09/27/my-first-blog/" title="my-first-blog" target="_blank" rel="external">http://yoursite.com/2017/09/27/my-first-blog/</a>
-    </li>
-    
-    <li class="post-copyright-license">
-      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
-    </li>
-  </ul>
-</blockquote>
-
-
-<div class="panel panel-default panel-badger">
-  <div class="panel-body">
-    <figure class="media">
-      <div class="media-left">
-        <a href="https://github.com/cofess" target="_blank" class="img-burn thumb-sm visible-lg">
-          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
-        </a>
-      </div>
-      <div class="media-body">
-        <h3 class="media-heading"><a href="https://github.com/cofess" target="_blank"><span class="text-dark">昵称</span><small class="ml-1x">Web Developer &amp; Designer</small></a></h3>
-        <div>个人简介。</div>
-      </div>
-    </figure>
-  </div>
-</div>
-
-
-    </div>
-  </article>
-  
-    
-  <section id="comments">
-  	
-       
-    <div id="uyan_frame"></div>
-
-    
-  </section>
-
-
-  
-</div>
-
-  <nav class="bar bar-footer clearfix" data-stick-bottom>
-  <div class="bar-inner">
-  
-  <ul class="pager pull-left">
-    
-    
-    <li class="next">
-      <a href="/2017/09/25/hello-world/" title="Hello World">Older&nbsp;&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></a>
-    </li>
-    
-  </ul>
-  
-  
-  <!-- Button trigger modal -->
-  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning hidden-xs" data-toggle="modal" data-target="#donateModal"><span>$</span></button>
-  
-  
-  <div class="bar-right">
-    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
-  </div>
-  
-  </div>
-</nav>
-  
-<!-- Modal -->
-<div class="modal modal-center modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      <div class="modal-body">
-        <div class="donate-box">
-          <div class="donate-tit">
-            <p>Thank you for your support, I will continue to work hard!</p>
-          </div>
-          <div class="donate-payimg">
-            <img src="/images/donate/alipayimg.png" alt="Scan Qrcode" title="Scan" />
-          </div>
-          <p class="text-muted mv">Scan this qrcode</p>
-          <div class="donate-payselect">
-            <div class="pay_item checked" data-id="alipay" data-src="/images/donate/alipayimg.png">
-              <div class="radio">
-                <input type="radio" name="payment" id="input-alipay" value="alipay" checked>
-                <label class="pay_logo clickable" for="input-alipay"><img src="/images/donate/alipay.jpg" alt="alipay" /></label>
-              </div>
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+            <div class="shang_tit">
+              <p>纯属好玩</p>
             </div>
-            <div class="pay_item" data-id="weipay" data-src="/images/donate/weipayimg.png">
-              <div class="radio">
-                <input type="radio" name="payment" id="input-weipay" value="weipay">
-                <label class="pay_logo clickable" for="input-weipay"><img src="/images/donate/weipay.jpg" alt="weipay" /></label>
-              </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
             </div>
-          </div>
-          <div class="text-grey">
-            <p>Open<span id="donate-pay_txt">alipay</span>Scan this qrcode, you can sweep yards reward oh!</p>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
           </div>
         </div>
-      </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
     </div>
+    
   </div>
-</div>
-
-
-
-</main>
-
-  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
-	
-	
-    <ul class="social-links">
-    	
-        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="fa fa-github"></i></a></li>
-        
-        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="fa fa-weibo"></i></a></li>
-        
-        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="fa fa-twitter"></i></a></li>
-        
-        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="fa fa-behance"></i></a></li>
-        
-        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="fa fa-rss"></i></a></li>
-        
-    </ul>
-
+  
+    
     <div class="copyright">
-    	
-        <div class="publishby">
-        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        <p><span>本文标题:</span><a href="/2017/09/27/my-first-blog/">my-first-blog</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 0xMJ 的个人博客">0xMJ</a></p>
+        <p><span>发布时间:</span>2017年09月27日 - 16时56分</p>
+        <p><span>最后更新:</span>2017年09月27日 - 16时58分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/09/27/my-first-blog/" title="my-first-blog">http://yoursite.com/2017/09/27/my-first-blog/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/09/27/my-first-blog/　　作者: 0xMJ" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2017/09/25/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#description"><span class="toc-number">1.</span> <span class="toc-text">description: </span></a></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <div id="gitments"></div>
+<script src="/js/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+      id: window.location.pathname,
+      owner: 'luuman',
+      repo: 'luuman.github.io',
+      oauth: {
+        client_id: '',
+        client_secret: '',
+      },
+    })
+    gitment.render('gitments')
+</script>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2017/09/25/hello-world/" title="下一篇: Hello World">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/09/27/my-first-blog/">my-first-blog</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/25/hello-world/">Hello World</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2017 0xMJ
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
+            </div>
         </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >海贼到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
     </div>
 </footer>
-  <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
 <script>
-window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
 </script>
-<script src="/js/plugin.js"></script>
-<script src="/js/application.js"></script>
-  
-    
-    
-    
-        <script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: 'Posts',
-            PAGES: 'Pages',
-            CATEGORIES: 'Categories',
-            TAGS: 'Tags',
-            UNTITLED: '(Untitled)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
-<script src="/js/insight.js"></script>
-    
-    
-        
-<script defer src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
 
 
-
-    
-    
-        
-    
-    <script defer type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=[object Object]"></script>
-
-
-    
-    
-
-
-
+  </div>
 </body>
 </html>
