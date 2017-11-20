@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-10-07T09:49:58.962Z</updated>
+  <updated>2017-10-07T11:16:26.100Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2017/09/27/Hello%20World%20/"/>
     <id>http://yoursite.com/2017/09/27/Hello World /</id>
     <published>2017-09-27T08:56:58.000Z</published>
-    <updated>2017-10-07T09:49:58.962Z</updated>
+    <updated>2017-10-07T11:16:26.100Z</updated>
     
     <content type="html"><![CDATA[<p>description:<br>和以往一样，一个博客的开篇都有这么一个开始，几乎所到之处都有一个相似的开始，他的名字叫做Hello World。当然这里也一样，也是从hello world开始的。你好，世界！</p><hr>]]></content>
     
@@ -35,6 +35,8 @@
       
     
     </summary>
+    
+      <category term="文章" scheme="http://yoursite.com/categories/%E6%96%87%E7%AB%A0/"/>
     
     
   </entry>
