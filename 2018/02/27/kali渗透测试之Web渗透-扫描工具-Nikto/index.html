@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>hexo博客搭建 | 0xMJ&#39;s blog</title>
-  <meta name="keywords" content=" hexo ">
-  <meta name="description" content="hexo博客搭建 | 0xMJ&#39;s blog">
+  <title>kali渗透测试之Web渗透-扫描工具-Nikto | 0xMJ&#39;s blog</title>
+  <meta name="keywords" content=" Nikto ">
+  <meta name="description" content="kali渗透测试之Web渗透-扫描工具-Nikto | 0xMJ&#39;s blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="0xMJ&#39;s blog">
@@ -303,9 +303,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="w-hexo博客搭建" class="article article-type-w" itemscope itemprop="blogPost">
+        <article id="post-kali渗透测试之Web渗透-扫描工具-Nikto" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">hexo博客搭建</h1>
+        <h1 class="article-title">kali渗透测试之Web渗透-扫描工具-Nikto</h1>
     
     <div class="article-meta">
         
@@ -313,21 +313,21 @@
         
         <span class="book">
             
-            <a href="javascript:" data-rel="博客">博客</a>
+            <a href="javascript:" data-rel="Kali">Kali</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color5">hexo</a>
+            <a href="javascript:" class="color1">Nikto</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2017-11-22 17:19:35'>2017-11-22 16:57</time>
+        创建时间:<time class="date" title='更新时间: 2018-02-27 19:47:51'>2018-02-27 19:47</time>
         
     </div>
     <div class="article-meta">
@@ -360,7 +360,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#建立github仓库"><span class="toc-text">建立github仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#本地安装Git"><span class="toc-text">本地安装Git</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置SSH"><span class="toc-text">配置SSH</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装Hexo"><span class="toc-text">安装Hexo</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#安装前提"><span class="toc-text">安装前提</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#安装Hexo-1"><span class="toc-text">安装Hexo</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改主题"><span class="toc-text">修改主题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#上传之前"><span class="toc-text">上传之前</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#上传到github"><span class="toc-text">上传到github</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结：部署步骤"><span class="toc-text">总结：部署步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用hexo命令"><span class="toc-text">常用hexo命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Hexo主题的分类和标签设置："><span class="toc-text">3-Hexo主题的分类和标签设置：</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#kali渗透测试之Web渗透-扫描工具-Nikto"><span class="toc-text">kali渗透测试之Web渗透-扫描工具-Nikto</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#任务4：实验环境Metasploaitable和侦察HTTRACK"><span class="toc-text">任务4：实验环境Metasploaitable和侦察HTTRACK</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#任务5：扫描工具-Nikto"><span class="toc-text">任务5：扫描工具-Nikto</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -375,82 +375,99 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#hexo博客搭建</p>
-<p>##安装git,nodejs,npm，并了解相关基础知识<br>下载nodejs和git(<a href="https://git-scm.com/)并安装" target="_blank" rel="external">https://git-scm.com/)并安装</a></p>
-<p>确认安装成功</p>
-<h2 id="建立github仓库"><a href="#建立github仓库" class="headerlink" title="建立github仓库"></a>建立github仓库</h2><p>新建一个名为你的用户名.github.io的仓库，比如说，如果你的github用户名是test，那么你就新建test.github.io的仓库（必须是你的用户名，其它名称无效），将来你的网站访问地址就是 <a href="http://test.github.io" target="_blank" rel="external">http://test.github.io</a> 了，是不是很方便？</p>
-<p>由此可见，每一个github账户最多只能创建一个这样可以直接使用域名访问的仓库。</p>
-<p>几个注意的地方：</p>
-<blockquote>
-<p>注册的邮箱一定要验证，否则不会成功；<br>仓库名字必须是：username.github.io，其中username是你的用户名；<br>仓库创建成功不会立即生效，需要过一段时间，大概10-30分钟，或者更久，我的等了半个小时才生效；<br>创建成功后，默认会在你这个仓库里生成一些示例页面，以后你的网站所有代码都是放在这个仓库里啦。</p>
-</blockquote>
-<h2 id="本地安装Git"><a href="#本地安装Git" class="headerlink" title="本地安装Git"></a>本地安装Git</h2><p>进入 Git 官网，下载相应的 Git 版本，下载完成之后按照引导安装 Git 。安装完成之后在开始菜单中会有一个 Git Bash 。这是一个类似于Liunx的终端，在里面可以模拟Linux下的终端进行操作。</p>
-<h2 id="配置SSH"><a href="#配置SSH" class="headerlink" title="配置SSH"></a>配置SSH</h2><p>打开 Git Bash ，执行下面的命令生成 SSH 访问私钥及公钥。</p>
-<p>$ ssh-keygen -t rsa -C “email@email.com”<br>ssh | 300*0<br>输入命令回车之后会提示你输入一些东西，不用管。一直回车到底就好了。然后你的 ~/.ssh 文件下就会生成两个文件 id_rsa 和 id_rsa.pub 。</p>
-<p>打开你的 Github -&gt; setting -&gt; SSH Keys 。然后点击 New SSH Key 创建一个新的SSH Key。Title 可以用你的计算机名，可以用以区分。将文件 id_rsa.pub 中的所以内容复制粘贴到 Key 下面。然后使用下面的命令测试是否可以连接上 Github 。</p>
-<p>$ ssh -T git@github.com<br><img src="http://oy0tigw51.bkt.clouddn.com/201711210154_534.png" alt=""></p>
-<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>Hexo的安装在其官方文档中有很详细的说明。下面将简单介绍Hexo的安装。</p>
-<h4 id="安装前提"><a href="#安装前提" class="headerlink" title="安装前提"></a>安装前提</h4><p>安装 Node.js ，请进入Node.js 的官网下载安装。<br>安装 Git ，前面已经说明，不再赘述。</p>
-<h4 id="安装Hexo-1"><a href="#安装Hexo-1" class="headerlink" title="安装Hexo"></a>安装Hexo</h4><p>上面两个工具安装完整之后，打开 Git Bash ，只需要使用npm即可完成Hexo的安装。</p>
-<p>$ npm install -g hexo-cli<br>安装Hexo完成之后，执行下面的命令，Hexo将会在你制定的文件夹中新建所需要的文件。</p>
-<p>$ hexo init <folder><br>$ cd <folder><br>$ npm install<br>新建完成后，文件夹下的目录如下：</folder></folder></p>
-<p>.<br>├── _config.yml<br>├── package.json<br>├── scaffolds<br>├── source<br>|   ├── _drafts<br>|   └── _posts<br>└── themes<br>_config.yml 文件是网站的配置文件，可以在其中配置网站的大部分参数。<br>package.json 文件是应用程序的信息。<br>source 是资源文件夹，是用来存放用户资源的地方。<br>themes 是主题文件夹，Hexo会根据主题来生成不同的静态页面。<br>scaffolds是模板件夹，当新建文章的时候，Hexo会根据模板来建立文件。</p>
-<h2 id="修改主题"><a href="#修改主题" class="headerlink" title="修改主题"></a>修改主题</h2><p><a href="https://github.com/yelog/hexo-theme-3-hexo首先下载这个主题：" target="_blank" rel="external">https://github.com/yelog/hexo-theme-3-hexo首先下载这个主题：</a></p>
-<pre><code>$ cd /f/Workspaces/hexo/
-$ git clone https://github.com/yelog/hexo-theme-3-hexo themes/3-hexo
-</code></pre><p>修改_config.yml中的theme: landscape改为theme: 3-hexo，然后重新执行hexo g来重新生成。</p>
-<p>如果出现一些莫名其妙的问题，可以先执行hexo clean来清理一下public的内容，然后再来重新生成和发布。</p>
-<h2 id="上传之前"><a href="#上传之前" class="headerlink" title="上传之前"></a>上传之前</h2><p>在上传代码到github之前，一定要记得先把你以前所有代码下载下来（虽然github有版本管理，但备份一下总是好的），因为从hexo提交代码时会把你以前的所有代码都删掉。</p>
-<h2 id="上传到github"><a href="#上传到github" class="headerlink" title="上传到github"></a>上传到github</h2><p>如果你一切都配置好了，发布上传很容易，一句hexo d就搞定，当然关键还是你要把所有东西配置好。</p>
-<p>首先，ssh key肯定要配置好。</p>
-<p>其次，配置_config.yml中有关deploy的部分：</p>
-<p>正确写法：</p>
-<p>deploy:<br>  type: git<br>  repository: git@github.com:liuxianan/liuxianan.github.io.git<br>  branch: master</p>
-<p>错误写法：</p>
-<p>deploy:<br>  type: github<br>  repository: <a href="https://github.com/liuxianan/liuxianan.github.io.git" target="_blank" rel="external">https://github.com/liuxianan/liuxianan.github.io.git</a><br>  branch: master</p>
-<h2 id="总结：部署步骤"><a href="#总结：部署步骤" class="headerlink" title="总结：部署步骤"></a>总结：部署步骤</h2><p>每次部署的步骤，可按以下三步来进行。</p>
-<p>hexo clean<br>hexo generate<br>hexo deploy</p>
-<ol>
-<li><p>总结：本地调试</p>
-</li>
-<li><p>在执行下面的命令后，</p>
-</li>
-</ol>
-<p>$ hexo g #生成<br>$ hexo s #启动本地服务，进行文章预览调试<br>浏览器输入<a href="http://localhost:4000，查看搭建效果。此后的每次变更_config.yml" target="_blank" rel="external">http://localhost:4000，查看搭建效果。此后的每次变更_config.yml</a> 文件或者新建文件都可以先用此命令调试，尤其是当你想调试新添加的主题时。</p>
-<ol>
-<li>可以用简化的一条命令</li>
-</ol>
-<p>hexo s -g</p>
-<h2 id="常用hexo命令"><a href="#常用hexo命令" class="headerlink" title="常用hexo命令"></a>常用hexo命令</h2><p>hexo clean 清除<br>hexo s -g #生成并本地预览<br>hexo d -g #生成并上传<br>hexo server –debug  # 本地部署<br>hexo generate or hexo g  # 生成页面<br>hexo deployer or hexo d  # 部署到github<br>hexo new “title”  # 新建文章<br>hexo new page “about”  # 创建新页面</p>
-<h2 id="3-Hexo主题的分类和标签设置："><a href="#3-Hexo主题的分类和标签设置：" class="headerlink" title="3-Hexo主题的分类和标签设置："></a>3-Hexo主题的分类和标签设置：</h2><p>这里遇到了坑<br>发了邮件问了这个主题的开发者<br>我以为是要用next主题形式创建hexo new page “ca”</p>
-<pre><code>代码：
-tags: 
-- 前端
-- hexo
-categories: 
-- 前端
-在博客根目录输入
+        <h1 id="kali渗透测试之Web渗透-扫描工具-Nikto"><a href="#kali渗透测试之Web渗透-扫描工具-Nikto" class="headerlink" title="kali渗透测试之Web渗透-扫描工具-Nikto"></a>kali渗透测试之Web渗透-扫描工具-Nikto</h1><h2 id="任务4：实验环境Metasploaitable和侦察HTTRACK"><a href="#任务4：实验环境Metasploaitable和侦察HTTRACK" class="headerlink" title="任务4：实验环境Metasploaitable和侦察HTTRACK"></a>任务4：实验环境Metasploaitable和侦察HTTRACK</h2><p>httrack 克隆一个网站页面到本地<br><img src="http://oy0tigw51.bkt.clouddn.com/201711231143_886.png" alt=""><br>mkdir dvwa 创建一个目录<br><img src="http://oy0tigw51.bkt.clouddn.com/201711231145_468.png" alt=""></p>
+<p>侦察【减少与目标系统交互】</p>
+<pre><code>Httrack：将WEB可下载的页面下载到本机，再进行本地检查【kali下安装】
 
-hexo new page tags
-打开 tags/index.md ，并改成：
+##可到此网站获取代理：hidemyass.com【免费代理需小心】
+</code></pre><h2 id="任务5：扫描工具-Nikto"><a href="#任务5：扫描工具-Nikto" class="headerlink" title="任务5：扫描工具-Nikto"></a>任务5：扫描工具-Nikto</h2><p>基于WEB的扫描工具，基本都支持两种扫描模式。代理截断模式，<strong>主动扫描模式</strong></p>
+<p>手动扫描：作为用户操作发现页面存在的问题，但可能会存在遗漏</p>
+<p>自动扫描：基于字典，提高速度，但存在误报和触发警告</p>
+<p>参考书：Web_Penetration_Testing_with_Kali_Linux</p>
+<p>Nikto【纯主动型】<br>   Nikto 是一款Perl语言开发的开源代码的、功能强大的WEB扫描评估软件，能对web服务器多种安全项目进行测试的扫描软件。<br>扫描内容：</p>
+<pre><code>1、软件版本
+2、搜索存在安全隐患的文件【如：某些web维护人员备份完后，遗留的压缩包，若被下载下来，则获得网站源码】
 
-title: 标签
-date: 日期
-type: &quot;tags&quot;
-comments: false
-分类同理
+3、服务器配置漏洞【组件可能存在默认配置】
 
-hexo new page categories
-打开category/index.md，改为：
+    4、WEB Application层面的安全隐患【xss，SQL注入等】
 
-title: 分类
-date: 日期
-type: &quot;categories&quot;
-comments: false
-</code></pre><p>实际上不需要 ，大概浪费了我两天时间的坑。<br>这个侧边栏分类无须单独配置，只要在文章中加入 categories</p>
-<p>比如创建了一篇文章如下，加入 categories: 大前端， 这样就会在侧边栏自动出现 大前端 这个分类，且所有有 categories: 大前端 这个参数的文章都会归到这个分类下。<br>这个主题贼强 自动添加文集分类</p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201711221651_585.png" alt=""></p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201711221651_329.png" alt=""></p>
+    5、避免404误判
+
+        ·很多服务器不遵守RFC标准，对于不存在的对象返回200响应码
+
+        ·依据响应文件内容判断，不同扩展名【jsp、cji】的文件404响应内容不同
+
+        ·去除时间信息后的内容取MD5值
+
+        ·参数：-no404【不进行误判尝试判断，可能存在误判】
+</code></pre><p>命令详解：</p>
+<pre><code>nikto 主要参数
+man nikto 更多参数
+nikto -update   #直接更新数据库，厂商网址可能被墙 【在此网站可下载最新版http://cirt.net/nikto/UPDATES/】
+
+nikto  -list-plugins       #插件列表
+</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201711251346_435.jpg" alt=""></p>
+<pre><code>nikto -host http://1.1.1.1 （目标）
+nikto -host 192.168.1.1 -ssl -port 443,8443,995 扫描端口
+例如：
+nikto -host www.baidu.com -port 443 -ssl
+ssl即https的端口默认为443
+</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201711041704_648.png" alt=""></p>
+<p>nikto -host <a href="http://192.168.1.109/dvwa/" target="_blank" rel="external">http://192.168.1.109/dvwa/</a>           #指定网站目录扫描</p>
+<pre><code>nikto -host 192.168.1.1.109 -port 80,443      #可指定多个端口【加-output：输出结果】
+nikto -host host.txt   #扫描多个IP
+nmap -p80 192.168.1.0/24 -oG - | nikto -host -        #结合nmap，对一个网段内开放了80端口的主机进行扫描 
+nikto -host https://www.baidu.com -useproxy http://localhost:8087     #使用代理
+-vhost  【+域名】   #虚拟IP，区分网站【使用背景：一个ip对应多个网站】
+</code></pre><p>交互性参数【用于扫描过程中】</p>
+<pre><code>回车：报告当前状态
+v：正在扫描的详细信息（路径，结果等）#再按v就停止
+d：极其详细的信息，包括传strong text输内容     #
+e：错误信息                                    #
+p：显示进度                               #
+r：重定向                                   #
+c：cookie
+a：身份认证
+
+q：退出
+
+N：下一个主机（用于多个IP）
+
+P：暂停
+</code></pre><p>nikto配置文件【大部分需要登录进网站，才能进行扫描】</p>
+<pre><code>    -id+    #使用http身份认证【但现在很少】
+
+支持指定cookie
+
+    vi /etv/nikto.conf
+</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201711251338_899.jpg" alt=""></p>
+<pre><code>    #修改useagent【默认配置，容易被管理员发现】
+
+    USERAGENT=Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)
+</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201711251345_604.jpg" alt=""></p>
+<pre><code>    #抓包分析，获取cookie
+</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201711251345_197.jpg" alt=""></p>
+<pre><code>    #修改cookie信息【让nikto获得身份认证，进行进一步扫描】
+</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201711251345_949.jpg" alt=""></p>
+<pre><code>    -evasion：使用LibWhisker中对IDS的逃避技术，可使用以下几种类型
+
+    1、随机URL编码（非UTF-8方式）
+
+    2、自选路径（/./）
+
+    3、过早结束的URL
+
+    4、优先考虑长随机字符串
+
+    5、参数欺骗
+
+    6、使用TAB作为命令的分隔符
+
+    7、使用变化的URL
+
+    8、使用windows路径分隔符”\“
+</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201711251345_7.jpg" alt=""></p>
 
       
        <hr><span style="font-style: italic;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 951207194@qq.com </span>

