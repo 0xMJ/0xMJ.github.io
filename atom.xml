@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://0xmj.club/"/>
-  <updated>2018-06-20T14:41:21.311Z</updated>
+  <updated>2018-08-01T15:43:57.015Z</updated>
   <id>http://0xmj.club/</id>
   
   <author>
@@ -15,6 +15,59 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>渗透测试基础</title>
+    <link href="http://0xmj.club/2018/08/01/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80/"/>
+    <id>http://0xmj.club/2018/08/01/渗透测试基础/</id>
+    <published>2018-08-01T15:43:32.000Z</published>
+    <updated>2018-08-01T15:43:57.015Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="渗透测试基础"><a href="#渗透测试基础" class="headerlink" title="渗透测试基础"></a>渗透测试基础</h1><h2 id="0x00熟悉各类名词"><a href="#0x00熟悉各类名词" class="headerlink" title="0x00熟悉各类名词"></a>0x00熟悉各类名词</h2><p>黑客：Hacker 黑客所做的不是恶意破坏，他们是一群纵横网络上的技术人员，热衷与科技探索、计算机科学研究。在IT圈中，Hacker一词无疑是带有正面意义的。<br>骇客：Cracker 骇客未必具有很高的技术，通常用一些简单的手段去达到一些炫耀、恶作剧、搞破坏的目的。<br>红客：Honcker Honcker用自己的技术维护国内网络安全，并对外来的一切进攻进行还击。他们拥有爱国、正义、进取的精神，是网络安全时代的英雄的代表。</p><p>白帽： 专门研究或者从事网络安全行业的人，通常受雇于各大安全公司，是提高网络、系统安全水平的主要力量。</p><p>黑帽： 专门研究木马、操作系统，寻找漏洞，并且以个人意志为出发点，攻击网络或者计算机。<br>灰帽： 以个人意志为出发点，两者皆可做。</p><h2 id="0x01术语词汇"><a href="#0x01术语词汇" class="headerlink" title="0x01术语词汇"></a>0x01术语词汇</h2><p>脚本(asp、php、jsp)<br>html(css、js、html)<br>HTTP协议<br>CMS(B/S)<br>MD5<br>肉鸡： 被黑客入侵并长期驻扎的计算机或服务器。<br>抓鸡： 利用使用量大的程序的漏洞，使用自动化方式获取。<br>Webshell： 通过Web入侵的一种脚本工具，可以据此对网站服务进行一定程度的控制。<br>漏洞: 硬件、软件、协议等等的可利用安全缺陷，可能被攻击者利用，对数据进行篡改，控制等。</p><p>一句话木马： 通过向服务器端提交一句简短的代码，配合本地客户端实现webshell功能的木马。</p><p>&lt;%eval request(&quot;pass&quot;)%&gt;<br>&lt;%execute(request(&quot;pass&quot;))%&gt;<br>request(“pass”)：接收客户端提交的数据。pass为执行命令的参数。<br>eval/execute：函数执行客户端命令的内容。<br>提权： 操作系统低权限的账户将自己提升为管理员权限使用的方法。</p><p>后门： 黑客为了对住基金向长期的控制，在机器上种植的一段程序或者留下的一个“入口”。</p><p>跳板： 使用肉鸡IP来实施攻击其他目标，以便更好地隐藏自己的身份信息。</p><p>旁站入侵： 即同服务器下的网站入侵，入侵之后可以通过提权跨目录等手段拿到目标网站的权限。常见的旁站查询工具有：WebRobot、御剑、明小子和web在线查询等。</p><p>C段入侵： 即同C段下服务器入侵。如目标ip为192.168.1.253，入侵192.168.1.*的任意一台机器，然后利用一些黑客工具嗅探获取在网络上传输的各种信息。常用的工具有：在windows下有Cain，在UNIX环境下有Sniffit，Snoop，Tcpdump，Dsniff等。</p><p>C段技巧 :</p><p>1.扫描1-255全部网段的网站CMS情况<br>选择一款自己擅长入侵的cms，这样才能更快速的实现C段入侵<br>2.扫描1-255全部网段的端口开放情况<br>先查询端口，选择自己擅长提权的端口的网站来入侵，通过端口提权。使用到的工具椰树、阿D网络工具包</p><h2 id="0x02渗透测试"><a href="#0x02渗透测试" class="headerlink" title="0x02渗透测试"></a>0x02渗透测试</h2><p><strong>黑盒测试</strong>： 在未授权的情况下，模拟黑客的攻击方法和思维方式，来评估计算机网络系统可能存在的安全风险。 黑盒测试不同于黑客入侵，并不等于黑站。黑盒测试考验的是综合的能力（OS、Database、Script、code、思路、社工） 思路与经验积累往往决定成败。 三个臭皮匠赛过诸葛亮。<br><strong>白盒测试</strong> ： 相对黑盒测试，白鹤测试基本是从内部发起。 黑百合的另一种说法： 知道源代码和不知道源代码的渗透测试。 这时，黑盒测试还是传统的渗透测试，而白盒测试就偏向于代码审计。</p><p><strong>灰盒测试</strong>：基于白盒与黑盒测试之间的一种产物。 </p><p><strong>APT攻击</strong>：Advanced Persistent Threat 高级可持续性攻击，是指组织（特别是政府）或者小团体利用先进的攻击手段对特定目标进行长期持续性网络攻击的攻击形式。<br>1.极强的隐蔽性<br>2.潜伏期长，持续性强<br>3.目标性强<br><strong>渗透测试的特点：</strong><br>充满挑战与刺激——不达目的不罢休<br>思路与经验累计往往决定成败</p><p><strong>渗透测试与入侵的最大的区别：</strong><br>渗透测试：更全面的找出服务器的问题，更倾向于保护。<br>入侵：不择手段地（甚至是具有破坏性的）拿到权限。</p><h2 id="0x03渗透测试一般流程："><a href="#0x03渗透测试一般流程：" class="headerlink" title="0x03渗透测试一般流程："></a>0x03渗透测试一般流程：</h2><p>明确目标》信息收集》漏洞探测》漏洞验证》信息分析 》获取所需》信息整理》 形成报告</p><p>1.明确目标：<br>确定范围<br>确定规则<br>确定需求<br>2.信息收集：<br>基础信息<br>系统信息<br>应用信息<br>版本信息<br>服务信息<br>人员信息<br>防护信息<br>3.漏洞探测：<br>系统漏洞<br>WebServer漏洞<br>Web应用漏洞<br>其他端口服务漏洞<br>通信安全<br>4.漏洞验证：<br>自动化验证<br>手工验证<br>试验验证<br>登录猜解<br>业务漏洞验证<br>公开资源的利用<br>5.信息分析<br>精准打击<br>绕过防御机制<br>定制攻击路径<br>绕过检测机制<br>攻击代码<br>6.获取所需<br>实施攻击<br>获取内部信息<br>进一步渗透<br>持续性存在<br>清理痕迹<br>7.信息整理<br>整理渗透工具<br>整理收集信息<br>整理漏洞信息<br>8.形成报告：<br>按需整理<br>补充介绍<br>修补建议</p><p>经验分享<br>信息搜集是关键<br>做事不要太心急<br>多学习，多看源码<br>平时注意搜集0day<br>思路很重要</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;渗透测试基础&quot;&gt;&lt;a href=&quot;#渗透测试基础&quot; class=&quot;headerlink&quot; title=&quot;渗透测试基础&quot;&gt;&lt;/a&gt;渗透测试基础&lt;/h1&gt;&lt;h2 id=&quot;0x00熟悉各类名词&quot;&gt;&lt;a href=&quot;#0x00熟悉各类名词&quot; class=&quot;headerli
+      
+    
+    </summary>
+    
+      <category term="渗透测试" scheme="http://0xmj.club/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="渗透" scheme="http://0xmj.club/tags/%E6%B8%97%E9%80%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>八月展望</title>
+    <link href="http://0xmj.club/2018/08/01/%E5%85%AB%E6%9C%88%E5%B1%95%E6%9C%9B/"/>
+    <id>http://0xmj.club/2018/08/01/八月展望/</id>
+    <published>2018-08-01T15:41:26.000Z</published>
+    <updated>2018-08-01T15:42:16.323Z</updated>
+    
+    <content type="html"><![CDATA[<p>不要自己感动自己</p><p>不要过于享受生活</p><p>八月了，八月还会是如此的散漫自由么，生活确实不是一帆丰顺，社会上的尔虞吾诈也都心酸体验了一把。</p><p>八月了，希望自己静下心来，认真的做自己的计划，世界的另一番风景只有站的最够高才能看清，太低了琐事缠身，总想超脱，痛恨无能摆脱。</p><p>八月了，时间慢一点吧，目标定实际一点吧，能尽力碰到就好。人总是有些好高骛远，飞的太高太不真实，落下就残忍。</p><p>八月，祝能实现理想，静候佳音。完成flag。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;不要自己感动自己&lt;/p&gt;
+&lt;p&gt;不要过于享受生活&lt;/p&gt;
+&lt;p&gt;八月了，八月还会是如此的散漫自由么，生活确实不是一帆丰顺，社会上的尔虞吾诈也都心酸体验了一把。&lt;/p&gt;
+&lt;p&gt;八月了，希望自己静下心来，认真的做自己的计划，世界的另一番风景只有站的最够高才能看清，太低了琐事缠身
+      
+    
+    </summary>
+    
+      <category term="思考" scheme="http://0xmj.club/categories/%E6%80%9D%E8%80%83/"/>
+    
+    
+      <category term="思考" scheme="http://0xmj.club/tags/%E6%80%9D%E8%80%83/"/>
+    
+  </entry>
   
   <entry>
     <title>2018SCTF-wp</title>
@@ -470,54 +523,6 @@
     
     
       <category term="黑客攻防web安全实战详解" scheme="http://0xmj.club/tags/%E9%BB%91%E5%AE%A2%E6%94%BB%E9%98%B2web%E5%AE%89%E5%85%A8%E5%AE%9E%E6%88%98%E8%AF%A6%E8%A7%A3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>kali渗透测试之Web渗透-扫描工具-QWASP_ZAP</title>
-    <link href="http://0xmj.club/2018/02/27/kali%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E4%B9%8BWeb%E6%B8%97%E9%80%8F-%E6%89%AB%E6%8F%8F%E5%B7%A5%E5%85%B7-QWASP-ZAP/"/>
-    <id>http://0xmj.club/2018/02/27/kali渗透测试之Web渗透-扫描工具-QWASP-ZAP/</id>
-    <published>2018-02-27T11:54:20.000Z</published>
-    <updated>2018-02-27T11:55:35.978Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="kali渗透测试之Web渗透-扫描工具-QWASP-ZAP"><a href="#kali渗透测试之Web渗透-扫描工具-QWASP-ZAP" class="headerlink" title="kali渗透测试之Web渗透-扫描工具-QWASP_ZAP"></a>kali渗透测试之Web渗透-扫描工具-QWASP_ZAP</h1><p>扫描工具-QWASP_ZAP</p><p>十大安全工具之一，集成性工具，功能完善，而且强大。既可做主动扫描，也可做截断代理。开源免费跨平台，简单易用，体验相对混乱，但在主动扫描方面，相对占优。【kali集成】(主动扫描方面比burp好)</p><pre><code>####建议选择第二项####注意检查更新</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201711251642_866.jpg" alt=""></p><p>更新与插件安装</p><pre><code>安装插件release和beta【release：成熟版  beta：测试版  alpha：不成熟版】</code></pre><p>截断代理【结合手动爬网】</p><pre><code>默认情况下，代理功能自启动1、启动浏览器代理2、</code></pre><p>2、主动扫描</p><pre><code>一、快速爬网扫描二、直接扫描爬到的内容对于要身份认证才能访问的网页无法进行扫描，需要进行身份认证配置Fuzz二、</code></pre><p>结果分析：</p><pre><code>1、查看Code【200 OK】（）若为302，则是重定向2、查看Size Resp.Header是否不同</code></pre><p>暴力破解：</p><pre><code>API功能【程序接口】~http:/zap/【代理已经指向OWASP_ZAP】</code></pre><p>3、使用方法</p><pre><code>0、Persist Session1.四种模式Mode----safe&lt;protect&lt;standard&lt;ATTACK【小心选择扫描模式】2、升级add-ons3、Scan Profile（扫描策略）    右键-&gt;攻击-&gt;Active Scan    自定义扫描策略4、Anti CSRF Tokens【某些网站为了防止CSRF攻击，每次随机生成Tokens】5、扫描https网站时，出现证书报错，通过导入ssl证书，则不会出现错误6、Scope / Contexts（范围） / filter    #Scope  以相同的策略进行扫描（包含context）    #Contexts7、Http Sessions——default session tokens &amp; site session tokens    Session  Properties  #使用默认Manual已能满足大多数，失效再考虑下面#使用表单进行身份认证#脚本认证Script，需自己编写脚本【有脚本模版】#默认情况下，只认定指定的Session的名，必须手动添加其他Session【如：security】 #显示http Session tab    #用于使用不同用户登录审计，判断是否有越权8、Note / tag【添加各种标签，方便审计】9、Passive scan</code></pre><p>############################################################################################</p><p>#实时截断【注意截断时间，需快速】</p><pre><code>##返回的结果也会拦截</code></pre><p>#显示隐藏域</p><p>###隐藏域在客户端是为了降低客户端对服务端的请求过程，提高速度和用户体验。若服务端没对数据进行检验或检查，可进行价格修改和恶意代码注入等</p><pre><code>#被动扫描规则#爬网域值</code></pre><p>##########################################################################################</p><p>扫描标准流程</p><pre><code>设置代理手动爬网自动爬网     #强制浏览web服务器【有可能发现一些web目录】    #强制目录浏览、强制目录和子目录爬网【有各自的字典】主动扫描【active scan】</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;kali渗透测试之Web渗透-扫描工具-QWASP-ZAP&quot;&gt;&lt;a href=&quot;#kali渗透测试之Web渗透-扫描工具-QWASP-ZAP&quot; class=&quot;headerlink&quot; title=&quot;kali渗透测试之Web渗透-扫描工具-QWASP_ZAP&quot;&gt;&lt;/a
-      
-    
-    </summary>
-    
-    
-      <category term="QWASP_ZAP" scheme="http://0xmj.club/tags/QWASP-ZAP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>kali渗透测试之Web渗透-扫描工具-Vega</title>
-    <link href="http://0xmj.club/2018/02/27/kali%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E4%B9%8BWeb%E6%B8%97%E9%80%8F-%E6%89%AB%E6%8F%8F%E5%B7%A5%E5%85%B7-Vega/"/>
-    <id>http://0xmj.club/2018/02/27/kali渗透测试之Web渗透-扫描工具-Vega/</id>
-    <published>2018-02-27T11:51:36.000Z</published>
-    <updated>2018-02-27T11:52:13.219Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="kali渗透测试之Web渗透-扫描工具-Vega"><a href="#kali渗透测试之Web渗透-扫描工具-Vega" class="headerlink" title="kali渗透测试之Web渗透-扫描工具-Vega"></a>kali渗透测试之Web渗透-扫描工具-Vega</h1><p>##任务6： WEB扫描工具-Vega</p><p> 纯图形化界面，Java编写的开源web扫描器。两种工作模式：扫描模式和代理模式【主流扫描功能】。用于爬站。处理表单，注入测试等。支持SSL：<a href="http://vega/ca.crt" target="_blank" rel="external">http://vega/ca.crt</a></p><p>专注于应用程序代码方面的漏洞</p><p>Vega<br><img src="http://oy0tigw51.bkt.clouddn.com/201711251348_627.jpg" alt=""></p><pre><code>#基于字典发现网站目录</code></pre><p>代理模式</p><p>被动收集信息，结合手动爬站【即页面中能点击的链接全部点击一遍，能提交数据的地方，全部提交一遍】</p><p>连接到网站外面的链接可以暂时不用管<br><img src="http://oy0tigw51.bkt.clouddn.com/201711251349_64.jpg" alt=""></p><pre><code>#设置外部代理服务器</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201711251349_630.jpg" alt=""></p><pre><code>#删除user-agent尾部的vega字样</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201711251349_272.jpg" alt=""></p><pre><code>#设置代理</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201711251349_285.jpg" alt=""></p><pre><code>1、setup重置【方便用户初始安装和配置】设置安装完成后，一定要删掉，不能留在服务器。如果权限设置不当，通过非授权访问到，可篡改数据库内容</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201711251350_130.jpg" alt=""></p><pre><code>2、提交数据【随便输入，目的：被Vega抓取数据】</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201711251350_567.jpg" alt=""></p><pre><code>3、URL【?参数=***】在等号后面的值，添加不正常的内容，看返回结果4、view source【服务器端源代码，正常Web application中没有此功能，只为了分析漏洞而提供的功能】5、上传位置【同理：成功与否，无所谓】6、反射性XSS【输入什么内容，就返回什么内容】7、论坛或收集反馈的典型表单页面【】8、phpinfo  #安装PHP后，测试是否能否正常工作 【泄漏大量服务器配置信息】#左边灰白色为页面中存在的链接</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201711251350_798.jpg" alt=""></p><pre><code>#部分扫描结果</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201711251350_220.jpg" alt=""></p><pre><code>9、事后操作-修改内容重放【在时间失效之前】</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201711251351_991.jpg" alt=""></p><p><img src="http://oy0tigw51.bkt.clouddn.com/201711251351_491.jpg" alt=""></p><pre><code>截断功能【代理方面有所欠缺】</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201711251351_90.jpg" alt=""><br>扫描模式【切换】</p><pre><code>vega主动，对页面中的内容、参数进行扫描</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201711251351_475.jpg" alt=""></p><pre><code>配置1、准备     #定义身份认证信息    1、basic http authentication    #http基本身份认证    2、digest http authentication   #http摘要身份认证    3、NTLM                                 #windows系统账号密码认证【未加入域】    4、macro                                 #基于表单【大部分web应用身份认证】</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201711251351_2.jpg" alt=""></p><pre><code>        #创建宏</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201711251352_704.jpg" alt=""></p><p><img src="http://oy0tigw51.bkt.clouddn.com/201711251352_133.jpg" alt=""></p><pre><code>2、开始</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201711251352_828.jpg" alt=""></p><p><img src="http://oy0tigw51.bkt.clouddn.com/201711251352_280.jpg" alt=""><br><img src="http://oy0tigw51.bkt.clouddn.com/201711251352_318.jpg" alt=""></p><pre><code>#查看详细信息console</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201711251352_31.jpg" alt=""></p><pre><code>#请求内容的过程</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201711251352_181.jpg" alt=""></p><p>https证书加密网站【即其既是一个服务网站，又是一个可信证书颁发机构】的扫描【截断代理】</p><pre><code>签名证书：由权威颁发机构颁发给服务器或者个人用于证明自己身份的东西，默认客户端都是信任的。主要目的是用来加密和保证数据的完整性和不可抵赖性自签名证书：由服务器自己颁发给自己，用于证明自己身份的东西，非权威颁发机构发布，默认客户端都是不信任的，主要目的是用来加密和保证数据的完整性和不可抵赖性,与签名证书相同.创建自签名SSL证书：http://www.cnblogs.com/lihuang/articles/4205540.html也是类似，通过vega作为代理服务器，伪造证书，进行信息劫持，进行但要注意：####当访问网站出现信任报错时，可能是有人伪造了证书【如：百度号称全站https，淘宝、阿里、facebook】查看证书</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201711251353_9.jpg" alt=""></p><pre><code>#右键 View Page info</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201711251353_884.jpg" alt=""></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;kali渗透测试之Web渗透-扫描工具-Vega&quot;&gt;&lt;a href=&quot;#kali渗透测试之Web渗透-扫描工具-Vega&quot; class=&quot;headerlink&quot; title=&quot;kali渗透测试之Web渗透-扫描工具-Vega&quot;&gt;&lt;/a&gt;kali渗透测试之Web渗透
-      
-    
-    </summary>
-    
-      <category term="Kali" scheme="http://0xmj.club/categories/Kali/"/>
-    
-    
-      <category term="Vega" scheme="http://0xmj.club/tags/Vega/"/>
     
   </entry>
   

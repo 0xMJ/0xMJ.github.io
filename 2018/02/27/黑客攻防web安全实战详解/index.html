@@ -6,14 +6,18 @@
   <meta name="keywords" content=" 黑客攻防web安全实战详解 ">
   <meta name="description" content="黑客攻防web安全实战详解 | Mang0&#39;s blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Mang0&#39;s blog">
-<meta property="og:url" content="http://0xmj.club/404.html">
+<meta name="description" content="渗透测试基础0x00熟悉各类名词黑客：Hacker 黑客所做的不是恶意破坏，他们是一群纵横网络上的技术人员，热衷与科技探索、计算机科学研究。在IT圈中，Hacker一词无疑是带有正面意义的。骇客：Cracker 骇客未必具有很高的技术，通常用一些简单的手段去达到一些炫耀、恶作剧、搞破坏的目的。红客：Honcker Honcker用自己的技术维护国内网络安全，并对外来的一切进攻进行还击。他们拥有爱国">
+<meta name="keywords" content="渗透">
+<meta property="og:type" content="article">
+<meta property="og:title" content="渗透测试基础">
+<meta property="og:url" content="http://0xmj.club/2018/08/01/渗透测试基础/index.html">
 <meta property="og:site_name" content="Mang0&#39;s blog">
+<meta property="og:description" content="渗透测试基础0x00熟悉各类名词黑客：Hacker 黑客所做的不是恶意破坏，他们是一群纵横网络上的技术人员，热衷与科技探索、计算机科学研究。在IT圈中，Hacker一词无疑是带有正面意义的。骇客：Cracker 骇客未必具有很高的技术，通常用一些简单的手段去达到一些炫耀、恶作剧、搞破坏的目的。红客：Honcker Honcker用自己的技术维护国内网络安全，并对外来的一切进攻进行还击。他们拥有爱国">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-07T10:21:52.994Z">
+<meta property="og:updated_time" content="2018-08-01T15:43:57.015Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mang0&#39;s blog">
+<meta name="twitter:title" content="渗透测试基础">
+<meta name="twitter:description" content="渗透测试基础0x00熟悉各类名词黑客：Hacker 黑客所做的不是恶意破坏，他们是一群纵横网络上的技术人员，热衷与科技探索、计算机科学研究。在IT圈中，Hacker一词无疑是带有正面意义的。骇客：Cracker 骇客未必具有很高的技术，通常用一些简单的手段去达到一些炫耀、恶作剧、搞破坏的目的。红客：Honcker Honcker用自己的技术维护国内网络安全，并对外来的一切进攻进行还击。他们拥有爱国">
 
 
 <link rel="icon" href="/img/head.jpg">
@@ -72,9 +76,9 @@
 <ul>
     <li class="all active">全部文章</li>
     
-    <li data-rel="CTF"> CTF </li>
-    
     <li data-rel="思考"> 思考 </li>
+    
+    <li data-rel="CTF"> CTF </li>
     
     <li data-rel="Kali"> Kali </li>
     
@@ -86,6 +90,8 @@
     
     <li data-rel="工具"> 工具 </li>
     
+    <li data-rel="渗透测试"> 渗透测试 </li>
+    
     <li data-rel="渗透"> 渗透 </li>
     
     <li data-rel="读书摘要"> 读书摘要 </li>
@@ -94,7 +100,7 @@
 <div class="left-bottom">
     <a class="about" href="/about">关于</a><a class="friends">友链</a>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="31">
+<input type="hidden" id="yelog_site_posts_number" value="33">
 
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -133,6 +139,10 @@
     <div class="tags-list">
     
     <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">思考</a>
+    </li>
+    
+    <li class="article-tag-list-item">
         <a href="javascript:" class="color3">WP</a>
     </li>
     
@@ -141,15 +151,7 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color3">思考</a>
-    </li>
-    
-    <li class="article-tag-list-item">
         <a href="javascript:" class="color5">Nmap</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a href="javascript:" class="color4">sqlilabs</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -157,11 +159,15 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color2">NETCAT</a>
+        <a href="javascript:" class="color5">hexo</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color5">hexo</a>
+        <a href="javascript:" class="color4">sqlilabs</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">Nikto</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -169,19 +175,23 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color3">TCPDUMP</a>
-    </li>
-    
-    <li class="article-tag-list-item">
         <a href="javascript:" class="color4">VIM</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color4">Skipfish</a>
+        <a href="javascript:" class="color5">QWASP_ZAP</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color1">Nikto</a>
+        <a href="javascript:" class="color2">NETCAT</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">TCPDUMP</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">Skipfish</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -193,7 +203,7 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color5">QWASP_ZAP</a>
+        <a href="javascript:" class="color3">渗透</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -221,22 +231,6 @@
 
     <nav>
         
-        <a  class="CTF "
-           href="/2018/06/20/2018SCTF-wp/"
-           data-tag="WP"
-           data-author="" >
-            <span class="post-title" title="2018SCTF-wp">2018SCTF-wp</span>
-            <span class="post-date" title="2018-06-20 22:40:40">2018/06/20</span>
-        </a>
-        
-        <a  class="思考 "
-           href="/2017/09/27/Hello World /"
-           data-tag="first-blog"
-           data-author="" >
-            <span class="post-title" title="my-first-blog">my-first-blog</span>
-            <span class="post-date" title="2017-09-27 16:56:58">2017/09/27</span>
-        </a>
-        
         <a  class="思考 "
            href="/2017/11/22/17-11反思与进取/"
            data-tag="思考"
@@ -246,11 +240,11 @@
         </a>
         
         <a  class="CTF "
-           href="/2018/05/28/ISCC2018-writeup/"
+           href="/2018/06/20/2018SCTF-wp/"
            data-tag="WP"
            data-author="" >
-            <span class="post-title" title="ISCC2018-writeup">ISCC2018-writeup</span>
-            <span class="post-date" title="2018-05-28 00:54:05">2018/05/28</span>
+            <span class="post-title" title="2018SCTF-wp">2018SCTF-wp</span>
+            <span class="post-date" title="2018-06-20 22:40:40">2018/06/20</span>
         </a>
         
         <a  class="CTF "
@@ -261,6 +255,14 @@
             <span class="post-date" title="2018-04-23 21:35:39">2018/04/23</span>
         </a>
         
+        <a  class="思考 "
+           href="/2017/09/27/Hello World /"
+           data-tag="first-blog"
+           data-author="" >
+            <span class="post-title" title="my-first-blog">my-first-blog</span>
+            <span class="post-date" title="2017-09-27 16:56:58">2017/09/27</span>
+        </a>
+        
         <a  class="Kali "
            href="/2018/04/23/Nmap-使用技巧汇总/"
            data-tag="Nmap"
@@ -269,12 +271,12 @@
             <span class="post-date" title="2018-04-23 22:07:46">2018/04/23</span>
         </a>
         
-        <a  class="SQL "
-           href="/2018/04/02/Sqli-labs-1-4/"
-           data-tag="sqlilabs"
+        <a  class="CTF "
+           href="/2018/05/28/ISCC2018-writeup/"
+           data-tag="WP"
            data-author="" >
-            <span class="post-title" title="Sqli-labs  1-4">Sqli-labs  1-4</span>
-            <span class="post-date" title="2018-04-02 16:13:07">2018/04/02</span>
+            <span class="post-title" title="ISCC2018-writeup">ISCC2018-writeup</span>
+            <span class="post-date" title="2018-05-28 00:54:05">2018/05/28</span>
         </a>
         
         <a  class="SQL "
@@ -283,14 +285,6 @@
            data-author="" >
             <span class="post-title" title="SQLMAP注入教程-11种常见SQLMAP使用方法详解">SQLMAP注入教程-11种常见SQLMAP使用方法详解</span>
             <span class="post-date" title="2017-11-21 04:27:10">2017/11/21</span>
-        </a>
-        
-        <a  class="Kali "
-           href="/2018/02/27/kali渗透测试之Web渗透-工具-NETCAT/"
-           data-tag="NETCAT"
-           data-author="" >
-            <span class="post-title" title="kali渗透测试之Web渗透-工具-NETCAT">kali渗透测试之Web渗透-工具-NETCAT</span>
-            <span class="post-date" title="2018-02-27 19:38:09">2018/02/27</span>
         </a>
         
         <a  class="CTF "
@@ -309,20 +303,28 @@
             <span class="post-date" title="2017-11-22 16:57:45">2017/11/22</span>
         </a>
         
+        <a  class="SQL "
+           href="/2018/04/02/Sqli-labs-1-4/"
+           data-tag="sqlilabs"
+           data-author="" >
+            <span class="post-title" title="Sqli-labs  1-4">Sqli-labs  1-4</span>
+            <span class="post-date" title="2018-04-02 16:13:07">2018/04/02</span>
+        </a>
+        
+        <a  class="Kali "
+           href="/2018/02/27/kali渗透测试之Web渗透-扫描工具-Nikto/"
+           data-tag="Nikto"
+           data-author="" >
+            <span class="post-title" title="kali渗透测试之Web渗透-扫描工具-Nikto">kali渗透测试之Web渗透-扫描工具-Nikto</span>
+            <span class="post-date" title="2018-02-27 19:47:03">2018/02/27</span>
+        </a>
+        
         <a  class="Web安全 "
            href="/2018/06/01/cbc字节翻转攻击/"
            data-tag="密码学"
            data-author="" >
             <span class="post-title" title="cbc字节翻转攻击">cbc字节翻转攻击</span>
             <span class="post-date" title="2018-06-01 00:47:50">2018/06/01</span>
-        </a>
-        
-        <a  class="Kali "
-           href="/2018/02/27/kali渗透测试之Web渗透-工具-TCPDUMP/"
-           data-tag="TCPDUMP"
-           data-author="" >
-            <span class="post-title" title="kali渗透测试之Web渗透-工具-TCPDUMP">kali渗透测试之Web渗透-工具-TCPDUMP</span>
-            <span class="post-date" title="2018-02-27 19:42:43">2018/02/27</span>
         </a>
         
         <a  class="工具 "
@@ -333,20 +335,36 @@
             <span class="post-date" title="2017-12-15 19:07:45">2017/12/15</span>
         </a>
         
+        <a  class=""
+           href="/2018/02/27/kali渗透测试之Web渗透-扫描工具-QWASP-ZAP/"
+           data-tag="QWASP_ZAP"
+           data-author="" >
+            <span class="post-title" title="kali渗透测试之Web渗透-扫描工具-QWASP_ZAP">kali渗透测试之Web渗透-扫描工具-QWASP_ZAP</span>
+            <span class="post-date" title="2018-02-27 19:54:20">2018/02/27</span>
+        </a>
+        
+        <a  class="Kali "
+           href="/2018/02/27/kali渗透测试之Web渗透-工具-NETCAT/"
+           data-tag="NETCAT"
+           data-author="" >
+            <span class="post-title" title="kali渗透测试之Web渗透-工具-NETCAT">kali渗透测试之Web渗透-工具-NETCAT</span>
+            <span class="post-date" title="2018-02-27 19:38:09">2018/02/27</span>
+        </a>
+        
+        <a  class="Kali "
+           href="/2018/02/27/kali渗透测试之Web渗透-工具-TCPDUMP/"
+           data-tag="TCPDUMP"
+           data-author="" >
+            <span class="post-title" title="kali渗透测试之Web渗透-工具-TCPDUMP">kali渗透测试之Web渗透-工具-TCPDUMP</span>
+            <span class="post-date" title="2018-02-27 19:42:43">2018/02/27</span>
+        </a>
+        
         <a  class="Kali "
            href="/2018/02/27/kali渗透测试之Web渗透-扫描工具-Skipfish/"
            data-tag="Skipfish"
            data-author="" >
             <span class="post-title" title="kali渗透测试之Web渗透-扫描工具-Skipfish">kali渗透测试之Web渗透-扫描工具-Skipfish</span>
             <span class="post-date" title="2018-02-27 19:49:37">2018/02/27</span>
-        </a>
-        
-        <a  class="Kali "
-           href="/2018/02/27/kali渗透测试之Web渗透-扫描工具-Nikto/"
-           data-tag="Nikto"
-           data-author="" >
-            <span class="post-title" title="kali渗透测试之Web渗透-扫描工具-Nikto">kali渗透测试之Web渗透-扫描工具-Nikto</span>
-            <span class="post-date" title="2018-02-27 19:47:03">2018/02/27</span>
         </a>
         
         <a  class="Kali "
@@ -365,14 +383,6 @@
             <span class="post-date" title="2018-04-23 21:39:49">2018/04/23</span>
         </a>
         
-        <a  class=""
-           href="/2018/02/27/kali渗透测试之Web渗透-扫描工具-QWASP-ZAP/"
-           data-tag="QWASP_ZAP"
-           data-author="" >
-            <span class="post-title" title="kali渗透测试之Web渗透-扫描工具-QWASP_ZAP">kali渗透测试之Web渗透-扫描工具-QWASP_ZAP</span>
-            <span class="post-date" title="2018-02-27 19:54:20">2018/02/27</span>
-        </a>
-        
         <a  class="SQL "
            href="/2018/04/02/sqli-labs5-6-盲注/"
            data-tag="sqlilabs"
@@ -389,6 +399,14 @@
             <span class="post-date" title="2018-04-02 16:15:23">2018/04/02</span>
         </a>
         
+        <a  class="思考 "
+           href="/2018/08/01/八月展望/"
+           data-tag="思考"
+           data-author="" >
+            <span class="post-title" title="八月展望">八月展望</span>
+            <span class="post-date" title="2018-08-01 23:41:26">2018/08/01</span>
+        </a>
+        
         <a  class="CTF "
            href="/2018/05/15/全国网络空间安全技术大赛2018三道wp/"
            data-tag="WP"
@@ -397,20 +415,12 @@
             <span class="post-date" title="2018-05-15 19:04:17">2018/05/15</span>
         </a>
         
-        <a  class="SQL "
-           href="/2018/04/02/sqli-labs-less11-15/"
-           data-tag="sqlilabs"
+        <a  class="渗透测试 "
+           href="/2018/08/01/渗透测试基础/"
+           data-tag="渗透"
            data-author="" >
-            <span class="post-title" title="sqli-labs less11-15">sqli-labs less11-15</span>
-            <span class="post-date" title="2018-04-02 16:15:38">2018/04/02</span>
-        </a>
-        
-        <a  class="Web安全 "
-           href="/2018/04/23/文件上传总结/"
-           data-tag="文件上传"
-           data-author="" >
-            <span class="post-title" title="文件上传总结">文件上传总结</span>
-            <span class="post-date" title="2018-04-23 21:39:03">2018/04/23</span>
+            <span class="post-title" title="渗透测试基础">渗透测试基础</span>
+            <span class="post-date" title="2018-08-01 23:43:32">2018/08/01</span>
         </a>
         
         <a  class="CTF "
@@ -427,6 +437,30 @@
            data-author="" >
             <span class="post-title" title="第二届强网杯-部分wp">第二届强网杯-部分wp</span>
             <span class="post-date" title="2018-04-02 16:08:51">2018/04/02</span>
+        </a>
+        
+        <a  class="Web安全 "
+           href="/2018/04/23/文件上传总结/"
+           data-tag="文件上传"
+           data-author="" >
+            <span class="post-title" title="文件上传总结">文件上传总结</span>
+            <span class="post-date" title="2018-04-23 21:39:03">2018/04/23</span>
+        </a>
+        
+        <a  class="SQL "
+           href="/2018/04/02/sqli-labs-less11-15/"
+           data-tag="sqlilabs"
+           data-author="" >
+            <span class="post-title" title="sqli-labs less11-15">sqli-labs less11-15</span>
+            <span class="post-date" title="2018-04-02 16:15:38">2018/04/02</span>
+        </a>
+        
+        <a  class="CTF "
+           href="/2017/10/20/第八届Geek部分web/"
+           data-tag="WP"
+           data-author="" >
+            <span class="post-title" title="第八届Geek部分web">第八届Geek部分web</span>
+            <span class="post-date" title="2017-10-20 16:07:05">2017/10/20</span>
         </a>
         
         <a  class="渗透 "
@@ -451,14 +485,6 @@
            data-author="" >
             <span class="post-title" title="高级入侵">高级入侵</span>
             <span class="post-date" title="2018-04-23 21:33:14">2018/04/23</span>
-        </a>
-        
-        <a  class="CTF "
-           href="/2017/10/20/第八届Geek部分web/"
-           data-tag="WP"
-           data-author="" >
-            <span class="post-title" title="第八届Geek部分web">第八届Geek部分web</span>
-            <span class="post-date" title="2017-10-20 16:07:05">2017/10/20</span>
         </a>
         
         <a  class="Web安全 "
@@ -669,7 +695,7 @@ alert(document.cookie);
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#WP','#first-blog','#思考','#Nmap','#sqlilabs','#sqlmap','#NETCAT','#hexo','#密码学','#TCPDUMP','#VIM','#Skipfish','#Nikto','#Vega','#文件包含','#QWASP_ZAP','#文件上传','#信息收集','#黑客攻防web安全实战详解','#入侵','#Dvwa',],
+            'data': ['#思考','#WP','#first-blog','#Nmap','#sqlmap','#hexo','#sqlilabs','#Nikto','#密码学','#VIM','#QWASP_ZAP','#NETCAT','#TCPDUMP','#Skipfish','#Vega','#文件包含','#渗透','#文件上传','#信息收集','#黑客攻防web安全实战详解','#入侵','#Dvwa',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');
