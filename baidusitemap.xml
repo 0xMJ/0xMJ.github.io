@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://mang0.me/2018/10/11/web%E6%BC%8F%E6%B4%9E%E6%8C%96%E6%8E%98%E4%B9%8B%E7%82%B9%E5%87%BB%E5%8A%AB%E6%8C%81%E6%BC%8F%E6%B4%9E/</loc>
-    <lastmod>2018-10-11T06:14:04.295Z</lastmod>
+    <loc>http://mang0.me/2018/10/09/%E6%B5%85%E8%B0%88%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F%E6%B5%81%E7%A8%8B/</loc>
+    <lastmod>2018-10-11T07:06:33.559Z</lastmod>
   </url>  <url>
     <loc>http://mang0.me/2018/04/23/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%80%BB%E7%BB%93/</loc>
-    <lastmod>2018-10-11T06:14:03.441Z</lastmod>
+    <lastmod>2018-10-11T07:05:28.851Z</lastmod>
   </url>  <url>
-    <loc>http://mang0.me/2018/10/09/%E6%B5%85%E8%B0%88%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F%E6%B5%81%E7%A8%8B/</loc>
-    <lastmod>2018-10-09T08:45:56.626Z</lastmod>
+    <loc>http://mang0.me/2018/10/09/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%A6%82%E5%BF%B5/</loc>
+    <lastmod>2018-10-11T07:05:24.732Z</lastmod>
+  </url>  <url>
+    <loc>http://mang0.me/2018/10/11/web%E6%BC%8F%E6%B4%9E%E6%8C%96%E6%8E%98%E4%B9%8B%E7%82%B9%E5%87%BB%E5%8A%AB%E6%8C%81%E6%BC%8F%E6%B4%9E/</loc>
+    <lastmod>2018-10-11T07:05:01.626Z</lastmod>
+  </url>  <url>
+    <loc>http://mang0.me/2018/04/23/php%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E/</loc>
+    <lastmod>2018-10-11T07:04:57.045Z</lastmod>
+  </url>  <url>
+    <loc>http://mang0.me/2018/06/01/cbc%E5%AD%97%E8%8A%82%E7%BF%BB%E8%BD%AC%E6%94%BB%E5%87%BB/</loc>
+    <lastmod>2018-10-11T07:04:01.373Z</lastmod>
   </url>  <url>
     <loc>http://mang0.me/2018/04/23/%E9%AB%98%E7%BA%A7%E5%85%A5%E4%BE%B5/</loc>
     <lastmod>2018-10-09T08:45:53.067Z</lastmod>
@@ -64,9 +73,6 @@
     <loc>http://mang0.me/2018/02/27/%E9%BB%91%E5%AE%A2%E6%94%BB%E9%98%B2web%E5%AE%89%E5%85%A8%E5%AE%9E%E6%88%98%E8%AF%A6%E8%A7%A3/</loc>
     <lastmod>2018-10-09T08:41:24.316Z</lastmod>
   </url>  <url>
-    <loc>http://mang0.me/2018/10/09/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%A6%82%E5%BF%B5/</loc>
-    <lastmod>2018-10-09T08:41:18.181Z</lastmod>
-  </url>  <url>
     <loc>http://mang0.me/2018/08/25/%E5%A2%A8%E8%80%85%E5%AD%A6%E9%99%A2php%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A11/</loc>
     <lastmod>2018-10-09T08:41:05.742Z</lastmod>
   </url>  <url>
@@ -99,12 +105,6 @@
   </url>  <url>
     <loc>http://mang0.me/2018/06/20/2018SCTF-wp/</loc>
     <lastmod>2018-10-09T08:39:47.518Z</lastmod>
-  </url>  <url>
-    <loc>http://mang0.me/2018/04/23/php%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E/</loc>
-    <lastmod>2018-10-09T08:38:50.307Z</lastmod>
-  </url>  <url>
-    <loc>http://mang0.me/2018/06/01/cbc%E5%AD%97%E8%8A%82%E7%BF%BB%E8%BD%AC%E6%94%BB%E5%87%BB/</loc>
-    <lastmod>2018-10-09T08:38:45.144Z</lastmod>
   </url>  <url>
     <loc>http://mang0.me/2018/08/25/%E5%AE%89%E6%81%92%E4%BA%94%E6%9C%88/</loc>
     <lastmod>2018-08-25T12:41:11.797Z</lastmod>
