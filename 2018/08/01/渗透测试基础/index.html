@@ -719,6 +719,22 @@
 
 
     
+    <div id="comments"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+        id: 'http://mang0.me/2018/08/01/渗透测试基础/', // 可选。默认为 location.href
+        owner: 'Mang0',
+        repo: '0xMJ.github.io',
+        oauth: {
+            client_id: 'f9952e8e78f77f32bd90',
+            client_secret: '8acb22287b52dc37760b61294f590e9d6dfdb9e9',
+        },
+    })
+    gitment.render('comments')
+</script>
+    
 
 
 
