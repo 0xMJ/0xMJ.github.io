@@ -18,7 +18,7 @@ jQuery.expr[':'].contains_author = function (a, i, m) {
 /*使用pjax加载页面，速度更快，交互更友好*/
 var content = $(".pjax");
 var container = $(".post");
-$(document).pjax('.nav-right nav a,.nav-left .avatar_target,.nav-left .about', '.pjax', {fragment: '.pjax', timeout: 8000});
+$(document).pjax('.nav-right nav a,.nav-left .avatar_target,.site_url', '.pjax', {fragment: '.pjax', timeout: 8000});
 $(document).on({
     /*点击链接后触发的事件*/
     'pjax:click': function () {
@@ -126,7 +126,7 @@ $(document).keyup(function (e) {
     if (!$(".nav-right form .search").is(":focus") && !$('#comments textarea').is(':focus')) {
         if (e.keyCode == 83) { /* S - 显示/隐藏文章列表 */
             $(".full-toc .full").trigger("click");
-        } else if (e.keyCode == 73 && !$(".nav").hasClass("fullscreen") && !$('.title-list').hasClass('friend')) { /* I */
+        } else if (e.keyCode == 73 && ($(".nav").css('margin-left')=='0px') && !$('.title-list').hasClass('friend')) { /* I */
             $(".nav-right form .search").focus();
         } else if (e.keyCode == 87) { /* W - 显示/隐藏文章目录 */
             $(".full-toc .post-toc-menu").trigger("click");
@@ -144,47 +144,89 @@ $(".nav-right form .search").blur(function (e) {
 })
 /*输入框焦点时的快捷键捕获*/
 $(".nav-right form .search").keydown(function (e) {
-    if ($(".nav-right nav a:not(:hidden)").length > 0 && !$(".ac").is(":visible")) {
+    if ($(".nav-right nav a:not(:hidden), #local-search-result a:not(:hidden)").length > 0 && !$(".ac").is(":visible")) {
         if (e.which == 13) { /* 回车 */
-            var $handle = $(".nav-right nav a.hover:not(:hidden)");
+            var $handle = $(".nav-right nav a.hover:not(:hidden), #local-search-result a.hover:not(:hidden)");
             if ($handle.length == 0) {
-                $(".nav-right nav a:not(:hidden):first").trigger("click");
+                $(".nav-right nav a:not(:hidden):first, #local-search-result a:not(:hidden):first").trigger("click");
             } else {
                 $handle.trigger("click");
             }
+            $(':focus').blur();
         } else if (e.which == 38) { /* 上 */
-            if ($("nav a:visible.hover").length == 0 || $("nav a:visible.hover").prevAll(":visible").length == 0) {
-                $("nav").scrollTop($("nav").prop("scrollHeight"));
-                $(".nav-right nav a.hover").removeClass("hover");
-                $(".nav-right nav a:visible:last").addClass("hover");
-            } else {
-                $("nav a.hover").prevAll().each(function () {
-                    if ($(this).is(":visible")) {
-                        $(".nav-right nav a.hover").removeClass("hover");
-                        $(this).addClass("hover");
-                        if (($(this).offset().top) - $(".nav-right form").height() < 0) {
-                            $("nav").scrollTop($("nav").scrollTop() - $(this).height());
+            if (!$('nav').is(':visible')) {
+                if ($('#local-search-result a.hover').length == 0 || $('#local-search-result a.hover').parent().prevAll(":visible").length == 0) {
+                    $("#local-search-result").scrollTop($("#local-search-result").prop("scrollHeight"));
+                    $("#local-search-result a.hover").removeClass("hover");
+                    $("#local-search-result a:visible:last").addClass("hover");
+                } else {
+                    $("#local-search-result a.hover").parent().prevAll().each(function () {
+                        if ($(this).is(":visible")) {
+                            $("#local-search-result a.hover").removeClass("hover");
+                            $(this).children().addClass("hover");
+                            if (($(this).offset().top) - $(".nav-right form").height() < 0) {
+                                $("#local-search-result").scrollTop($("#local-search-result").scrollTop() - $(this).height());
+                            }
+                            return false;
                         }
-                        return false;
-                    }
-                })
+                    })
+                }
+            } else {
+                if ($("nav a:visible.hover").length == 0 || $("nav a:visible.hover").prevAll(":visible").length == 0) {
+                    $("nav").scrollTop($("nav").prop("scrollHeight"));
+                    $(".nav-right nav a.hover").removeClass("hover");
+                    $(".nav-right nav a:visible:last").addClass("hover");
+                } else {
+                    $("nav a.hover").prevAll().each(function () {
+                        if ($(this).is(":visible")) {
+                            $(".nav-right nav a.hover").removeClass("hover");
+                            $(this).addClass("hover");
+                            if (($(this).offset().top) - $(".nav-right form").height() < 0) {
+                                $("nav").scrollTop($("nav").scrollTop() - $(this).height());
+                            }
+                            return false;
+                        }
+                    })
+                }
             }
-        } else if (e.which == 40) { /* 下 */
-            if ($("nav a:visible.hover").length == 0 || $("nav a:visible.hover").nextAll(":visible").length == 0) {
-                $("nav").scrollTop(0);
-                $(".nav-right nav a.hover").removeClass("hover");
-                $(".nav-right nav a:visible:first").addClass("hover");
-            } else {
-                $("nav a.hover").nextAll().each(function () {
-                    if ($(this).is(":visible")) {
-                        $(".nav-right nav a.hover").removeClass("hover");
-                        $(this).addClass("hover");
-                        if (($("nav").height() + $(".nav-right form").height() - $(this).offset().top) < 0) {
-                            $("nav").scrollTop($("nav").scrollTop() + $(this).height());
+        } else if (e.which==9 || e.which == 40) { /* 下 */
+            if ($('nav').is(':visible')) {
+                if ($("nav a:visible.hover").length == 0 || $("nav a:visible.hover").nextAll(":visible").length == 0) {
+                    $("nav").scrollTop(0);
+                    $(".nav-right nav a.hover").removeClass("hover");
+                    $(".nav-right nav a:visible:first").addClass("hover");
+                } else {
+                    $("nav a.hover").nextAll().each(function () {
+                        if ($(this).is(":visible")) {
+                            $(".nav-right nav a.hover").removeClass("hover");
+                            $(this).addClass("hover");
+                            if (($("nav").height() + $(".nav-right form").height() - $(this).offset().top) < 20) {
+                                $("nav").scrollTop($("nav").scrollTop() + $(this).height());
+                            }
+                            return false;
                         }
-                        return false;
-                    }
-                })
+                    })
+                }
+            } else {
+                if ($("#local-search-result a:visible.hover").length == 0 || $("#local-search-result a:visible.hover").parent().nextAll(":visible").length == 0) {
+                    $("#local-search-result").scrollTop(0);
+                    $("#local-search-result a.hover").removeClass("hover");
+                    $("#local-search-result a:visible:first").addClass("hover");
+                } else {
+                    $("#local-search-result a.hover").parent().nextAll().each(function () {
+                        if ($(this).is(":visible")) {
+                            $("#local-search-result a.hover").removeClass("hover");
+                            $(this).children().addClass("hover");
+                            if (($("#local-search-result").height() + $(".nav-right form").height() - $(this).offset().top) < 20) {
+                                $("#local-search-result").scrollTop($("#local-search-result").scrollTop() + $(this).prev().height());
+                            }
+                            return false;
+                        }
+                    })
+                }
+            }
+            if (e.which == 9) {
+                return false;
             }
         }
     }
@@ -204,10 +246,26 @@ $(".nav-right form .search").on("input", function (e) {
 $(".nav-right form .search").on("change", function (e) {
     inputChange(e);
 });
+var searchContent;
 /*根据搜索条件，过滤文章列表*/
 function inputChange(e) {
-    $(".nav-right form .cross").css("display", $(e.currentTarget).val() == "" ? "none" : "block");
     var val = $(e.currentTarget).val().trim();
+    if (val == searchContent) {
+        return;
+    }
+    searchContent = val;
+    $(".nav-right form .cross").css("display", val == "" ? "none" : "block");
+    if ($('#local-search-result').length>0) {
+        if (val.length>3 && (val.substr(0,3).toLowerCase() == 'in:' || val.substr(0,3).toLowerCase()=='in：')) {
+            $('#title-list-nav').hide();
+            $('#local-search-result').show();
+            searchAll(val.substr(3))
+        } else {
+            $('#title-list-nav').show();
+            $('#local-search-result').hide();
+        }
+    }
+
     if (val == "") {
         $(".nav-right nav a").css("display", "block");
     } else if (val.substr(0, 1) == "#") {
@@ -241,7 +299,7 @@ $("#tagswitch").on("change", function (e) {
     }  else {
         height = $(document).height() - top - $('.nav-left').height() - 11;// 11 为nav的border-top + padding-bottom
     }
-    $(".nav-right nav").css({"top": top, "height": height});
+    $(".nav-right nav, #local-search-result").css({"top": top, "height": height});
 });
 
 /*隐藏/显示 文章列表*/
@@ -274,6 +332,23 @@ $(".post").hover(function () {
 
 $(function () {
     bind();
+
+    $('.more-menus').on('click', function () {
+        $('.mobile-menus-out').addClass('show');
+        $('.mobile-menus').addClass('show');
+    })
+    $('.mobile-menus-out,.mobile-menus a').on('click', function () {
+        $('.mobile-menus-out').removeClass('show');
+        $('.mobile-menus').removeClass('show');
+    })
+
+    $('.nav-left ul').css('height', 'calc(100vh - '+($('.avatar_target img').outerHeight(true) + $('.author').outerHeight(true)+$('.nav-left .icon').outerHeight(true)+$('.left-bottom').outerHeight(true))+'px)');
+    if ($('#local-search-result').length>0) {
+        // 全文搜索
+        $.getScript('/js/search.js', function () {
+            searchFunc("/search.xml", 'local-search-input', 'local-search-result');
+        })
+    }
     //搜索框下的tag搜索事件
     $(".nav-right .tags-list li a").on("click", function (e) {
         $(".nav-right form input").val("#" + $(this).text().trim()).change();
@@ -387,66 +462,68 @@ function bind() {
     $(document).pjax('.post .pjax article a[target!=_blank]', '.pjax', {fragment: '.pjax', timeout: 8000});
 
     /*初始化 img*/
-    $(".pjax").find('img').each(function () {
-        if (!$(this).parent().hasClass('div_img')) {
-            $(this).wrap("<div class='div_img'></div>");
-            var alt = this.alt;
-            if (alt) {
-                $(this).after('<div class="img_alt"><span>' + alt + '</span></div>');
-            }
-        }
-        if ($(window).width() > 426) {
-            $(this).on("click", function (e) {
-                var _that = $(this);
-                $("body").append('<img class="img_hidden" style="display:none" src="' + this.src + '" />');
-                var img_width = "";
-                var img_height = "";
-                var img_top = "";
-                var img_left = "";
-                if ((this.width / this.height) > (document.body.clientWidth / document.body.clientHeight) && $(".img_hidden").width() > document.body.clientWidth) {
-                    img_width = document.body.clientWidth + "px";
-                    img_height = this.height * document.body.clientWidth / this.width + "px";
-                    img_top = (document.body.clientHeight - this.height * document.body.clientWidth / this.width) / 2 + "px";
-                    img_left = "0px";
-                } else if (((this.width / this.height) < (document.body.clientWidth / document.body.clientHeight) && $(".img_hidden").height() > document.body.clientHeight)) {
-                    img_width = this.width * document.body.clientHeight / this.height + "px";
-                    img_height = document.body.clientHeight + "px";
-                    img_top = "0px";
-                    img_left = (document.body.clientWidth - this.width * document.body.clientHeight / this.height) / 2 + "px";
-                } else {
-                    img_height = $(".img_hidden").height() + "px";
-                    img_width = $(".img_hidden").width() + "px";
-                    img_top = (document.body.clientHeight - $(".img_hidden").height()) / 2 + "px";
-                    img_left = (document.body.clientWidth - $(".img_hidden").width()) / 2 + "px";
+    if (img_resize != 'photoSwipe') {
+        $(".pjax").find('img').each(function () {
+            if (!$(this).parent().hasClass('div_img')) {
+                $(this).wrap("<div class='div_img'></div>");
+                var alt = this.alt;
+                if (alt) {
+                    $(this).after('<div class="img_alt"><span>' + alt + '</span></div>');
                 }
-                $("body").append('<div class="img_max" style="opacity: 0"></div>');
-                $("body").append('<img class="img_max" src="' + this.src + '" style="top:' + $(this).offset().top + 'px;left:' + $(this).offset().left + 'px; width:' + $(this).width() + 'px;height: ' + this.height + 'px;">');
-                $(this).css("visibility", "hidden");
-                setTimeout(function () {
-                    $("img.img_max").attr("style", "").css({
-                        "top": img_top,
-                        "left": img_left,
-                        "width": img_width,
-                        "height": img_height
-                    });
-                    $("div.img_max").css("opacity", "1");
-                }, 10);
-                $(".img_max").on("click", function (e) {
-                    $("img.img_max").css({
-                        "width": _that.width() + "px",
-                        "height": _that.height() + "px",
-                        "top": _that.offset().top + "px",
-                        "left": _that.offset().left + "px"
-                    })
-                    $("div.img_max").css("opacity", "0");
+            }
+            if ($(window).width() > 426) {
+                $(this).on("click", function (e) {
+                    var _that = $(this);
+                    $("body").append('<img class="img_hidden" style="display:none" src="' + this.src + '" />');
+                    var img_width = "";
+                    var img_height = "";
+                    var img_top = "";
+                    var img_left = "";
+                    if ((this.width / this.height) > (document.body.clientWidth / document.body.clientHeight) && $(".img_hidden").width() > document.body.clientWidth) {
+                        img_width = document.body.clientWidth + "px";
+                        img_height = this.height * document.body.clientWidth / this.width + "px";
+                        img_top = (document.body.clientHeight - this.height * document.body.clientWidth / this.width) / 2 + "px";
+                        img_left = "0px";
+                    } else if (((this.width / this.height) < (document.body.clientWidth / document.body.clientHeight) && $(".img_hidden").height() > document.body.clientHeight)) {
+                        img_width = this.width * document.body.clientHeight / this.height + "px";
+                        img_height = document.body.clientHeight + "px";
+                        img_top = "0px";
+                        img_left = (document.body.clientWidth - this.width * document.body.clientHeight / this.height) / 2 + "px";
+                    } else {
+                        img_height = $(".img_hidden").height() + "px";
+                        img_width = $(".img_hidden").width() + "px";
+                        img_top = (document.body.clientHeight - $(".img_hidden").height()) / 2 + "px";
+                        img_left = (document.body.clientWidth - $(".img_hidden").width()) / 2 + "px";
+                    }
+                    $("body").append('<div class="img_max" style="opacity: 0"></div>');
+                    $("body").append('<img class="img_max" src="' + this.src + '" style="top:' + $(this).offset().top + 'px;left:' + $(this).offset().left + 'px; width:' + $(this).width() + 'px;height: ' + this.height + 'px;">');
+                    $(this).css("visibility", "hidden");
                     setTimeout(function () {
-                        _that.css("visibility", "visible");
-                        $(".img_max").remove();
-                        $(".img_hidden").remove();
-                    }, 500);
+                        $("img.img_max").attr("style", "").css({
+                            "top": img_top,
+                            "left": img_left,
+                            "width": img_width,
+                            "height": img_height
+                        });
+                        $("div.img_max").css("opacity", "1");
+                    }, 10);
+                    $(".img_max").on("click", function (e) {
+                        $("img.img_max").css({
+                            "width": _that.width() + "px",
+                            "height": _that.height() + "px",
+                            "top": _that.offset().top + "px",
+                            "left": _that.offset().left + "px"
+                        })
+                        $("div.img_max").css("opacity", "0");
+                        setTimeout(function () {
+                            _that.css("visibility", "visible");
+                            $(".img_max").remove();
+                            $(".img_hidden").remove();
+                        }, 500);
+                    })
                 })
-            })
-        }
-    });
+            }
+        });
+    }
 
 }
