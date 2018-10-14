@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+Allow: /about
+Allow: /archives/
+Allow: /categories/
+Allow: /page/
+Allow: /tags/ 
+Allow: /img/ 
+Disallow: /js/
+Disallow: /css/
+Disallow: /fonts/
+
+Sitemap: http://mang0.me/sitemap.xml
+Sitemap: http://mang0.me/baidusitemap.xml
