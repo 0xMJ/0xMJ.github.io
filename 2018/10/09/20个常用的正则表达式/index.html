@@ -42,6 +42,8 @@
 
 
 
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
 </head>
 <div style="display: none">
   <input class="theme_disqus_on" value="false">
@@ -766,19 +768,23 @@
 
 
     <div id="comments"></div>
-<link rel="stylesheet" href="https://jjeejj.github.io/css/gitment.css">
-<script src="https://jjeejj.github.io/js/gitment.js"></script>
-<script>
-    var gitment = new Gitment({
-        id: 'http://mang0.me/2018/10/09/20个常用的正则表达式/', // 可选。默认为 location.href
-        owner: 'Mang0',
-        repo: '0xMJ.github.io',
-        oauth: {
-            client_id: 'f9952e8e78f77f32bd90',
-            client_secret: '8acb22287b52dc37760b61294f590e9d6dfdb9e9',
-        },
+<link rel="stylesheet" href="/css/gitalk.css">
+
+<script type="text/javascript">
+    $.getScript('/js/gitalk.js', function () {
+        var gitalk = new Gitalk({
+            clientID: 'eb679ffbe3e667bef087',
+            clientSecret: '803d24db3cf86013b1c74778931b9e6670081459',
+            repo: '0xMJ.github.io',
+            owner: '0xMJ',
+            admin: ['0xMJ'],
+            id: location.pathname,
+            distractionFreeMode: 'true',
+            language: 'zh-CN',
+            perPage: parseInt('10',10)
+        })
+        gitalk.render('comments')
     })
-    gitment.render('comments')
 </script>
 
 
