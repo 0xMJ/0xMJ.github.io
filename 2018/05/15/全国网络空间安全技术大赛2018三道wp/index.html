@@ -646,7 +646,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2018-05-15 19:04:45'>2018-05-15 19:04</time>
+        创建时间:<time class="date" title='更新时间: 2018-10-14 10:57:11'>2018-05-15 19:04</time>
         
     </div>
     <div class="article-meta">
@@ -708,7 +708,7 @@
 <p>一开始以为是base64解码 把除了最后一行的==删除 去解码发现是乱码，知道思路不对 ，后来想起xdctf出过一到base64隐写</p>
 <p><img src="http://oy0tigw51.bkt.clouddn.com/201805121124_544.png" alt=""></p>
 <p>编码原理：Base64编码要求把3个8位字节转化为4个6位的字节，之后在6位的前面补两个0，形成8位一个字节的形式，6位2进制能表示的最大数是2的6次方是64，这也是为什么是64个字符(A-Z,a-z，0-9，+，/这64个编码字符，=号不属于编码字符，而是填充字符)的原因，这样就需要一张映射表，如下：</p>
-<p><img src="https://img0.tuicool.com/jiIR3yZ.png!web" alt="img"></p>
+<p><img src="http://oy0tigw51.bkt.clouddn.com/201810141056_335.png" alt=""></p>
 <p>举个例子(base64)：</p>
 <p>源文本：T h e</p>
 <p>对应ascii码:84 104 101</p>
@@ -794,7 +794,7 @@ with open(&#39;stego.txt&#39;, &#39;rb&#39;) as f:
     <p><span>文章字数:</span><span class="post-count">882</span></p>
     <p><span>本文作者:</span><a href="javascript:void(0)" title="Mang0">Mang0</a></p>
     <p><span>发布时间:</span>2018-05-15, 19:04:17</p>
-    <p><span>最后更新:</span>2018-05-15, 19:04:45</p>
+    <p><span>最后更新:</span>2018-10-14, 10:57:11</p>
     <span>原始链接:</span><a class="post-url" href="/2018/05/15/全国网络空间安全技术大赛2018三道wp/" title="全国网络空间安全技术大赛2018三道wp">http://mang0.me/2018/05/15/全国网络空间安全技术大赛2018三道wp/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
