@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title>Xss in MetInfo V6.1.2</title>
+      <link href="/archives/a5c61176/"/>
+      <url>/archives/a5c61176/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Xss-in-MetInfo-V6-1-2"><a href="#Xss-in-MetInfo-V6-1-2" class="headerlink" title="Xss in MetInfo V6.1.2"></a>Xss in MetInfo V6.1.2</h1><h2 id="Explain"><a href="#Explain" class="headerlink" title="Explain"></a>Explain</h2><p>The vulnerability exists in the MetInfo6.1.2/admin/index.php page. Due to the lazy filtering of the parameter anyid, the XSS vulnerability is caused.</p><h2 id="Founction"><a href="#Founction" class="headerlink" title="Founction"></a>Founction</h2><p>The affected page located in admin’s management page:MetInfo6.1.2\admin\</p><h2 id="Reappearance"><a href="#Reappearance" class="headerlink" title="Reappearance"></a>Reappearance</h2><p>To build a website locally, first login to the website background: <a href="http://localhost/MetInfo6.1.2/admin/" target="_blank" rel="external">http://localhost/MetInfo6.1.2/admin/</a>. After the login is successful, construct the payload:</p><p>Xss vulnerability exists</p><pre><code>http://localhost:9096/MetInfo6.1.2/admin/index.php?lang=cn&amp;anyid=47oaflb%3c%2fscript%3e%3cscript%3ealert(1)%3c%2fscript%3emwq3k&amp;n=admin&amp;c=admin_admin&amp;a=doadd</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201810160210_976.png" alt=""></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 代码审计 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> cve </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>web漏洞挖掘之点击劫持漏洞</title>
       <link href="/archives/95d370e7/"/>
       <url>/archives/95d370e7/</url>

