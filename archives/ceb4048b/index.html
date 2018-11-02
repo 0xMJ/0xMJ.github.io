@@ -150,6 +150,8 @@
             
             <li><a target="_blank" href="http://twosmi1e.com/">2Smile</a></li>
             
+            <li><a target="_blank" href="/www.bugsafe.cn">Poache’s</a></li>
+            
         </ul>
     </div>
 </div>
@@ -726,7 +728,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2018-10-15 08:40:51'>2018-05-15 19:04</time>
+        创建时间:<time class="date" title='更新时间: 2018-11-02 21:52:16'>2018-05-15 19:04</time>
         
     </div>
     <div class="article-meta">
@@ -778,17 +780,17 @@
       
         <h1 id="全国网络空间安全技术大赛2018三道wp"><a href="#全国网络空间安全技术大赛2018三道wp" class="headerlink" title="全国网络空间安全技术大赛2018三道wp"></a>全国网络空间安全技术大赛2018三道wp</h1><h2 id="MISC1"><a href="#MISC1" class="headerlink" title="MISC1"></a>MISC1</h2><p>得到一张图片</p>
 <p>binwalk 发现是zip加密</p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201805121134_772.png" alt=""></p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201805121134_772.png" alt=""></p>
 <p>直接修改后缀.zip</p>
 <p>打开压缩包之后发现需要解压密码</p>
 <p>猜测是伪加密那就直接尝试伪加密，利用伪加密判断工具ZipCenOp</p>
 <pre><code>java -jar ZipCenOp.jar r xxx.zip
 </code></pre><p>得到一个txt</p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201805121128_864.png" alt=""></p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201805121128_864.png" alt=""></p>
 <p>一开始以为是base64解码 把除了最后一行的==删除 去解码发现是乱码，知道思路不对 ，后来想起xdctf出过一到base64隐写</p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201805121124_544.png" alt=""></p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201805121124_544.png" alt=""></p>
 <p>编码原理：Base64编码要求把3个8位字节转化为4个6位的字节，之后在6位的前面补两个0，形成8位一个字节的形式，6位2进制能表示的最大数是2的6次方是64，这也是为什么是64个字符(A-Z,a-z，0-9，+，/这64个编码字符，=号不属于编码字符，而是填充字符)的原因，这样就需要一张映射表，如下：</p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201810141056_335.png" alt=""></p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201810141056_335.png" alt=""></p>
 <p>举个例子(base64)：</p>
 <p>源文本：T h e</p>
 <p>对应ascii码:84 104 101</p>
@@ -820,41 +822,41 @@ with open(&#39;stego.txt&#39;, &#39;rb&#39;) as f:
 <p><a href="https://github.com/amor-tsai/php_screw.git" target="_blank" rel="external">https://github.com/amor-tsai/php_screw.git</a></p>
 <h2 id="web1"><a href="#web1" class="headerlink" title="web1"></a>web1</h2><p>打开一个登陆界面 ，</p>
 <p>先注册，进入 右上角有个修改密码 猜测是任意密码重置</p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201805131624_405.png" alt=""></p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201805131624_405.png" alt=""></p>
 <p>提示flag在flag.php里</p>
 <p>抓包发现自己的Mang0被base64加密 然后url编码</p>
 <p>所以想到username更改admin尝试密码重置逻辑问题。</p>
 <p>username=YWRtaW4%3D</p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201805130011_460.png" alt=""></p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201805130011_460.png" alt=""></p>
 <p>发现密码重置成功，进入登陆界面 登陆成功</p>
 <p>发现页面叫我们填写远程图片地址，一开始尝试上传木马地址，然后上传木马图片但是都没有用处，问题在哪里呢</p>
 <p>思考发现会不会ssrf漏洞， 让服务器自己伪造请求，</p>
 <p>后将地址改成本地的flag.php</p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201805130048_442.png" alt=""></p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201805130048_442.png" alt=""></p>
 <p>得到 两个图片地址第二个图片是我们上传的，但是被解析就是jgp,</p>
 <p>无法利用所以利用点在于第一幅图片。</p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201805130049_141.png" alt=""></p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201805130049_141.png" alt=""></p>
 <p>访问第一幅图片地址，下载下来 得到flag</p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201805130049_976.png" alt=""></p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201805130050_718.png" alt=""></p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201805130049_976.png" alt=""></p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201805130050_718.png" alt=""></p>
 <p>保存图片得到flag</p>
 <h2 id="web02"><a href="#web02" class="headerlink" title="web02"></a>web02</h2><p>git源码泄露，</p>
 <p>githack工具下载源码审计</p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201805131640_57.png" alt=""></p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201805131640_57.png" alt=""></p>
 <p>upload很奇怪</p>
 <p>进入查看，谷歌查询<a href="http://0day5.com/archives/4022/" target="_blank" rel="external">http://0day5.com/archives/4022/</a></p>
 <p>存在免认证登录漏洞</p>
 <p>访问<a href="http://117.34.116.192/upload.php" target="_blank" rel="external">http://117.34.116.192/upload.php</a></p>
 <p>burp抓包改cookie</p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201805131648_158.png" alt=""></p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201805131648_158.png" alt=""></p>
 <p>进入</p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201805131650_741.png" alt=""></p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201805131650_29.png" alt=""></p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201805131650_741.png" alt=""></p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201805131650_29.png" alt=""></p>
 <p>上传文件包含</p>
 <p><a href="http://117.34.116.192/index.php?file=./img/img26019845.jpg" target="_blank" rel="external">http://117.34.116.192/index.php?file=./img/img26019845.jpg</a></p>
 <p>index.php 会把这jpg解析成php运行</p>
 <p>菜刀连接得到fl4g.php</p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201805131810_848.png" alt=""></p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201805131810_848.png" alt=""></p>
 <p>需要php反编译，得到原始代码</p>
 <p>flag{7cb3d823105433606ccac8fb75aed67c}</p>
 
@@ -874,7 +876,7 @@ with open(&#39;stego.txt&#39;, &#39;rb&#39;) as f:
     <p><span>文章字数:</span><span class="post-count">882</span></p>
     <p><span>本文作者:</span><a href="javascript:void(0)" title="Mang0">Mang0</a></p>
     <p><span>发布时间:</span>2018-05-15, 19:04:17</p>
-    <p><span>最后更新:</span>2018-10-15, 08:40:51</p>
+    <p><span>最后更新:</span>2018-11-02, 21:52:16</p>
     <span>原始链接:</span><a class="post-url" href="/archives/ceb4048b/" title="全国网络空间安全技术大赛2018三道wp">http://mang0.me/archives/ceb4048b/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。

@@ -150,6 +150,8 @@
             
             <li><a target="_blank" href="http://twosmi1e.com/">2Smile</a></li>
             
+            <li><a target="_blank" href="/www.bugsafe.cn">Poache’s</a></li>
+            
         </ul>
     </div>
 </div>
@@ -726,7 +728,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2018-10-15 08:40:51'>2018-08-25 20:39</time>
+        创建时间:<time class="date" title='更新时间: 2018-11-02 21:52:17'>2018-08-25 20:39</time>
         
     </div>
     <div class="article-meta">
@@ -782,15 +784,15 @@
 <p>只对某一参数注入</p>
 <p>sqlmap -u “<a href="http://101.71.29.5:10000/?order=id&amp;button=submit”" target="_blank" rel="external">http://101.71.29.5:10000/?order=id&amp;button=submit”</a> -p order</p>
 <p>sqlmap -u “<a href="http://101.71.29.5:10000/?order=id&amp;button=submit”" target="_blank" rel="external">http://101.71.29.5:10000/?order=id&amp;button=submit”</a> -p order –dbs</p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201807261044_138.png" alt=""></p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201807261044_138.png" alt=""></p>
 <p>sqlmap -u “<a href="http://101.71.29.5:10000/?order=id&amp;button=submit”" target="_blank" rel="external">http://101.71.29.5:10000/?order=id&amp;button=submit”</a> -p order –dbs –dump-all –thread 10</p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201807261613_856.png" alt=""></p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201807261613_856.png" alt=""></p>
 <p>flag{666_0rdorby_you_can}</p>
-<h3 id="0x01-就这么直接"><a href="#0x01-就这么直接" class="headerlink" title="0x01 就这么直接"></a>0x01 就这么直接</h3><p><img src="http://oy0tigw51.bkt.clouddn.com/201807221514_920.png" alt=""></p>
+<h3 id="0x01-就这么直接"><a href="#0x01-就这么直接" class="headerlink" title="0x01 就这么直接"></a>0x01 就这么直接</h3><p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201807221514_920.png" alt=""></p>
 <p>提交查询页面跳转到 我觉得这并不是答案</p>
 <p>右键源码得到 hint.php</p>
 <p>访问得到代码</p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201807211925_710.png" alt=""></p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201807211925_710.png" alt=""></p>
 <p>分析：</p>
 <p>1.访问页面的时间戳作为播种时间 </p>
 <p>2.输出md5</p>
@@ -798,7 +800,7 @@
 <p>随机抽取一个md5的值输入进去</p>
 <p>php -r “echo md(time());”</p>
 <p>返回 答案错误</p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201807211928_659.png" alt=""></p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201807211928_659.png" alt=""></p>
 <pre><code class="python">import requests
 import re
 import io
@@ -918,9 +920,9 @@ if(isset($_POST[&#39;submit&#39;])){
 
 show_source(__FILE__);
 </code></pre>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201807271711_417.png" alt=""></p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201807271711_417.png" alt=""></p>
 <p><a href="http://101.71.29.5:10001/admin/index.php" target="_blank" rel="external">http://101.71.29.5:10001/admin/index.php</a></p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201807271711_670.png" alt=""></p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201807271711_670.png" alt=""></p>
 <p>考虑知识点csrf 我们要模拟管理员去访问</p>
 <h6 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h6><p><a href="http://www.freebuf.com/articles/web/35353.html" target="_blank" rel="external">Flash跨域数据劫持漏洞，一大波网站受影响</a><br><strong>object标签在包含flash文件时没有对嵌入的文件后缀进行判断。也就是说，只要文件内容包含了正常的flash文件代码，就能够被object标签成功加载并执行。</strong></p>
 <p>flash文件有三种文件头：CWS FWS ZWS【最新的】<br>由于ZWS是新兴的文件格式，PHP暂不支持。</p>
@@ -942,14 +944,14 @@ java Extract  E:\CTF\安恒月赛7\5b51807ba55b4\Misc.jpg
 然后会生成output.txt文件
 </code></pre><p>有密码</p>
 <p>使用zipcenop打开看看可以解密</p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201807261455_536.png" alt=""></p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201807261455_536.png" alt=""></p>
 <p>伪加密</p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201807261455_593.png" alt=""></p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201807261455_593.png" alt=""></p>
 <p>实际上修改把01改成00就可</p>
 <p>flag{96efd0a2037d06f34199e921079778ee}</p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201807242216_34.png" alt=""></p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201807242216_34.png" alt=""></p>
 <h3 id="0x01-弱口令"><a href="#0x01-弱口令" class="headerlink" title="0x01 弱口令"></a>0x01 弱口令</h3><p>…. . .-.. .-.. —– ..-. — .-. ..- – </p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201807261343_275.png" alt=""></p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201807261343_275.png" alt=""></p>
 <p>… . .-.. .-.. —– ..-. — .-. ..- —</p>
 <p><a href="http://www.zhongguosou.com/zonghe/moErSiCodeConverter.aspx" target="_blank" rel="external">http://www.zhongguosou.com/zonghe/moErSiCodeConverter.aspx</a></p>
 <p>HELL0FORUM</p>
@@ -972,7 +974,7 @@ java Extract  E:\CTF\安恒月赛7\5b51807ba55b4\Misc.jpg
     <p><span>文章字数:</span><span class="post-count">1,242</span></p>
     <p><span>本文作者:</span><a href="javascript:void(0)" title="Mang0">Mang0</a></p>
     <p><span>发布时间:</span>2018-08-25, 20:39:36</p>
-    <p><span>最后更新:</span>2018-10-15, 08:40:51</p>
+    <p><span>最后更新:</span>2018-11-02, 21:52:17</p>
     <span>原始链接:</span><a class="post-url" href="/archives/b20debe2/" title="安恒7月">http://mang0.me/archives/b20debe2/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。

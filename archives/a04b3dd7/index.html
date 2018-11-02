@@ -150,6 +150,8 @@
             
             <li><a target="_blank" href="http://twosmi1e.com/">2Smile</a></li>
             
+            <li><a target="_blank" href="/www.bugsafe.cn">Poache’s</a></li>
+            
         </ul>
     </div>
 </div>
@@ -726,7 +728,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2018-10-15 08:40:51'>2018-02-27 19:47</time>
+        创建时间:<time class="date" title='更新时间: 2018-11-02 21:52:13'>2018-02-27 19:47</time>
         
     </div>
     <div class="article-meta">
@@ -776,7 +778,7 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="kali渗透测试之Web渗透-扫描工具-Nikto"><a href="#kali渗透测试之Web渗透-扫描工具-Nikto" class="headerlink" title="kali渗透测试之Web渗透-扫描工具-Nikto"></a>kali渗透测试之Web渗透-扫描工具-Nikto</h1><h2 id="任务4：实验环境Metasploaitable和侦察HTTRACK"><a href="#任务4：实验环境Metasploaitable和侦察HTTRACK" class="headerlink" title="任务4：实验环境Metasploaitable和侦察HTTRACK"></a>任务4：实验环境Metasploaitable和侦察HTTRACK</h2><p>httrack 克隆一个网站页面到本地<br><img src="http://oy0tigw51.bkt.clouddn.com/201711231143_886.png" alt=""><br>mkdir dvwa 创建一个目录<br><img src="http://oy0tigw51.bkt.clouddn.com/201711231145_468.png" alt=""></p>
+        <h1 id="kali渗透测试之Web渗透-扫描工具-Nikto"><a href="#kali渗透测试之Web渗透-扫描工具-Nikto" class="headerlink" title="kali渗透测试之Web渗透-扫描工具-Nikto"></a>kali渗透测试之Web渗透-扫描工具-Nikto</h1><h2 id="任务4：实验环境Metasploaitable和侦察HTTRACK"><a href="#任务4：实验环境Metasploaitable和侦察HTTRACK" class="headerlink" title="任务4：实验环境Metasploaitable和侦察HTTRACK"></a>任务4：实验环境Metasploaitable和侦察HTTRACK</h2><p>httrack 克隆一个网站页面到本地<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201711231143_886.png" alt=""><br>mkdir dvwa 创建一个目录<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201711231145_468.png" alt=""></p>
 <p>侦察【减少与目标系统交互】</p>
 <pre><code>Httrack：将WEB可下载的页面下载到本机，再进行本地检查【kali下安装】
 
@@ -808,13 +810,13 @@ man nikto 更多参数
 nikto -update   #直接更新数据库，厂商网址可能被墙 【在此网站可下载最新版http://cirt.net/nikto/UPDATES/】
 
 nikto  -list-plugins       #插件列表
-</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201711251346_435.jpg" alt=""></p>
+</code></pre><p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201711251346_435.jpg" alt=""></p>
 <pre><code>nikto -host http://1.1.1.1 （目标）
 nikto -host 192.168.1.1 -ssl -port 443,8443,995 扫描端口
 例如：
 nikto -host www.baidu.com -port 443 -ssl
 ssl即https的端口默认为443
-</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201711041704_648.png" alt=""></p>
+</code></pre><p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201711041704_648.png" alt=""></p>
 <p>nikto -host <a href="http://192.168.1.109/dvwa/" target="_blank" rel="external">http://192.168.1.109/dvwa/</a>           #指定网站目录扫描</p>
 <pre><code>nikto -host 192.168.1.1.109 -port 80,443      #可指定多个端口【加-output：输出结果】
 nikto -host host.txt   #扫描多个IP
@@ -842,15 +844,15 @@ P：暂停
 支持指定cookie
 
     vi /etv/nikto.conf
-</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201711251338_899.jpg" alt=""></p>
+</code></pre><p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201711251338_899.jpg" alt=""></p>
 <pre><code>    #修改useagent【默认配置，容易被管理员发现】
 
     USERAGENT=Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)
-</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201711251345_604.jpg" alt=""></p>
+</code></pre><p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201711251345_604.jpg" alt=""></p>
 <pre><code>    #抓包分析，获取cookie
-</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201711251345_197.jpg" alt=""></p>
+</code></pre><p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201711251345_197.jpg" alt=""></p>
 <pre><code>    #修改cookie信息【让nikto获得身份认证，进行进一步扫描】
-</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201711251345_949.jpg" alt=""></p>
+</code></pre><p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201711251345_949.jpg" alt=""></p>
 <pre><code>    -evasion：使用LibWhisker中对IDS的逃避技术，可使用以下几种类型
 
     1、随机URL编码（非UTF-8方式）
@@ -868,7 +870,7 @@ P：暂停
     7、使用变化的URL
 
     8、使用windows路径分隔符”\“
-</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201711251345_7.jpg" alt=""></p>
+</code></pre><p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201711251345_7.jpg" alt=""></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 951207194@qq.com </span>
@@ -886,7 +888,7 @@ P：暂停
     <p><span>文章字数:</span><span class="post-count">913</span></p>
     <p><span>本文作者:</span><a href="javascript:void(0)" title="Mang0">Mang0</a></p>
     <p><span>发布时间:</span>2018-02-27, 19:47:03</p>
-    <p><span>最后更新:</span>2018-10-15, 08:40:51</p>
+    <p><span>最后更新:</span>2018-11-02, 21:52:13</p>
     <span>原始链接:</span><a class="post-url" href="/archives/a04b3dd7/" title="kali渗透测试之Web渗透-扫描工具-Nikto">http://mang0.me/archives/a04b3dd7/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。

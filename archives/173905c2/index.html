@@ -150,6 +150,8 @@
             
             <li><a target="_blank" href="http://twosmi1e.com/">2Smile</a></li>
             
+            <li><a target="_blank" href="/www.bugsafe.cn">Poache’s</a></li>
+            
         </ul>
     </div>
 </div>
@@ -726,7 +728,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2018-10-23 23:58:36'>2018-10-13 23:53</time>
+        创建时间:<time class="date" title='更新时间: 2018-11-02 21:52:17'>2018-10-13 23:53</time>
         
     </div>
     <div class="article-meta">
@@ -835,7 +837,7 @@ if __name__ == &quot;__main__&quot;:
 <p><img src="/archives/173905c2/my write markdown\data\02-CTF\2.0-writeup\jl6Wwoc.png" alt=""></p>
 <p>找到了 cookie_secret，根据 hint，构造 url</p>
 <p>/fllllllllllag</p>
-<p>{BVt!-e%cqXs<a href="&#x6d;&#97;&#x69;&#x6c;&#116;&#x6f;&#x3a;&#38;&#108;&#x6e;&#41;&#x24;&#x37;&#95;&#x78;&#x49;&#x40;&#x77;&#74;&#x30;&#x50;&#x41;&#94;&#57;&#x51;&#x31;&#x23;&#56;&#63;&#x6b;&#104;&#x6a;&#x28;&#x34;&#97;&#111;&#50;&#x75;&#x72;&#67;&#98;&#x4c;&#51;&#72;&#69;&#126;&#46;&#x47;&#x70;&#122;&#70;&#x66;">&#38;&#108;&#x6e;&#41;&#x24;&#x37;&#95;&#x78;&#x49;&#x40;&#x77;&#74;&#x30;&#x50;&#x41;&#94;&#57;&#x51;&#x31;&#x23;&#56;&#63;&#x6b;&#104;&#x6a;&#x28;&#x34;&#97;&#111;&#50;&#x75;&#x72;&#67;&#98;&#x4c;&#51;&#72;&#69;&#126;&#46;&#x47;&#x70;&#122;&#70;&#x66;</a>[YKSg</p>
+<p>{BVt!-e%cqXs<a href="&#x6d;&#x61;&#105;&#x6c;&#116;&#111;&#x3a;&#x26;&#x6c;&#110;&#41;&#36;&#55;&#95;&#120;&#x49;&#64;&#119;&#74;&#x30;&#80;&#x41;&#x5e;&#x39;&#x51;&#49;&#35;&#56;&#63;&#x6b;&#x68;&#x6a;&#40;&#x34;&#x61;&#111;&#50;&#x75;&#114;&#67;&#x62;&#x4c;&#51;&#72;&#69;&#126;&#x2e;&#x47;&#x70;&#122;&#70;&#102;">&#x26;&#x6c;&#110;&#41;&#36;&#55;&#95;&#120;&#x49;&#64;&#119;&#74;&#x30;&#80;&#x41;&#x5e;&#x39;&#x51;&#49;&#35;&#56;&#63;&#x6b;&#x68;&#x6a;&#40;&#x34;&#x61;&#111;&#50;&#x75;&#114;&#67;&#x62;&#x4c;&#51;&#72;&#69;&#126;&#x2e;&#x47;&#x70;&#122;&#70;&#102;</a>[YKSg</p>
 <pre><code class="php">&lt;?php
 $str = &quot;/fllllllllllag&quot;;
 $a=md5($str);
@@ -850,9 +852,9 @@ echo md5($str3);
 <h3 id="LTSHOP"><a href="#LTSHOP" class="headerlink" title="LTSHOP"></a>LTSHOP</h3><p>本题的考点在于条件竞争以及整数的溢出问题</p>
 <p>通过多线程发包的方式使得购买到 5 个以上的大辣条</p>
 <p>可以使用burp抓包，发送到intruder</p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201810181352_259.png" alt=""></p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201810181352_259.png" alt=""></p>
 <p>设线程大一点</p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201810181402_632.png" alt=""></p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201810181402_632.png" alt=""></p>
 <p>start stack</p>
 <p>得到10个大辣条越换两个辣条之王</p>
 <p>抓包发现cookie有go_iris 猜测是go语言数据类型溢出</p>
@@ -893,7 +895,7 @@ for i in range(1,256):
     <p><span>文章字数:</span><span class="post-count">790</span></p>
     <p><span>本文作者:</span><a href="javascript:void(0)" title="Mang0">Mang0</a></p>
     <p><span>发布时间:</span>2018-10-13, 23:53:02</p>
-    <p><span>最后更新:</span>2018-10-23, 23:58:36</p>
+    <p><span>最后更新:</span>2018-11-02, 21:52:17</p>
     <span>原始链接:</span><a class="post-url" href="/archives/173905c2/" title="护网杯wp">http://mang0.me/archives/173905c2/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。

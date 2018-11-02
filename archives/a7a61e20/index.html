@@ -150,6 +150,8 @@
             
             <li><a target="_blank" href="http://twosmi1e.com/">2Smile</a></li>
             
+            <li><a target="_blank" href="/www.bugsafe.cn">Poache’s</a></li>
+            
         </ul>
     </div>
 </div>
@@ -726,7 +728,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2018-10-15 08:40:51'>2018-04-23 21:35</time>
+        创建时间:<time class="date" title='更新时间: 2018-11-02 21:52:11'>2018-04-23 21:35</time>
         
     </div>
     <div class="article-meta">
@@ -789,13 +791,13 @@ for i in range(90,160):
         print chr(int(k)),
     print &quot;&quot;
 </code></pre>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201804192226_410.png" alt=""></p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201804192226_410.png" alt=""></p>
 <p> DDCTF{922ab9974a47cd322cf43b50610faea5}</p>
-<h2 id="第四扩展FS"><a href="#第四扩展FS" class="headerlink" title="第四扩展FS"></a>第四扩展FS</h2><p><img src="http://oy0tigw51.bkt.clouddn.com/201804192234_752.png" alt=""></p>
+<h2 id="第四扩展FS"><a href="#第四扩展FS" class="headerlink" title="第四扩展FS"></a>第四扩展FS</h2><p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201804192234_752.png" alt=""></p>
 <p>分析得到有一个压缩包</p>
 <p>foremost出来得到zip，</p>
 <p>解压密码在windows.jpg属性的备注</p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201804192236_14.png" alt=""></p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201804192236_14.png" alt=""></p>
 <p>Pactera</p>
 <p>（插曲我一开始以为是crc32攻击）逃 </p>
 <p>解压得到file</p>
@@ -927,13 +929,13 @@ for i in range(90,160):
 </tbody>
 </table>
 <p>DDCTF{tu0kUanshiye!}</p>
-<h2 id="Web-1-数据库的秘密"><a href="#Web-1-数据库的秘密" class="headerlink" title="Web 1 数据库的秘密"></a>Web 1 数据库的秘密</h2><p><img src="http://oy0tigw51.bkt.clouddn.com/201804212006_929.png" alt=""></p>
+<h2 id="Web-1-数据库的秘密"><a href="#Web-1-数据库的秘密" class="headerlink" title="Web 1 数据库的秘密"></a>Web 1 数据库的秘密</h2><p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201804212006_929.png" alt=""></p>
 <p>使用插件modify headers加一个x-forward-for: 123.232.23.245</p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201804212005_33.png" alt=""></p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201804212005_33.png" alt=""></p>
 <p>打开题目是三个搜索框和一个数据表格，分析form表单发现隐藏一处所以更改本地复现进行注入</p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201804220047_85.png" alt=""></p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201804220047_85.png" alt=""></p>
 <p>发现是bool盲注，并用burp fuzz一下</p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201804220050_110.png" alt=""></p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201804220050_110.png" alt=""></p>
 <p>发现union，database（）都被过滤</p>
 <p>准语句：0’&amp;&amp;if(ascii(substr((select version()),1,1))&gt;0,1,0)#</p>
 <p>得到库名：0’ &amp;&amp; if(ascii(substr((select schema_name from information_schema.schemata limit 1,1),1,1))&gt;0,1,0)#：DDCTF</p>
@@ -1016,7 +1018,7 @@ echo $body;
     <p><span>文章字数:</span><span class="post-count">793</span></p>
     <p><span>本文作者:</span><a href="javascript:void(0)" title="Mang0">Mang0</a></p>
     <p><span>发布时间:</span>2018-04-23, 21:35:39</p>
-    <p><span>最后更新:</span>2018-10-15, 08:40:51</p>
+    <p><span>最后更新:</span>2018-11-02, 21:52:11</p>
     <span>原始链接:</span><a class="post-url" href="/archives/a7a61e20/" title="DDCTF三道小结">http://mang0.me/archives/a7a61e20/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。

