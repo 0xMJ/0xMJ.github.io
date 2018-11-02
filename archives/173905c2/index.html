@@ -728,12 +728,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2018-11-02 21:52:17'>2018-10-13 23:53</time>
+        创建时间:<time class="date" title='更新时间: 2018-11-02 22:17:04'>2018-10-13 23:53</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:790</span>
+        <span>字数:813</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -778,7 +778,8 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="web"><a href="#web" class="headerlink" title="web"></a>web</h2><h3 id="easy-tornado"><a href="#easy-tornado" class="headerlink" title="easy tornado"></a>easy tornado</h3><p>进入首页，看到文件列表。</p>
+        <p><a href="http://www.kingkk.com/2018/10/%E6%8A%A4%E7%BD%91%E6%9D%AF-web/" target="_blank" rel="external">http://www.kingkk.com/2018/10/%E6%8A%A4%E7%BD%91%E6%9D%AF-web/</a></p>
+<h2 id="web"><a href="#web" class="headerlink" title="web"></a>web</h2><h3 id="easy-tornado"><a href="#easy-tornado" class="headerlink" title="easy tornado"></a>easy tornado</h3><p>进入首页，看到文件列表。</p>
 <p><a href="http://49.4.94.186:31331/" target="_blank" rel="external">http://49.4.94.186:31331/</a></p>
 <p>随便点一个，可以读取文件内容，看到url里有两个参数，一个是文件名，另一个是签名。</p>
 <p>根据 hint.txt ， 签名是 cookie_secret + 文件名 的 md5</p>
@@ -788,8 +789,7 @@ md5(cookie_secret + md5(filename))
 <p>通过 FUZZ 参数，发现新的路由，即报错页面。</p>
 <p><a href="http://49.4.94.186:31331/error?msg=%E7%AD%BE%E5%90%8D%E9%94%99%E8%AF%AF" target="_blank" rel="external">http://49.4.94.186:31331/error?msg=%E7%AD%BE%E5%90%8D%E9%94%99%E8%AF%AF</a></p>
 <p>看到参数的 <code>签名错误</code> 被输出到页面里，应该是 SSTI。</p>
-<p><img src="/archives/173905c2/my write markdown\data\02-CTF\2.0-writeup\xleEWng.png" alt=""></p>
-<p>另外学习：</p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201811020000.png" alt=""></p>
 <p><a href="http://blog.51cto.com/wengmengkai/1844886" target="_blank" rel="external">tornado—web框架基础入门</a> 通过这个进行快速学习tornado的开发</p>
 <p><a href="http://www.tornadoweb.org/en/stable/" target="_blank" rel="external">tornado文档</a> 通过阅读文档快速掌握对象</p>
 <p>安装:</p>
@@ -834,10 +834,10 @@ if __name__ == &quot;__main__&quot;:
 <p>模版注入绕过:<a href="https://p0sec.net/index.php/archives/120/" target="_blank" rel="external">Flask/Jinja2模板注入中的一些绕过姿势</a></p>
 <p>里面的payload 基本都包含 () 很明显题目过滤了 只保留了. 所以通过上面别名的方法来获得cookie_secret</p>
 <p>可以通过这个 msg= 直接读出 tornado 的配置。</p>
-<p><img src="/archives/173905c2/my write markdown\data\02-CTF\2.0-writeup\jl6Wwoc.png" alt=""></p>
+<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/jl6Wwoc.png" alt=""></p>
 <p>找到了 cookie_secret，根据 hint，构造 url</p>
 <p>/fllllllllllag</p>
-<p>{BVt!-e%cqXs<a href="&#x6d;&#x61;&#105;&#x6c;&#116;&#111;&#x3a;&#x26;&#x6c;&#110;&#41;&#36;&#55;&#95;&#120;&#x49;&#64;&#119;&#74;&#x30;&#80;&#x41;&#x5e;&#x39;&#x51;&#49;&#35;&#56;&#63;&#x6b;&#x68;&#x6a;&#40;&#x34;&#x61;&#111;&#50;&#x75;&#114;&#67;&#x62;&#x4c;&#51;&#72;&#69;&#126;&#x2e;&#x47;&#x70;&#122;&#70;&#102;">&#x26;&#x6c;&#110;&#41;&#36;&#55;&#95;&#120;&#x49;&#64;&#119;&#74;&#x30;&#80;&#x41;&#x5e;&#x39;&#x51;&#49;&#35;&#56;&#63;&#x6b;&#x68;&#x6a;&#40;&#x34;&#x61;&#111;&#50;&#x75;&#114;&#67;&#x62;&#x4c;&#51;&#72;&#69;&#126;&#x2e;&#x47;&#x70;&#122;&#70;&#102;</a>[YKSg</p>
+<p>{BVt!-e%cqXs<a href="&#109;&#97;&#105;&#x6c;&#116;&#x6f;&#58;&#38;&#108;&#110;&#x29;&#36;&#x37;&#x5f;&#120;&#x49;&#x40;&#x77;&#x4a;&#x30;&#80;&#x41;&#x5e;&#x39;&#81;&#49;&#x23;&#56;&#63;&#x6b;&#104;&#x6a;&#x28;&#x34;&#x61;&#x6f;&#50;&#117;&#114;&#67;&#98;&#76;&#x33;&#x48;&#x45;&#x7e;&#x2e;&#x47;&#112;&#x7a;&#70;&#102;">&#38;&#108;&#110;&#x29;&#36;&#x37;&#x5f;&#120;&#x49;&#x40;&#x77;&#x4a;&#x30;&#80;&#x41;&#x5e;&#x39;&#81;&#49;&#x23;&#56;&#63;&#x6b;&#104;&#x6a;&#x28;&#x34;&#x61;&#x6f;&#50;&#117;&#114;&#67;&#98;&#76;&#x33;&#x48;&#x45;&#x7e;&#x2e;&#x47;&#112;&#x7a;&#70;&#102;</a>[YKSg</p>
 <pre><code class="php">&lt;?php
 $str = &quot;/fllllllllllag&quot;;
 $a=md5($str);
@@ -849,6 +849,7 @@ echo md5($str3);
 <p>2ad507bc2e8b59cce2e4147b0bfa169f</p>
 <p><a href="http://49.4.94.186:31331/file?filename=/fllllllllllag&amp;signature=2ad507bc2e8b59cce2e4147b0bfa169f" target="_blank" rel="external">http://49.4.94.186:31331/file?filename=/fllllllllllag&amp;signature=2ad507bc2e8b59cce2e4147b0bfa169f</a></p>
 <p>flag{fd29ee3314ce32fedce028ca753fb68a}</p>
+<p><a href="http://49.4.78.81:30980/file?filename=/fllllllllllag&amp;signature=7bae09c2c6e2f6aa34df7dbee23db960" target="_blank" rel="external">http://49.4.78.81:30980/file?filename=/fllllllllllag&amp;signature=7bae09c2c6e2f6aa34df7dbee23db960</a></p>
 <h3 id="LTSHOP"><a href="#LTSHOP" class="headerlink" title="LTSHOP"></a>LTSHOP</h3><p>本题的考点在于条件竞争以及整数的溢出问题</p>
 <p>通过多线程发包的方式使得购买到 5 个以上的大辣条</p>
 <p>可以使用burp抓包，发送到intruder</p>
@@ -892,10 +893,10 @@ for i in range(1,256):
 
 <div class="article_copyright">
     <p><span>文章标题:</span>护网杯wp</p>
-    <p><span>文章字数:</span><span class="post-count">790</span></p>
+    <p><span>文章字数:</span><span class="post-count">813</span></p>
     <p><span>本文作者:</span><a href="javascript:void(0)" title="Mang0">Mang0</a></p>
     <p><span>发布时间:</span>2018-10-13, 23:53:02</p>
-    <p><span>最后更新:</span>2018-11-02, 21:52:17</p>
+    <p><span>最后更新:</span>2018-11-02, 22:17:04</p>
     <span>原始链接:</span><a class="post-url" href="/archives/173905c2/" title="护网杯wp">http://mang0.me/archives/173905c2/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
