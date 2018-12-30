@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>kali渗透测试之Web渗透-扫描工具-Vega | Mang0 的成长之路 | Mang0 | 网络安全 | 安全技术 | CTF|WEB 安全 | 数据科学安全</title>
-  <meta name="keywords" content=" Vega ">
-  <meta name="description" content="kali渗透测试之Web渗透-扫描工具-Vega | Mang0 的成长之路 | Mang0 | 网络安全 | 安全技术 | CTF|WEB 安全 | 数据科学安全">
+  <title>2018反思总结 | Mang0 的成长之路 | Mang0 | 网络安全 | 安全技术 | CTF|WEB 安全 | 数据科学安全</title>
+  <meta name="keywords" content=" life ">
+  <meta name="description" content="2018反思总结 | Mang0 的成长之路 | Mang0 | 网络安全 | 安全技术 | CTF|WEB 安全 | 数据科学安全">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="L2Dwidget.init({&quot;pluginRootPath&quot;:&quot;live2dw/&quot;,&quot;pluginJsPath&quot;:&quot;lib/&quot;,&quot;pluginModelPath&quot;:&quot;assets/&quot;,&quot;tagMode&quot;:false,&quot;debug&quot;:false,&quot;model&quot;:{&quot;jsonPath&quot;:&quot;/live2dw/assets/assets/koharu.mode">
 <meta property="og:type" content="website">
@@ -750,9 +750,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-kali渗透测试之Web渗透-扫描工具-Vega" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-2018反思总结" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">kali渗透测试之Web渗透-扫描工具-Vega</h1>
+        <h1 class="article-title">2018反思总结</h1>
     
     <div class="article-meta">
         
@@ -760,26 +760,26 @@
         
         <span class="book">
             
-            <a href="javascript:" data-rel="Kali">Kali</a>
+            <a href="javascript:" data-rel="思考">思考</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color5">Vega</a>
+            <a href="javascript:" class="color5">life</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2018-11-02 21:52:14'>2018-02-27 19:51</time>
+        创建时间:<time class="date" title='更新时间: 2018-12-31 01:16:29'>2018-12-31 01:14</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:822</span>
+        <span>字数:636</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -809,7 +809,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#kali渗透测试之Web渗透-扫描工具-Vega"><span class="toc-text">kali渗透测试之Web渗透-扫描工具-Vega</span></a></li></ol>
+        
     
 <style>
     .left-col .switch-btn,
@@ -824,111 +824,21 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="kali渗透测试之Web渗透-扫描工具-Vega"><a href="#kali渗透测试之Web渗透-扫描工具-Vega" class="headerlink" title="kali渗透测试之Web渗透-扫描工具-Vega"></a>kali渗透测试之Web渗透-扫描工具-Vega</h1><p>##任务6： WEB扫描工具-Vega</p>
-<p> 纯图形化界面，Java编写的开源web扫描器。两种工作模式：扫描模式和代理模式【主流扫描功能】。用于爬站。处理表单，注入测试等。支持SSL：<a href="http://vega/ca.crt" target="_blank" rel="external">http://vega/ca.crt</a></p>
-<p>专注于应用程序代码方面的漏洞</p>
-<p>Vega<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201711251348_627.jpg" alt=""></p>
-<pre><code>#基于字典发现网站目录
-</code></pre><p>代理模式</p>
-<p>被动收集信息，结合手动爬站【即页面中能点击的链接全部点击一遍，能提交数据的地方，全部提交一遍】</p>
-<p>连接到网站外面的链接可以暂时不用管<br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201711251349_64.jpg" alt=""></p>
-<pre><code>#设置外部代理服务器
-</code></pre><p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201711251349_630.jpg" alt=""></p>
-<pre><code>#删除user-agent尾部的vega字样
-</code></pre><p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201711251349_272.jpg" alt=""></p>
-<pre><code>#设置代理
-</code></pre><p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201711251349_285.jpg" alt=""></p>
-<pre><code>1、setup重置【方便用户初始安装和配置】
-
-设置安装完成后，一定要删掉，不能留在服务器。如果权限设置不当，通过非授权访问到，可篡改数据库内容
-</code></pre><p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201711251350_130.jpg" alt=""></p>
-<pre><code>2、提交数据【随便输入，目的：被Vega抓取数据】
-</code></pre><p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201711251350_567.jpg" alt=""></p>
-<pre><code>3、URL【?参数=***】
-
-在等号后面的值，添加不正常的内容，看返回结果
-
-
-
-
-4、view source【服务器端源代码，正常Web application中没有此功能，只为了分析漏洞而提供的功能】
-
-
-
-
-5、上传位置【同理：成功与否，无所谓】
-
-
-
-
-6、反射性XSS【输入什么内容，就返回什么内容】
-
-
-
-
-7、论坛或收集反馈的典型表单页面【】
-
-
-
-
-8、phpinfo  #安装PHP后，测试是否能否正常工作 【泄漏大量服务器配置信息】
-
-
-
-
-#左边灰白色为页面中存在的链接
-</code></pre><p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201711251350_798.jpg" alt=""></p>
-<pre><code>#部分扫描结果
-</code></pre><p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201711251350_220.jpg" alt=""></p>
-<pre><code>9、事后操作-修改内容重放【在时间失效之前】
-</code></pre><p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201711251351_991.jpg" alt=""></p>
-<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201711251351_491.jpg" alt=""></p>
-<pre><code>截断功能【代理方面有所欠缺】
-</code></pre><p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201711251351_90.jpg" alt=""><br>扫描模式【切换】</p>
-<pre><code>vega主动，对页面中的内容、参数进行扫描
-</code></pre><p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201711251351_475.jpg" alt=""></p>
-<pre><code>配置
-
-1、准备
-
-     #定义身份认证信息
-
-    1、basic http authentication    #http基本身份认证
-
-    2、digest http authentication   #http摘要身份认证
-
-    3、NTLM                                 #windows系统账号密码认证【未加入域】
-
-    4、macro                                 #基于表单【大部分web应用身份认证】
-</code></pre><p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201711251351_2.jpg" alt=""></p>
-<pre><code>        #创建宏
-</code></pre><p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201711251352_704.jpg" alt=""></p>
-<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201711251352_133.jpg" alt=""></p>
-<pre><code>2、开始
-</code></pre><p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201711251352_828.jpg" alt=""></p>
-<p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201711251352_280.jpg" alt=""><br><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201711251352_318.jpg" alt=""></p>
-<pre><code>#查看详细信息console
-</code></pre><p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201711251352_31.jpg" alt=""></p>
-<pre><code>#请求内容的过程
-</code></pre><p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201711251352_181.jpg" alt=""></p>
-<p>https证书加密网站【即其既是一个服务网站，又是一个可信证书颁发机构】的扫描【截断代理】</p>
-<pre><code>签名证书：由权威颁发机构颁发给服务器或者个人用于证明自己身份的东西，默认客户端都是信任的。主要目的是用来加密和保证数据的完整性和不可抵赖性
-
-自签名证书：由服务器自己颁发给自己，用于证明自己身份的东西，非权威颁发机构发布，默认客户端都是不信任的，主要目的是用来加密和保证数据的完整性和不可抵赖性,与签名证书相同.
-
-创建自签名SSL证书：http://www.cnblogs.com/lihuang/articles/4205540.html
-
-也是类似，通过vega作为代理服务器，伪造证书，进行信息劫持，进行但要注意：
-
-####当访问网站出现信任报错时，可能是有人伪造了证书【如：百度号称全站https，淘宝、阿里、facebook】
-
-
-
-
-查看证书
-</code></pre><p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201711251353_9.jpg" alt=""></p>
-<pre><code>#右键 View Page info
-</code></pre><p><img src="https://blog-1254419664.cos.ap-chengdu.myqcloud.com/backup/201711251353_884.jpg" alt=""></p>
+        <p>时间过得真的很快，转眼的大二没了，大三也过了一半。</p>
+<p>其实这一次总结真不知道该说什么</p>
+<p>这一年有很多的成长和感动吧。</p>
+<p>“Talk is Cheap. Show me the code.”这一年明白的最重要的道理了。</p>
+<p>这一年还是一如既往的当个脚本小子，尝试了读源码去审计，一开始也头疼的要死，根本顶不住，陷入函数追踪的漩涡之中，摸搜了很久才找到自己的一点方法。</p>
+<p>颓废也有，失望也有，努力追寻也有。</p>
+<p>这一年算是踏入安全圈子的第二年。从大二开始懵懵懂懂学习web，学习ctf，学习基础渗透。到现在入门机器学习的大坑，内网渗透的一点大坑（实名感谢刘哥，有一个好圈子的重要吧，自己也学了不少东西）。</p>
+<p>做安全真的是个很累的事情，不止于身体吧，还有每天拷问自己灵魂的一句，“我他妈怎么这么菜”。可是总有人要为某个行业做出点贡献，要修补随时可能出现问题的大船，保护一些梦想。</p>
+<p>我想自己也应该要做一些值得做的，没有多少人帮助，也要硬着头皮自己上吧。也希望多接触更多人，扩大圈子学到更多别人身上的优点吧。</p>
+<p>学任何东西最好有个奖励机制吧，能看到自己的成长，打了各个ctf比赛，发表了文章发现自己也能靠自己能力赚钱，收获水货cve、cnvd，挖了一点垃圾漏洞提交，拿到了自己想做的实习工作。就这样一直努力下去吧。</p>
+<p>说到行业，自己暑假本要去某恒实习，无奈被鸽，暑假两个月在学校偶尔颓废，也算达成了自己要达成的目标吧。</p>
+<p>现在也还不错，有两三个offer，寒假去实习ueba研究也请更加努力造出东西吧。希望未来自己能在安全数据分析有所造化吧。</p>
+<p>学了一年半接触了很多，认识了很多小伙伴。感谢他们的陪伴。也感谢女朋友一直给的鼓励和支持。</p>
+<p>接下来也请做自己喜欢的研究，不要为了某些利益而改变内心的欢喜，做自己喜欢的事才是人生一大快乐啊。</p>
+<p>不畏将来，不忘初心吧。</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 951207194@qq.com </span>
@@ -942,12 +852,12 @@
 
 
 <div class="article_copyright">
-    <p><span>文章标题:</span>kali渗透测试之Web渗透-扫描工具-Vega</p>
-    <p><span>文章字数:</span><span class="post-count">822</span></p>
+    <p><span>文章标题:</span>2018反思总结</p>
+    <p><span>文章字数:</span><span class="post-count">636</span></p>
     <p><span>本文作者:</span><a href="javascript:void(0)" title="Mang0">Mang0</a></p>
-    <p><span>发布时间:</span>2018-02-27, 19:51:36</p>
-    <p><span>最后更新:</span>2018-11-02, 21:52:14</p>
-    <span>原始链接:</span><a class="post-url" href="/archives/136af25a/" title="kali渗透测试之Web渗透-扫描工具-Vega">http://mang0.me/archives/136af25a/</a>
+    <p><span>发布时间:</span>2018-12-31, 01:14:45</p>
+    <p><span>最后更新:</span>2018-12-31, 01:16:29</p>
+    <span>原始链接:</span><a class="post-url" href="/archives/f7c9beed/" title="2018反思总结">http://mang0.me/archives/f7c9beed/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
